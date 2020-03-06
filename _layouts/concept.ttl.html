@@ -5,6 +5,7 @@ layout: null
 {%- assign rdfprofile = "/api/rdf-profile" -%}
 {%- assign concept_html = site.concepts | where: 'termid', page.termid | first -%}
 {%- assign concept_id = concept_html.url -%}
+{%- assign english = page["eng"] -%}
 # baseURI: "{{ concept_id }}"
 # imports: http://purl.org/dc/terms/
 # imports: https://www.geolexica.org/api/rdf-profile
@@ -39,12 +40,12 @@ layout: null
 {%- endif %}
 {%- endfor %}
   rdf-profile:termID <{{ page.url }}> ;
-  rdfs:label "closure" ;
-  skos:notation: {{ page.termid }} ;
+  rdfs:label "{{ english.term | escape }}" ;
+  skos:notation {{ page.termid }} ;
 {%- for lang in site.term_languages %}
 {%- assign localized_term = page[lang] -%}
 {%- if localized_term.definition %}
-  skos:definition:"{{ localized_term.definition | escape }}"@{{ site.data.lang[lang].iso-639-1 }} ;
+  skos:definition "{{ localized_term.definition | escape }}"@{{ site.data.lang[lang].iso-639-1 }} ;
 {%- endif %}
 {%- endfor %}
   skos:inScheme rdf-profile:GeolexicaConceptScheme ;
@@ -52,33 +53,33 @@ layout: null
 {%- for lang in site.term_languages %}
 {%- assign localized_term = page[lang] -%}
 {%- if localized_term.term %}
-  skos:prefLabel"{{ localized_term.term | escape }}"@{{ site.data.lang[lang].iso-639-1 }} ;
+  skos:prefLabel "{{ localized_term.term | escape }}"@{{ site.data.lang[lang].iso-639-1 }} ;
 {%- endif %}
 {%- endfor %}
 
 {%- for lang in site.term_languages %}
 {%- assign localized_term = page[lang] -%}
 {%- if localized_term.alt %}
-  skos:altLabel"{{ localized_term.alt | escape }}"@{{ site.data.lang[lang].iso-639-1 }} ;
+  skos:altLabel "{{ localized_term.alt | escape }}"@{{ site.data.lang[lang].iso-639-1 }} ;
 {%- endif %}
 {%- endfor %}
 
 {%- if concept.date_accepted %}
-  dcterms:dateAccepted"{{ concept.date_accepted | date: "%F" }}" ;
+  dcterms:dateAccepted "{{ concept.date_accepted | date: "%F" }}" ;
 {%- endif %}
 
 {%- if concept.date_amended %}
-  dcterms:modified"{{ concept.date_amended | date: "%F" }}" ;
+  dcterms:modified "{{ concept.date_amended | date: "%F" }}" ;
 {%- endif %}
 
 {%- assign term_status = concept.entry_status -%}
-{%- if concept.entry_status %} ;
-  status"{{ concept.entry_status | escape }}"
+{%- if concept.entry_status %}
+  :status "{{ concept.entry_status | escape }}" ;
 {%- endif %}
 
 {%- assign classification = concept.classification -%}
 {%- if concept.classification %}
-  classification"{{ concept.classification | escape }}" ;
+  :classification "{{ concept.classification | escape }}" ;
 {%- endif %}
 .
 :linked-data-api
