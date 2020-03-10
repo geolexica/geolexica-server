@@ -52,18 +52,18 @@ tc211-termbase.yaml tc211-termbase.meta.yaml concepts_data: tc211-termbase.xlsx
 _concepts: concepts_data
 	mkdir -p $@
 	for filename in $</*.yaml; do \
-	    [ -e "$$filename" ] || continue; \
+		[ -e "$$filename" ] || continue; \
 			newpath=$${filename//$<\/concept-/$@\/}; \
-	    cp $$filename $${newpath//yaml/adoc}; \
+		cp $$filename $${newpath//yaml/adoc}; \
 			echo "---" >> $${newpath//yaml/adoc}; \
 	done
 
 # index.xml: csd.rxl external.rxl admin.rxl
 # 	cp -a external/*.rxl csd/; \
 # 	bundle exec relaton concatenate \
-# 	  -t $(CSD_REGISTRY_NAME) \
+# 		-t $(CSD_REGISTRY_NAME) \
 # 		-g $(NAME_ORG) \
-# 	  csd/ $@
+# 		csd/ $@
 
 serve:
 	bundle exec jekyll serve
