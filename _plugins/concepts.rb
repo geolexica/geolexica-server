@@ -44,7 +44,7 @@ module Jekyll
       end
 
       def concepts_glob
-        File.expand_path("../geolexica-database/concepts/*.yaml", __dir__)
+        File.expand_path("./geolexica-database/concepts/*.yaml", site.source)
       end
 
       def add_page *pages
