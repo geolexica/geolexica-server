@@ -94,7 +94,7 @@ module Jekyll
         end
 
         def permalink
-          nil
+          "/concepts/#{termid}/"
         end
       end
 
@@ -112,7 +112,7 @@ module Jekyll
         end
 
         def permalink
-          "/api/concepts/:basename.json"
+          "/api/concepts/#{termid}.json"
         end
       end
 
@@ -130,7 +130,7 @@ module Jekyll
         end
 
         def permalink
-          "/api/concepts/:basename.jsonld"
+          "/api/concepts/#{termid}.jsonld"
         end
       end
 
@@ -148,7 +148,7 @@ module Jekyll
         end
 
         def permalink
-          "/api/concepts/:basename.ttl"
+          "/api/concepts/#{termid}.ttl"
         end
       end
     end
