@@ -8,3 +8,4 @@ end
 
 require_relative "geolexica/concept_page"
 require_relative "geolexica/concepts_generator"
+require_relative "geolexica/meta_pages_generator"
