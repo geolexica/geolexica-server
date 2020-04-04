@@ -6,4 +6,5 @@ module Jekyll
   end
 end
 
-require_relative "geolexica/concepts"
+require_relative "geolexica/concept_page"
+require_relative "geolexica/concepts_generator"
