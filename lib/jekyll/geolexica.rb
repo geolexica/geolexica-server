@@ -1,6 +1,8 @@
 # (c) Copyright 2020 Ribose Inc.
 #
 
+require "jekyll"
+
 module Jekyll
   module Geolexica
   end
