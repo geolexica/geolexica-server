@@ -24,12 +24,18 @@ module Jekyll
 
       # Processes concepts and yields a bunch of Jekyll::Page instances.
       def make_pages
-        Dir.glob("**/*", base: base_dir).each do |meta_page_path|
-          pathname = Pathname.new(meta_page_path)
-          next if pathname.expand_path(base_dir).directory?
+        all_pages_pathnames.each do |pathname|
           add_page Page.new(site, base_dir,
             pathname.dirname.to_s, pathname.basename.to_s)
         end
+      end
+
+      # Lists all regular files in +base_dir+ recursively, and returns them
+      # as an Array of Pathname instances, which are relative to +base_dir+.
+      def all_pages_pathnames
+        Dir.glob("**/*", base: base_dir).
+          map { |path| Pathname.new(path) }.
+          reject { |pathname| pathname.expand_path(base_dir).directory? }
       end
 
       def base_dir
