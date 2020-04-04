@@ -24,9 +24,8 @@ module Jekyll
 
       # Processes concepts and yields a bunch of Jekyll::Page instances.
       def make_pages
-        all_pages_pathnames.each do |pathname|
-          add_page Page.new(site, base_dir,
-            pathname.dirname.to_s, pathname.basename.to_s)
+        all_pages_pathnames.each do |p|
+          add_page Page.new(site, base_dir, p.dirname.to_s, p.basename.to_s)
         end
       end
 
