@@ -52,6 +52,7 @@ collections:
     output_ext: .ttl
 
 geolexica:
+  concepts_glob: "./geolexica-database/concepts/*.yaml"
   term_languages:
     - eng
 
