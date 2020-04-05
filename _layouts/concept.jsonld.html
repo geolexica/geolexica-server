@@ -18,7 +18,7 @@ layout: null
   "skos:notation": "{{ page.termid }}",
 
   "skos:prefLabel": [
-    {%- for lang in site.term_languages -%}
+    {%- for lang in site.geolexica.term_languages -%}
     {%- assign localized_term = page[lang] -%}
     {%- if localized_term.term -%}
     {
@@ -30,7 +30,7 @@ layout: null
   ],
 
   "skos:altLabel": [
-    {%- for lang in site.term_languages -%}
+    {%- for lang in site.geolexica.term_languages -%}
     {%- assign localized_term = page[lang] -%}
     {%- if localized_term.alt -%}
     {
@@ -42,7 +42,7 @@ layout: null
   ],
 
   "skos:definition": [
-    {%- for lang in site.term_languages -%}
+    {%- for lang in site.geolexica.term_languages -%}
     {%- assign localized_term = page[lang] -%}
     {%- if localized_term.definition -%}
     {
@@ -63,7 +63,7 @@ layout: null
 
   {%- if concept.notes -%}
   "notes": {
-    {%- for lang in site.term_languages -%}
+    {%- for lang in site.geolexica.term_languages -%}
     {%- assign localized_term = page[lang] -%}
     {%- if localized_term.notes.size > 0 -%}
     "{{ lang }}": [
@@ -93,7 +93,7 @@ layout: null
 
   {%- if concept.examples -%}
   "examples": {
-    {%- for lang in site.term_languages -%}
+    {%- for lang in site.geolexica.term_languages -%}
     {%- assign localized_term = page[lang] -%}
     {%- if localized_term.examples.size > 0 -%}
     "{{ lang }}": [

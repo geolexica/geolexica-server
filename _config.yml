@@ -51,8 +51,9 @@ collections:
     output: true
     output_ext: .ttl
 
-term_languages:
-  - eng
+geolexica:
+  term_languages:
+    - eng
 
 exclude:
   - spec/

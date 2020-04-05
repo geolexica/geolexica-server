@@ -8,7 +8,7 @@ permalink: "/api/concepts-index-list.json"
     "term": {{ concept.term | jsonify }},
 
     {% assign english_concept = concept["eng"] %}
-    {% for lang in site.term_languages %}
+    {% for lang in site.geolexica.term_languages %}
 
     "{{ lang }}": {% if concept[lang] %}{
       "term": {{ concept[lang].term | jsonify }},
