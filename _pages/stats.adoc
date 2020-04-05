@@ -9,7 +9,7 @@ title: Statistics
 
 The following languages are provided in Geolexica, with the number of terms displayed below.
 
-{% for lang_pair in site.data.info.languages %}
+{% for lang in site.geolexica.term_languages %}
 {% assign lang = lang_pair[0] %}
 {% assign counter = 0 %}
 {% for concept in site.concepts %}
