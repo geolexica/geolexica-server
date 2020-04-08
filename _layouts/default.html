@@ -13,7 +13,7 @@
       <div class="site-headline">
         <div class="parent-org-reference">
           <a href="/" class="logo-link">
-            <img src="{{ "/assets/logo-iso-noninverted.svg" | relative_url }}" alt="ISO">
+            <img src="{{ site.committee.main_logo.path | relative_url }}" alt="{{ site.committee.main_logo.alt_text }}">
           </a>
         </div>
 
@@ -21,10 +21,10 @@
           <span class="committee-widget">
             <span class="widget-group">
               <span class="widget-item parent-org-reference">
-                ISO
+                {{ site.committee.parent_org_name }}
               </span>
               <span class="widget-item committee-id">
-                TC {{ site.committee.identifier }}
+                {{ site.committee.identifier }}
               </span>
               <span class="widget-item committee-name">
                 {{ site.committee.name }}
@@ -142,7 +142,7 @@
       </p>
 
       <div class="logo">
-        <a href="https://www.iso.org/"><img src="{{ "/assets/logo-iso-noninverted.svg" | relative_url }}" alt="ISO organization"/></a>
+        <a href="{{ site.committee.footer_logo.url }}"><img src="{{ site.committee.footer_logo.path | relative_url }}" alt="{{ site.committee.footer_logo.alt_text }}"/></a>
       </div>
     </footer>
 
