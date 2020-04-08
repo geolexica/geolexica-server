@@ -108,7 +108,7 @@
     {% if site.awards and page.hide_awards != true %}
       <p class="awards">
         <i class="fa fa-certificate icon"></i>
-        Winner of 
+        Winner of
         {% for award in site.awards %}
           <span class="award">the <a href="{{ award.path }}"
             >{{ award.title }}</a>{%- unless forloop.last -%}, {% endunless %}</span>{% endfor %}.
