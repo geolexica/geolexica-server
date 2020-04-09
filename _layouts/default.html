@@ -73,11 +73,10 @@
       {% if nav_items %}
         <nav class="priority-nav">
           <ul>
-            {% for item in nav_items %}
-              {% assign item_data = site.nav.items | where_exp: "nav_item", "nav_item.id == item" | first %}
-              {% if item_data %}
+            {% for item in site.nav.items %}
+              {% if nav_items contains item.id %}
                 <li>
-                  <a href="{{ item_data.url }}">{{ item_data.title }}</a>
+                  <a href="{{ item.url }}">{{ item.title }}</a>
                 </li>
               {% endif %}
             {% endfor %}
