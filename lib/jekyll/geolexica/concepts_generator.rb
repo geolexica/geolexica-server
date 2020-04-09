@@ -28,7 +28,8 @@ module Jekyll
         Dir.glob(concepts_glob).each do |concept_file_path|
           Jekyll.logger.debug("Geolexica:",
             "processing concept data #{concept_file_path}")
-          concept_hash = YAML.load(File.read concept_file_path)
+          concept_hash = read_concept_file(concept_file_path)
+          preprocess_concept_hash(concept_hash)
           add_page ConceptPage::HTML.new(site, concept_hash)
           add_page ConceptPage::JSON.new(site, concept_hash)
           add_page ConceptPage::JSONLD.new(site, concept_hash)
@@ -57,6 +58,15 @@ module Jekyll
 
       def find_page(name)
         site.pages.detect { |page| page.name == name }
+      end
+
+      # Reads and parses concept file located at given path.
+      def read_concept_file(path)
+        YAML.load(File.read path)
+      end
+
+      # Does nothing, but some sites may replace this method.
+      def preprocess_concept_hash(concept_hash)
       end
     end
   end
