@@ -37,7 +37,7 @@ term_attributes:
   <p class="field-name">source</p>
   <p class="field-value">
     {% if english.authoritative_source.link %}
-      <a href="{{ english.authoritative_source.link }}">{{ english.authoritative_source.ref }}</a>{% if english.authoritative_source.clause %}, {{ english.authoritative_source.clause }}{% endif %}
+      <a href="{{ english.authoritative_source.link }}">{{ english.authoritative_source.ref | default: english.authoritative_source.link | escape_once }}</a>{% if english.authoritative_source.clause %}, {{ english.authoritative_source.clause }}{% endif %}
     {% else %}
       {{ english.authoritative_source.ref }}{% if english.authoritative_source.clause %}, {{ english.authoritative_source.clause }}{% endif %}
     {% endif %}
