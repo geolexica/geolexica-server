@@ -69,35 +69,35 @@
         </div>
       </div>
 
-      {% assign nav_items = page.nav_items | default: layout.nav_items %}
-      {% if nav_items %}
+      {%- assign nav_items = page.nav_items | default: layout.nav_items %}
+      {%- if nav_items %}
         <nav class="priority-nav">
           <ul>
-            {% for item in site.nav.items %}
-              {% if nav_items contains item.id %}
+            {%- for item in site.nav.items %}
+              {%- if nav_items contains item.id %}
                 <li>
                   <a href="{{ item.url }}">{{ item.title }}</a>
                 </li>
-              {% endif %}
-            {% endfor %}
+              {%- endif %}
+            {%- endfor %}
           </ul>
         </nav>
-      {% endif %}
+      {%- endif %}
 
-      {% if site.nav %}
+      {%- if site.nav %}
         <nav class="expandable-nav">
           <ul>
-          {% for item in site.nav.items %}
+          {%- for item in site.nav.items %}
             <li>
               <a href="{{ item.url }}">{{ item.title }}</a>
-              {% if item.description %}
+              {%- if item.description %}
                 <p class="desc">{{ item.description }}</p>
-              {% endif %}
+              {%- endif %}
             </li>
-          {% endfor %}
+          {%- endfor %}
           </ul>
         </nav>
-      {% endif %}
+      {%- endif %}
     </header>
 
     <main>
