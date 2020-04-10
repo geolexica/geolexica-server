@@ -21,9 +21,6 @@ nav:
   - id: about
     url: /about
     title: About
-  - id: feedback
-    url: /feedback
-    title: Feedback
 
 email: open.source@ribose.com
 
