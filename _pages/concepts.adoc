@@ -4,6 +4,8 @@ permalink: "/concepts/index.html"
 nav_items: [home, about, stats, posts, feedback, registers]
 bodyClass: concepts
 title: All Concepts
+extra_stylesheets:
+  - href: "/assets/math.css"
 ---
 :page-liquid:
 
@@ -28,7 +30,7 @@ The concepts below are sorted by term name, alphabetically, in a case-insensitiv
             <a href="{{ concept.url | relative_url }}">{{ concept.termid }}</a>
           </td>
           <td class="field-term">
-            <a href="{{ concept.url | relative_url }}">{{ concept.term }}</a>
+            <a href="{{ concept.url | relative_url }}">{{ concept.term | asciimath }}</a>
           </td>
         </tr>
       {% endfor %}
