@@ -6,7 +6,7 @@ $widescreenBreakpoint: 1200px;
 $logoSize: 100px;
 $logoOffset: $logoSize + 12px;
 
-$isoTCColor: #0f6db3;
+$isoTCColor: #0f6db3 !default;
 $textColor: black;
 
 $warningColor: red;
