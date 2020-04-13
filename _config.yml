@@ -47,6 +47,9 @@ collections:
   concepts_ttl:
     output: true
     output_ext: .ttl
+  concepts_tbx:
+    output: true
+    output_ext: .tbx.xml
 
 geolexica:
   concepts_glob: "./geolexica-database/concepts/*.yaml"

@@ -79,6 +79,13 @@ term_attributes:
 </section>
 {%- endif %}
 
+{% assign tbx_concept = site.concepts_tbx | where: 'termid', page.termid | first -%}
+{% assign tbx_url = tbx_concept.url -%}
+<section class="field tbx">
+  <p class="field-name">TBX-ISO-TML</p>
+  <p class="field-value"><a href="{{ tbx_url }}">{{ tbx_url }}</a></p>
+</section>
+
 <section class="field info">
   <p class="field-name">info</p>
   <div class="field-value">
