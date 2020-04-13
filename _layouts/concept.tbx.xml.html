@@ -1,0 +1,76 @@
+---
+layout: null
+---
+{%- assign concept = page["eng"] -%}
+{%- assign concept_html = site.concepts | where: 'termid', page.termid | first -%}
+{%- assign english = page["eng"] -%}
+<tbx type="TBX-Core" xmlns:tbx="urn:iso:std:iso:30042:ed-3">
+<tbx:termEntry id="{{ page.termid }}">
+
+{%- for lang in site.geolexica.term_languages %}
+{%- assign localized_term = page[lang] -%}
+  <tbx:langSet xml:lang="{{ lang }}">
+
+{%- if localized_term.definition %}
+    <tbx:definition>{{ localized_term.definition | escape }}</tbx:definition>
+{%- endif %}
+
+{%- if concept.authoritative_source -%}
+  {%- if concept.authoritative_source.link -%}
+    <tbx:xSource xtarget="{{ concept.authoritative_source.link }}">Available
+      from: {{ concept.authoritative_source.link }}</tbx:xSource>
+  {%- endif -%}
+    <tbx:source>{{ concept.authoritative_source.ref }}</tbx:source>
+{%- endif -%}
+
+{%- if concept.notes -%}
+  {%- if localized_term.notes.size > 0 -%}
+    {%- for note in localized_term.notes -%}
+    <tbx:note>{{ note | escape }}</tbx:note>
+    {% endfor %}
+  {%- endif -%}
+{%- endif -%}
+
+{%- if concept.examples -%}
+  {%- if localized_term.examples.size > 0 -%}
+    {%- for example in localized_term.examples -%}
+    <tbx:example>{{ example | escape }}</tbx:example>
+    {% endfor %}
+  {%- endif -%}
+{%- endif -%}
+
+{%- if localized_term.terms %}
+  {%- for term in localized_term.terms -%}
+    <tbx:tig>
+      <tbx:term id="{{ page.termid }}@{{ lang }}">{{ term.designation }}</tbx:term>
+
+      {% if term.normativeStatus %}
+      <tbx:normativeAuthorization value="{{ term.normativeStatus }}Term" />
+      {% else %}
+      <tbx:normativeAuthorization value="admittedTerm" />
+      {%- endif %}
+
+      {% if term.gender %}
+      <tbx:grammaticalGender value="{{ term.gender }}" />
+      {%- endif %}
+
+      {% if term.plurality %}
+      <tbx:grammaticalNumber value="{{ term.plurality }}" />
+      {%- endif %}
+
+      {% if term.partOfSpeech %}
+      <tbx:partOfSpeech value="{{ term.partOfSpeech }}" />
+      {%- endif %}
+
+      {% if term.usageInfo %}
+      <tbx:usageNote>{{ term.usageInfo }}</tbx:usageNote>
+      {%- endif %}
+    </tbx:tig>
+  {%- endfor %}
+{%- endif %}
+
+  </tbx:langSet>
+{%- endfor %}
+
+</tbx:termEntry>
+</tbx>
