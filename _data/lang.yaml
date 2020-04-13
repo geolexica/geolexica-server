@@ -10,18 +10,18 @@ ara:
   iso-639-1: ar
   example: "مثال"
   note_to_entry: "ملاحظة DD:"
-chn:
-  lang_native: 中文
-  lang_en: Chinese
-  iso-639-1: zh
-  example: 示例
-  note_to_entry: "注 DD："
 dan:
   lang_native: dansk
   lang_en: Danish
   iso-639-1: da
   example: EKSEMPEL
-  note_to_entry: "NOTE DD to entry:"
+  note_to_entry: "Bemærk DD til posten:"
+deu:
+  lang_native: Deutsch
+  lang_en: German
+  iso-639-1: de
+  example: BEISPIEL
+  note_to_entry: "NOTE DD:"
 dut:
   lang_native: Nederlands
   lang_en: Dutch
@@ -34,18 +34,12 @@ fin:
   iso-639-1: fi
   example: ESIM.
   note_to_entry: "HUOM. DD:"
-fra:
+fre:
   lang_native: français
   lang_en: French
   iso-639-1: fr
   example: EXEMPLE
-  note_to_entry: "A noter DD:"
-ger:
-  lang_native: Deutsch
-  lang_en: German
-  iso-639-1: de
-  example: BEISPIEL
-  note_to_entry: "NOTE DD:"
+  note_to_entry: "Note DD à l'article:"
 jpn:
   lang_native: 日本語
   lang_en: Japanese
@@ -76,15 +70,27 @@ rus:
   iso-639-1: ru
   example: Пример
   note_to_entry: "Примечание DD:"
-spa:
+esp:
   lang_native: español
   lang_en: Spanish
   iso-639-1: es
   example: EJEMPLO
   note_to_entry: "Nota DD:"
+por:
+  lang_native: português
+  lang_en: Portuguese
+  iso-639-1: pt
+  exemplo: EXEMPLO
+  note_to_entry: "Anote o DD na entrada:"
 swe:
   lang_native: Svenska
   lang_en: Swedish
   iso-639-1: sv
   example: EXEMPEL
   note_to_entry: "Anm. DD till termpost:"
+zho:
+  lang_native: 中文
+  lang_en: Chinese
+  iso-639-1: zh
+  example: 示例
+  note_to_entry: "注 DD："
