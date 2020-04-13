@@ -98,6 +98,25 @@ module Jekyll
           "/api/concepts/#{termid}.ttl"
         end
       end
+
+      class TBX < ConceptPage
+        def page_name
+          "#{termid}.tbx.xml"
+        end
+
+        def collection_name
+          "concepts_tbx"
+        end
+
+        def layout
+          "concept.tbx.xml"
+        end
+
+        def permalink
+          "/api/concepts/#{termid}.tbx.xml"
+        end
+      end
+
     end
   end
 end

@@ -34,6 +34,7 @@ module Jekyll
           add_page ConceptPage::JSON.new(site, concept_hash)
           add_page ConceptPage::JSONLD.new(site, concept_hash)
           add_page ConceptPage::Turtle.new(site, concept_hash)
+          add_page ConceptPage::TBX.new(site, concept_hash)
         end
       end
 
