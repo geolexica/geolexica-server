@@ -44,33 +44,51 @@ layout: null
     <tbx:tig>
       <tbx:term id="{{ page.termid }}@{{ lang }}">{{ term.designation }}</tbx:term>
 
-      {% if term.normativeStatus %}
+      {%- if term.normativeStatus %}
       <tbx:normativeAuthorization value="{{ term.normativeStatus }}Term" />
       {% else %}
       <tbx:normativeAuthorization value="admittedTerm" />
       {%- endif %}
 
-      {% case term.gender %}
+      {%- case term.gender %}
       {% when "m" %}
-      {% assign gender = "masculine" %}
+      {%- assign gender = "masculine" %}
       {% when "f" %}
-      {% assign gender = "feminine" %}
+      {%- assign gender = "feminine" %}
       {% when "n" %}
-      {% assign gender = "neuter" %}
+      {%- assign gender = "neuter" %}
       {% endcase %}
-      {% if gender %}
+      {%- if gender %}
       <tbx:grammaticalGender value="{{ gender }}" />
+      {% endif %}
+
+      {%- if term.geographicalArea %}
+      <tbx:geographicalUsage>{{ term.geographicalArea }}</tbx:geographicalUsage>
       {%- endif %}
 
-      {% if term.plurality %}
+      {%- if term.plurality %}
       <tbx:grammaticalNumber value="{{ term.plurality }}" />
       {%- endif %}
 
-      {% if term.partOfSpeech %}
+      {%- if term.partOfSpeech %}
       <tbx:partOfSpeech value="{{ term.partOfSpeech }}" />
       {%- endif %}
 
-      {% if term.usageInfo %}
+      {%- case term.type %}
+      {% when "expression" %}
+      {%- assign term_type = "fullForm" %}
+      {% when "symbol" %}
+      {%- assign term_type = "symbol" %}
+      {% when "acronym" %}
+      {%- assign term_type = "acronym" %}
+      {% when "abbreviation" %}
+      {%- assign term_type = "abbreviation" %}
+      {% endcase %}
+      {%- if term_type %}
+      <tbx:termType value="{{ term_type }}" />
+      {%- endif %}
+
+      {%- if term.usageInfo %}
       <tbx:usageNote>{{ term.usageInfo }}</tbx:usageNote>
       {%- endif %}
     </tbx:tig>
