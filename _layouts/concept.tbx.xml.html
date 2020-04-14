@@ -50,8 +50,16 @@ layout: null
       <tbx:normativeAuthorization value="admittedTerm" />
       {%- endif %}
 
-      {% if term.gender %}
-      <tbx:grammaticalGender value="{{ term.gender }}" />
+      {% case term.gender %}
+      {% when "m" %}
+      {% assign gender = "masculine" %}
+      {% when "f" %}
+      {% assign gender = "feminine" %}
+      {% when "n" %}
+      {% assign gender = "neuter" %}
+      {% endcase %}
+      {% if gender %}
+      <tbx:grammaticalGender value="{{ gender }}" />
       {%- endif %}
 
       {% if term.plurality %}
