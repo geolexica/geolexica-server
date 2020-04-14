@@ -52,16 +52,13 @@ layout: null
 
 {%- for lang in site.geolexica.term_languages %}
 {%- assign localized_term = page[lang] -%}
-{%- if localized_term.term %}
-  skos:prefLabel "{{ localized_term.term | escape }}"@{{ site.data.lang[lang].iso-639-1 }} ;
+{%- for term in localized_term.terms %}
+{%- if term.normativeStatus == "preferred" or term.normativeStatus == "" %}
+  skos:prefLabel "{{ term.designation | escape }}"@{{ site.data.lang[lang].iso-639-1 }} ;
+{%- elsif term.normativeStatus == "admitted" %}
+  skos:altLabel "{{ term.designation | escape }}"@{{ site.data.lang[lang].iso-639-1 }} ;
 {%- endif %}
 {%- endfor %}
-
-{%- for lang in site.geolexica.term_languages %}
-{%- assign localized_term = page[lang] -%}
-{%- if localized_term.alt %}
-  skos:altLabel "{{ localized_term.alt | escape }}"@{{ site.data.lang[lang].iso-639-1 }} ;
-{%- endif %}
 {%- endfor %}
 
 {%- if concept.date_accepted %}
