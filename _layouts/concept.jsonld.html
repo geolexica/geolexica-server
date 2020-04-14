@@ -20,24 +20,28 @@ layout: null
   "skos:prefLabel": [
     {%- for lang in site.geolexica.term_languages -%}
     {%- assign localized_term = page[lang] -%}
-    {%- if localized_term.term -%}
+    {%- for term in localized_term.terms -%}
+    {%- if term.normativeStatus == "preferred" or term.normativeStatus == "" -%}
     {
-      "@language": "{{ lang }}",
-      "@value": "{{ localized_term.term | escape }}"
+      "@language": "{{ site.data.lang[lang].iso-639-1 }}",
+      "@value": "{{ term.designation | escape }}"
     }{% unless forloop.last %},{% endunless %}
     {%- endif -%}
+    {%- endfor -%}
     {%- endfor -%}
   ],
 
   "skos:altLabel": [
     {%- for lang in site.geolexica.term_languages -%}
     {%- assign localized_term = page[lang] -%}
-    {%- if localized_term.alt -%}
+    {%- for term in localized_term.terms -%}
+    {%- if term.normativeStatus == "admitted" -%}
     {
-      "@language": "{{ lang }}",
-      "@value": "{{ localized_term.alt | escape }}"
+      "@language": "{{ site.data.lang[lang].iso-639-1 }}",
+      "@value": "{{ term.designation | escape }}"
     }{% unless forloop.last %},{% endunless %}
     {%- endif -%}
+    {%- endfor -%}
     {%- endfor -%}
   ],
 
@@ -46,7 +50,7 @@ layout: null
     {%- assign localized_term = page[lang] -%}
     {%- if localized_term.definition -%}
     {
-      "@language": "{{ lang }}",
+      "@language": "{{ site.data.lang[lang].iso-639-1 }}",
       "@value": "{{ localized_term.definition | escape }}"
     }{% unless forloop.last %},{% endunless %}
     {%- endif -%}
@@ -74,7 +78,7 @@ layout: null
       {
         "note-id": {{ notenum }},
         "note": {
-          "@language": "{{ lang }}",
+          "@language": "{{ site.data.lang[lang].iso-639-1 }}",
           "@type": "skos:note",
           {%- if lang != "eng" and note == concept.notes[forloop.index0] -%}
           "@value": "notTranslated",
@@ -104,7 +108,7 @@ layout: null
       {
         "example-id": {{ examplenum }},
         "example": {
-          "@language": "{{ lang }}",
+          "@language": "{{ site.data.lang[lang].iso-639-1 }}",
           "@type": "skos:example",
           {%- if lang != "eng" and example == concept.examples[forloop.index0] -%}
           "@value": "notTranslated",
