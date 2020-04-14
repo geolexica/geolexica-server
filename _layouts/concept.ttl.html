@@ -45,7 +45,7 @@ layout: null
 {%- for lang in site.geolexica.term_languages %}
 {%- assign localized_term = page[lang] -%}
 {%- if localized_term.definition %}
-  skos:definition "{{ localized_term.definition | escape }}"@{{ site.data.lang[lang].iso-639-1 }} ;
+  skos:definition "{{ localized_term.definition | escape | asciimath }}"@{{ site.data.lang[lang].iso-639-1 }} ;
 {%- endif %}
 {%- endfor %}
   skos:inScheme rdf-profile:GeolexicaConceptScheme ;
@@ -54,9 +54,9 @@ layout: null
 {%- assign localized_term = page[lang] -%}
 {%- for term in localized_term.terms %}
 {%- if term.normativeStatus == "preferred" or term.normativeStatus == "" %}
-  skos:prefLabel "{{ term.designation | escape }}"@{{ site.data.lang[lang].iso-639-1 }} ;
+  skos:prefLabel "{{ term.designation | escape | asciimath }}"@{{ site.data.lang[lang].iso-639-1 }} ;
 {%- elsif term.normativeStatus == "admitted" %}
-  skos:altLabel "{{ term.designation | escape }}"@{{ site.data.lang[lang].iso-639-1 }} ;
+  skos:altLabel "{{ term.designation | escape | asciimath }}"@{{ site.data.lang[lang].iso-639-1 }} ;
 {%- endif %}
 {%- endfor %}
 {%- endfor %}

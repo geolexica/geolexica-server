@@ -24,7 +24,7 @@ layout: null
     {%- if term.normativeStatus == "preferred" or term.normativeStatus == "" -%}
     {
       "@language": "{{ site.data.lang[lang].iso-639-1 }}",
-      "@value": "{{ term.designation | escape }}"
+      "@value": "{{ term.designation | escape | asciimath }}"
     }{% unless forloop.last %},{% endunless %}
     {%- endif -%}
     {%- endfor -%}
@@ -38,7 +38,7 @@ layout: null
     {%- if term.normativeStatus == "admitted" -%}
     {
       "@language": "{{ site.data.lang[lang].iso-639-1 }}",
-      "@value": "{{ term.designation | escape }}"
+      "@value": "{{ term.designation | escape | asciimath }}"
     }{% unless forloop.last %},{% endunless %}
     {%- endif -%}
     {%- endfor -%}
@@ -51,7 +51,7 @@ layout: null
     {%- if localized_term.definition -%}
     {
       "@language": "{{ site.data.lang[lang].iso-639-1 }}",
-      "@value": "{{ localized_term.definition | escape }}"
+      "@value": "{{ localized_term.definition | escape | asciimath }}"
     }{% unless forloop.last %},{% endunless %}
     {%- endif -%}
     {%- endfor -%}
@@ -83,7 +83,7 @@ layout: null
           {%- if lang != "eng" and note == concept.notes[forloop.index0] -%}
           "@value": "notTranslated",
           {%- else -%}
-          "@value": "{{ note | escape }}"
+          "@value": "{{ note | escape | asciimath }}"
           {%- endif -%}
         }
       }{% unless forloop.last %},{% endunless %}
@@ -113,7 +113,7 @@ layout: null
           {%- if lang != "eng" and example == concept.examples[forloop.index0] -%}
           "@value": "notTranslated",
           {%- else -%}
-          "@value": "{{ example | escape }}"
+          "@value": "{{ example | escape | asciimath }}"
           {%- endif -%}
         }
       }{% unless forloop.last %},{% endunless %}

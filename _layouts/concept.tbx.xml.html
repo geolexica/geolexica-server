@@ -12,7 +12,7 @@ layout: null
   <tbx:langSet xml:lang="{{ lang }}">
 
 {%- if localized_term.definition %}
-    <tbx:definition>{{ localized_term.definition | escape }}</tbx:definition>
+    <tbx:definition>{{ localized_term.definition | escape | asciimath }}</tbx:definition>
 {%- endif %}
 
 {%- if concept.authoritative_source -%}
@@ -26,7 +26,7 @@ layout: null
 {%- if concept.notes -%}
   {%- if localized_term.notes.size > 0 -%}
     {%- for note in localized_term.notes -%}
-    <tbx:note>{{ note | escape }}</tbx:note>
+    <tbx:note>{{ note | escape | asciimath }}</tbx:note>
     {% endfor %}
   {%- endif -%}
 {%- endif -%}
@@ -34,7 +34,7 @@ layout: null
 {%- if concept.examples -%}
   {%- if localized_term.examples.size > 0 -%}
     {%- for example in localized_term.examples -%}
-    <tbx:example>{{ example | escape }}</tbx:example>
+    <tbx:example>{{ example | escape | asciimath }}</tbx:example>
     {% endfor %}
   {%- endif -%}
 {%- endif -%}
@@ -42,7 +42,7 @@ layout: null
 {%- if localized_term.terms %}
   {%- for term in localized_term.terms -%}
     <tbx:tig>
-      <tbx:term id="{{ page.termid }}@{{ lang }}">{{ term.designation }}</tbx:term>
+      <tbx:term id="{{ page.termid }}@{{ lang }}">{{ term.designation | asciimath }}</tbx:term>
 
       {%- if term.normativeStatus %}
       <tbx:normativeAuthorization value="{{ term.normativeStatus }}Term" />
