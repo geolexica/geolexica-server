@@ -50,6 +50,7 @@ layout: null
       <tbx:normativeAuthorization value="admittedTerm" />
       {%- endif %}
 
+      {%- assign gender = nil %}
       {%- case term.gender %}
       {% when "m" %}
       {%- assign gender = "masculine" %}
@@ -74,6 +75,7 @@ layout: null
       <tbx:partOfSpeech value="{{ term.partOfSpeech }}" />
       {%- endif %}
 
+      {%- assign term_type = nil %}
       {%- case term.type %}
       {% when "expression" %}
       {%- assign term_type = "fullForm" %}
