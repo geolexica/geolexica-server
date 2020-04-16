@@ -4,6 +4,8 @@
 module Jekyll
   module Geolexica
     class ConceptsGenerator < Generator
+      include Configuration
+
       safe true
 
       attr_reader :generated_pages, :site
@@ -45,11 +47,6 @@ module Jekyll
         generated_pages.each do |page|
           site.collections[page.collection_name].docs.push(page)
         end
-      end
-
-      def concepts_glob
-        glob_string = site.config.dig("geolexica", "concepts_glob")
-        File.expand_path(glob_string, site.source)
       end
 
       def add_page *pages
