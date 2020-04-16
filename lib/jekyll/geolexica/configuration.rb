@@ -4,6 +4,11 @@
 module Jekyll
   module Geolexica
     module Configuration
+      def concepts_glob
+        glob_string = glossary_config["concepts_glob"]
+        File.expand_path(glob_string, site.source)
+      end
+
       protected
 
       def glossary_config
