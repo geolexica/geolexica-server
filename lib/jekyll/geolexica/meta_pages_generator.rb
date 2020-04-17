@@ -4,6 +4,8 @@
 module Jekyll
   module Geolexica
     class MetaPagesGenerator < Generator
+      include Configuration
+
       safe true
 
       attr_reader :generated_pages, :site
@@ -25,6 +27,7 @@ module Jekyll
       # Processes concepts and yields a bunch of Jekyll::Page instances.
       def make_pages
         all_pages_pathnames.each do |p|
+          next if skip_page?(p)
           add_page Page.new(site, base_dir, p.dirname.to_s, p.basename.to_s)
         end
       end
@@ -39,6 +42,12 @@ module Jekyll
 
       def base_dir
         File.expand_path("../../../_pages", __dir__)
+      end
+
+      def skip_page?(pathname)
+        (pathname.extname == ".ttl" && !output_turtle?) ||
+        (pathname.extname == ".json" && !output_json?) ||
+        false
       end
 
       def add_page *pages
