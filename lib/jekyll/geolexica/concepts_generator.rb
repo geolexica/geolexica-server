@@ -32,10 +32,10 @@ module Jekyll
             "processing concept data #{concept_file_path}")
           concept_hash = read_concept_file(concept_file_path)
           preprocess_concept_hash(concept_hash)
-          add_page ConceptPage::HTML.new(site, concept_hash)
-          add_page ConceptPage::JSON.new(site, concept_hash)
-          add_page ConceptPage::JSONLD.new(site, concept_hash)
-          add_page ConceptPage::Turtle.new(site, concept_hash)
+          add_page ConceptPage::HTML.new(site, concept_hash) if output_html?
+          add_page ConceptPage::JSON.new(site, concept_hash) if output_json?
+          add_page ConceptPage::JSONLD.new(site, concept_hash) if output_jsonld?
+          add_page ConceptPage::Turtle.new(site, concept_hash) if output_turtle?
         end
       end
 
