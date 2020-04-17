@@ -54,26 +54,32 @@ term_attributes:
 
 {% endfor %}
 
+{% if site.geolexica.formats contains 'json' -%}
 {% assign json_concept = site.concepts_json | where: 'termid', page.termid | first -%}
 {% assign json_url = json_concept.url -%}
 <section class="field json">
   <p class="field-name">JSON</p>
   <p class="field-value"><a href="{{ json_url }}">{{ json_url }}</a></p>
 </section>
+{%- endif %}
 
+{% if site.geolexica.formats contains 'json-ld' -%}
 {% assign json_concept = site.concepts_jsonld | where: 'termid', page.termid | first -%}
 {% assign json_url = json_concept.url -%}
 <section class="field json">
   <p class="field-name">SKOS in JSON-LD</p>
   <p class="field-value"><a href="{{ json_url }}">{{ json_url }}</a></p>
 </section>
+{%- endif %}
 
+{% if site.geolexica.formats contains 'turtle' -%}
 {% assign ttl_concept = site.concepts_ttl | where: 'termid', page.termid | first -%}
 {% assign ttl_url = ttl_concept.url -%}
 <section class="field ttl">
   <p class="field-name">SKOS in RDF</p>
   <p class="field-value"><a href="{{ ttl_url }}">{{ ttl_url }}</a></p>
 </section>
+{%- endif %}
 
 <section class="field info">
   <p class="field-name">info</p>
