@@ -27,16 +27,14 @@ module Jekyll
 
       # Processes concepts and yields a bunch of Jekyll::Page instances.
       def make_pages
-        Dir.glob(concepts_glob).each do |concept_file_path|
+        site.glossary.each_concept do |concept|
           Jekyll.logger.debug("Geolexica:",
-            "processing concept data #{concept_file_path}")
-          concept_hash = read_concept_file(concept_file_path)
-          preprocess_concept_hash(concept_hash)
-          add_page ConceptPage::HTML.new(site, concept_hash) if output_html?
-          add_page ConceptPage::JSON.new(site, concept_hash) if output_json?
-          add_page ConceptPage::JSONLD.new(site, concept_hash) if output_jsonld?
-          add_page ConceptPage::TBX.new(site, concept_hash) if output_tbx?
-          add_page ConceptPage::Turtle.new(site, concept_hash) if output_turtle?
+            "building pages for concept #{concept.data["termid"]}")
+          add_page ConceptPage::HTML.new(site, concept.data) if output_html?
+          add_page ConceptPage::JSON.new(site, concept.data) if output_json?
+          add_page ConceptPage::JSONLD.new(site, concept.data) if output_jsonld?
+          add_page ConceptPage::TBX.new(site, concept.data) if output_tbx?
+          add_page ConceptPage::Turtle.new(site, concept.data) if output_turtle?
         end
       end
 
@@ -56,15 +54,6 @@ module Jekyll
 
       def find_page(name)
         site.pages.detect { |page| page.name == name }
-      end
-
-      # Reads and parses concept file located at given path.
-      def read_concept_file(path)
-        YAML.load(File.read path)
-      end
-
-      # Does nothing, but some sites may replace this method.
-      def preprocess_concept_hash(concept_hash)
       end
     end
   end
