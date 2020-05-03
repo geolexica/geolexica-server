@@ -29,6 +29,10 @@ body.concept {
       font-size: unset;
       flex-shrink: 0;
 
+      &.field-name-language {
+        text-transform: none;
+      }
+
       @media screen and (min-width: $bigscreenBreakpoint) {
         margin: 0;
         text-align: center;
