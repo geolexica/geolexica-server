@@ -133,14 +133,12 @@ layout: null
   },
   {%- endif -%}
 
-  {%- assign term_status = concept.entry_status -%}
   {%- if concept.entry_status -%}
   "status": {
     "@value": "{{ concept.entry_status | escape }}"
   },
   {%- endif -%}
 
-  {%- assign classification = concept.classification -%}
   {%- if concept.classification -%}
   "classification": {
     "@value": "{{ concept.classification | escape }}"
