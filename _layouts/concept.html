@@ -87,8 +87,8 @@ term_attributes:
         <li>status: {{ english.entry_status | escape }}</li>
       {% endif -%}
 
-      {% if english.classification -%}
-        <li>classification: {{ english.classification | escape }}</li>
+      {% if english.terms.first.normative_status -%}
+        <li>classification: {{ english.terms.first.normative_status | escape }}</li>
       {% endif -%}
 
       {% if english.date_accepted -%}

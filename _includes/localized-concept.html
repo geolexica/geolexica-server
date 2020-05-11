@@ -1,5 +1,5 @@
 {%- assign term_status = english.entry_status -%}
-{%- assign classification = english.classification -%}
+{%- assign classification = english.terms.first.normative_status -%}
 <article
   class="localized-term field lang-{{ lang }} status-{{ term_status }} classification-{{ classification }}"
   id="entry-lang-{{ lang }}">
@@ -7,11 +7,11 @@
   <p class="field-name field-name-language">{{ lang }}</p>
 
   <div class="field-value">
-    {% if localized_term.term %}
-      <h3 class="localized">{{ localized_term.term | escape }}</h3>
+    {% for entry in localized_term.terms %}
+      <h3 class="localized">{{ entry.designation | escape }}</h3>
     {% else %}
       <h3 class="warning">Translated term missing in this language.</h3>
-    {% endif %}
+    {% endfor %}
 
     {% if localized_term.abbrev %}
       <p class="localized abbrev">{{ localized_term.abbrev | escape }}</p>

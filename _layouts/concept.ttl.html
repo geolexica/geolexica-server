@@ -35,12 +35,12 @@ layout: null
 
 {%- for lang in site.geolexica.term_languages %}
 {%- assign localized_term = page[lang] -%}
-{%- if localized_term.term %}
+{%- if localized_term.terms.size > 0 %}
   rdf-profile:{{ lang }}Origin rdf-profile:{{ site.data.lang[lang].lang_en }} ;
 {%- endif %}
 {%- endfor %}
   rdf-profile:termID <{{ page.url }}> ;
-  rdfs:label "{{ english.term | escape }}" ;
+  rdfs:label "{{ english.terms.first.designation | escape }}" ;
   skos:notation {{ page.termid }} ;
 {%- for lang in site.geolexica.term_languages %}
 {%- assign localized_term = page[lang] -%}
@@ -52,16 +52,13 @@ layout: null
 
 {%- for lang in site.geolexica.term_languages %}
 {%- assign localized_term = page[lang] -%}
-{%- if localized_term.term %}
-  skos:prefLabel "{{ localized_term.term | escape }}"@{{ site.data.lang[lang].iso-639-1 }} ;
+{%- for term in localized_term.terms %}
+{%- if forloop.first %}
+  skos:prefLabel "{{ term.designation | escape }}"@{{ site.data.lang[lang].iso-639-1 }} ;
+{%- else %}
+  skos:altLabel "{{ term.designation | escape }}"@{{ site.data.lang[lang].iso-639-1 }} ;
 {%- endif %}
 {%- endfor %}
-
-{%- for lang in site.geolexica.term_languages %}
-{%- assign localized_term = page[lang] -%}
-{%- if localized_term.alt %}
-  skos:altLabel "{{ localized_term.alt | escape }}"@{{ site.data.lang[lang].iso-639-1 }} ;
-{%- endif %}
 {%- endfor %}
 
 {%- if concept.date_accepted %}
@@ -76,8 +73,8 @@ layout: null
   :status "{{ concept.entry_status | escape }}" ;
 {%- endif %}
 
-{%- if concept.classification %}
-  :classification "{{ concept.classification | escape }}" ;
+{%- if concept.terms.first.normative_status %}
+  :classification "{{ concept.terms.first.normative_status | escape }}" ;
 {%- endif %}
 .
 :linked-data-api

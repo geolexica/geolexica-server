@@ -5,13 +5,13 @@ permalink: "/api/concepts-index-list.json"
   {% for concept in site.concepts %}
   {
     "termid": {{ concept.termid }},
-    "term": {{ concept.term | jsonify }},
+    "term": {{ concept.eng.terms.first.designation | jsonify }},
 
     {% assign english_concept = concept["eng"] %}
     {% for lang in site.geolexica.term_languages %}
 
     "{{ lang }}": {% if concept[lang] %}{
-      "term": {{ concept[lang].term | jsonify }},
+      "term": {{ concept[lang].terms.first.designation | jsonify }},
       "id": {{ concept[lang].id | jsonify }},
       "entry_status": {{ english_concept.entry_status | jsonify }},
       "language_code": {{ concept[lang].language_code | jsonify }},
