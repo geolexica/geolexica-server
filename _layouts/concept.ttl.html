@@ -72,12 +72,10 @@ layout: null
   dcterms:modified "{{ concept.date_amended | date: "%F" }}" ;
 {%- endif %}
 
-{%- assign term_status = concept.entry_status -%}
 {%- if concept.entry_status %}
   :status "{{ concept.entry_status | escape }}" ;
 {%- endif %}
 
-{%- assign classification = concept.classification -%}
 {%- if concept.classification %}
   :classification "{{ concept.classification | escape }}" ;
 {%- endif %}
