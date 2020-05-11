@@ -20,10 +20,10 @@ layout: null
   "skos:prefLabel": [
     {%- for lang in site.geolexica.term_languages -%}
     {%- assign localized_term = page[lang] -%}
-    {%- if localized_term.term -%}
+    {%- if localized_term.terms.size > 0 -%}
     {
       "@language": "{{ site.data.lang[lang].iso-639-1 }}",
-      "@value": "{{ localized_term.term | escape }}"
+      "@value": "{{ localized_term.terms.first.designation | escape }}"
     }{% unless forloop.last %},{% endunless %}
     {%- endif -%}
     {%- endfor -%}
@@ -31,13 +31,16 @@ layout: null
 
   "skos:altLabel": [
     {%- for lang in site.geolexica.term_languages -%}
+    {%- assign outer_forloop = forloop -%}
     {%- assign localized_term = page[lang] -%}
-    {%- if localized_term.alt -%}
+    {%- for term in localized_term.terms -%}
+    {%- unless forloop.first -%}
     {
       "@language": "{{ site.data.lang[lang].iso-639-1 }}",
-      "@value": "{{ localized_term.alt | escape }}"
-    }{% unless forloop.last %},{% endunless %}
-    {%- endif -%}
+      "@value": "{{ term.designation | escape }}"
+    }{% unless outer_forloop.last and forloop.last %},{% endunless %}
+    {%- endunless -%}
+    {%- endfor -%}
     {%- endfor -%}
   ],
 
@@ -139,9 +142,9 @@ layout: null
   },
   {%- endif -%}
 
-  {%- if concept.classification -%}
+  {%- if concept.terms.first.normative_status -%}
   "classification": {
-    "@value": "{{ concept.classification | escape }}"
+    "@value": "{{ concept.terms.first.normative_status | escape }}"
   },
   {%- endif -%}
 
