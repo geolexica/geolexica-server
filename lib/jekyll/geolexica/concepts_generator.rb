@@ -35,7 +35,7 @@ module Jekyll
           add_page ConceptPage::HTML.new(site, concept_hash) if output_html?
           add_page ConceptPage::JSON.new(site, concept_hash) if output_json?
           add_page ConceptPage::JSONLD.new(site, concept_hash) if output_jsonld?
-          add_page ConceptPage::TBX.new(site, concept_hash)
+          add_page ConceptPage::TBX.new(site, concept_hash) if output_tbx?
           add_page ConceptPage::Turtle.new(site, concept_hash) if output_turtle?
         end
       end
