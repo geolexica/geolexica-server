@@ -21,6 +21,10 @@ module Jekyll
         glossary_config["formats"].include?("json-ld")
       end
 
+      def output_tbx?
+        glossary_config["formats"].include?("tbx-iso-tml")
+      end
+
       def output_turtle?
         glossary_config["formats"].include?("turtle")
       end
