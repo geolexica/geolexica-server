@@ -18,6 +18,7 @@ term_attributes:
   - review_decision_notes
   - release
 ---
+{%- assign english = page["eng"] -%}
 <header>
   <h2 class="section-title">
     Concept
@@ -30,7 +31,7 @@ term_attributes:
   <p class="field-value">{{ page.termid }}</p>
 </section>
 
-{% assign english = page["eng"] %}
+
 <section class="field source">
   <p class="field-name">source</p>
   <p class="field-value">
