@@ -1,0 +1,1163 @@
+{
+  "@context": {
+    "dcterms": "http://purl.org/dc/terms/",
+    "geolexica": "https://www.geolexica.org/api/rdf#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://www.geolexica.org/concepts/10/",
+      "@type": "owl:Ontology",
+      "owl:imports": {
+        "@id": "https://www.geolexica.org/api/rdf"
+      }
+    },
+    {
+      "@id": "https://www.geolexica.org/concepts/10/#",
+      "@type": "skos:Concept",
+      "geolexica:ara_authoritative_source": " ",
+      "geolexica:ara_authority_clause": " ",
+      "geolexica:ara_authority_link": " ",
+      "geolexica:ara_classification": " ",
+      "geolexica:ara_clause": " ",
+      "geolexica:ara_country_code": " ",
+      "geolexica:ara_date_accepted": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:ara_date_amended": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:ara_definition": {
+        "@language": "ar",
+        "@value": " "
+      },
+      "geolexica:ara_entry_status": " ",
+      "geolexica:ara_example_1": " ",
+      "geolexica:ara_example_2": " ",
+      "geolexica:ara_example_3": " ",
+      "geolexica:ara_example_4": " ",
+      "geolexica:ara_example_5": " ",
+      "geolexica:ara_example_6": " ",
+      "geolexica:ara_example_7": " ",
+      "geolexica:ara_example_8": " ",
+      "geolexica:ara_language_code": " ",
+      "geolexica:ara_lineage_source": " ",
+      "geolexica:ara_note_1": " ",
+      "geolexica:ara_note_2": " ",
+      "geolexica:ara_note_3": " ",
+      "geolexica:ara_note_4": " ",
+      "geolexica:ara_note_5": " ",
+      "geolexica:ara_note_6": " ",
+      "geolexica:ara_note_7": " ",
+      "geolexica:ara_note_8": " ",
+      "geolexica:ara_ref": " ",
+      "geolexica:ara_release": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:ara_review_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:ara_review_decision": " ",
+      "geolexica:ara_review_decision_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:ara_review_decision_event": " ",
+      "geolexica:ara_review_decision_notes": " ",
+      "geolexica:ara_review_indicator": " ",
+      "geolexica:ara_review_status": " ",
+      "geolexica:ara_similarity_authoritative": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:ara_similarity_lineage": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:ara_term": {
+        "@language": "ar",
+        "@value": " "
+      },
+      "geolexica:ara_termID": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:authoritative_source": " ",
+      "geolexica:authority_clause": " ",
+      "geolexica:authority_link": " ",
+      "geolexica:chi_authoritative_source": " ",
+      "geolexica:chi_authority_clause": " ",
+      "geolexica:chi_authority_link": " ",
+      "geolexica:chi_classification": " ",
+      "geolexica:chi_clause": " ",
+      "geolexica:chi_country_code": " ",
+      "geolexica:chi_date_accepted": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:chi_date_amended": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:chi_definition": {
+        "@language": "zh",
+        "@value": " "
+      },
+      "geolexica:chi_entry_status": " ",
+      "geolexica:chi_example_1": " ",
+      "geolexica:chi_example_2": " ",
+      "geolexica:chi_example_3": " ",
+      "geolexica:chi_example_4": " ",
+      "geolexica:chi_example_5": " ",
+      "geolexica:chi_example_6": " ",
+      "geolexica:chi_example_7": " ",
+      "geolexica:chi_example_8": " ",
+      "geolexica:chi_language_code": " ",
+      "geolexica:chi_lineage_source": " ",
+      "geolexica:chi_note_1": " ",
+      "geolexica:chi_note_2": " ",
+      "geolexica:chi_note_3": " ",
+      "geolexica:chi_note_4": " ",
+      "geolexica:chi_note_5": " ",
+      "geolexica:chi_note_6": " ",
+      "geolexica:chi_note_7": " ",
+      "geolexica:chi_note_8": " ",
+      "geolexica:chi_ref": " ",
+      "geolexica:chi_release": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:chi_review_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:chi_review_decision": " ",
+      "geolexica:chi_review_decision_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:chi_review_decision_event": " ",
+      "geolexica:chi_review_decision_notes": " ",
+      "geolexica:chi_review_indicator": " ",
+      "geolexica:chi_review_status": " ",
+      "geolexica:chi_similarity_authoritative": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:chi_similarity_lineage": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:chi_term": {
+        "@language": "zh",
+        "@value": " "
+      },
+      "geolexica:chi_termID": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:classification": " ",
+      "geolexica:clause": " ",
+      "geolexica:country_code": " ",
+      "geolexica:dan_authoritative_source": " ",
+      "geolexica:dan_authority_clause": " ",
+      "geolexica:dan_authority_link": " ",
+      "geolexica:dan_classification": " ",
+      "geolexica:dan_clause": " ",
+      "geolexica:dan_country_code": " ",
+      "geolexica:dan_date_accepted": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:dan_date_amended": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:dan_definition": {
+        "@language": "da",
+        "@value": " "
+      },
+      "geolexica:dan_entry_status": " ",
+      "geolexica:dan_example_1": " ",
+      "geolexica:dan_example_2": " ",
+      "geolexica:dan_example_3": " ",
+      "geolexica:dan_example_4": " ",
+      "geolexica:dan_example_5": " ",
+      "geolexica:dan_example_6": " ",
+      "geolexica:dan_example_7": " ",
+      "geolexica:dan_example_8": " ",
+      "geolexica:dan_language_code": " ",
+      "geolexica:dan_lineage_source": " ",
+      "geolexica:dan_note_1": " ",
+      "geolexica:dan_note_2": " ",
+      "geolexica:dan_note_3": " ",
+      "geolexica:dan_note_4": " ",
+      "geolexica:dan_note_5": " ",
+      "geolexica:dan_note_6": " ",
+      "geolexica:dan_note_7": " ",
+      "geolexica:dan_note_8": " ",
+      "geolexica:dan_ref": " ",
+      "geolexica:dan_release": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:dan_review_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:dan_review_decision": " ",
+      "geolexica:dan_review_decision_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:dan_review_decision_event": " ",
+      "geolexica:dan_review_decision_notes": " ",
+      "geolexica:dan_review_indicator": " ",
+      "geolexica:dan_review_status": " ",
+      "geolexica:dan_similarity_authoritative": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:dan_similarity_lineage": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:dan_term": {
+        "@language": "da",
+        "@value": " "
+      },
+      "geolexica:dan_termID": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:date_accepted": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:date_amended": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:definition": {
+        "@language": "en",
+        "@value": " "
+      },
+      "geolexica:dut_authoritative_source": " ",
+      "geolexica:dut_authority_clause": " ",
+      "geolexica:dut_authority_link": " ",
+      "geolexica:dut_classification": " ",
+      "geolexica:dut_clause": " ",
+      "geolexica:dut_country_code": " ",
+      "geolexica:dut_date_accepted": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:dut_date_amended": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:dut_definition": {
+        "@language": "nl",
+        "@value": " "
+      },
+      "geolexica:dut_entry_status": " ",
+      "geolexica:dut_example_1": " ",
+      "geolexica:dut_example_2": " ",
+      "geolexica:dut_example_3": " ",
+      "geolexica:dut_example_4": " ",
+      "geolexica:dut_example_5": " ",
+      "geolexica:dut_example_6": " ",
+      "geolexica:dut_example_7": " ",
+      "geolexica:dut_example_8": " ",
+      "geolexica:dut_language_code": " ",
+      "geolexica:dut_lineage_source": " ",
+      "geolexica:dut_note_1": " ",
+      "geolexica:dut_note_2": " ",
+      "geolexica:dut_note_3": " ",
+      "geolexica:dut_note_4": " ",
+      "geolexica:dut_note_5": " ",
+      "geolexica:dut_note_6": " ",
+      "geolexica:dut_note_7": " ",
+      "geolexica:dut_note_8": " ",
+      "geolexica:dut_ref": " ",
+      "geolexica:dut_release": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:dut_review_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:dut_review_decision": " ",
+      "geolexica:dut_review_decision_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:dut_review_decision_event": " ",
+      "geolexica:dut_review_decision_notes": " ",
+      "geolexica:dut_review_indicator": " ",
+      "geolexica:dut_review_status": " ",
+      "geolexica:dut_similarity_authoritative": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:dut_similarity_lineage": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:dut_term": {
+        "@language": "nl",
+        "@value": " "
+      },
+      "geolexica:dut_termID": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:eng_authoritative_source": " ",
+      "geolexica:eng_authority_clause": " ",
+      "geolexica:eng_authority_link": " ",
+      "geolexica:eng_classification": " ",
+      "geolexica:eng_clause": " ",
+      "geolexica:eng_country_code": " ",
+      "geolexica:eng_date_accepted": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:eng_date_amended": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:eng_definition": {
+        "@language": "en",
+        "@value": " "
+      },
+      "geolexica:eng_entry_status": " ",
+      "geolexica:eng_example_1": " ",
+      "geolexica:eng_example_2": " ",
+      "geolexica:eng_example_3": " ",
+      "geolexica:eng_example_4": " ",
+      "geolexica:eng_example_5": " ",
+      "geolexica:eng_example_6": " ",
+      "geolexica:eng_example_7": " ",
+      "geolexica:eng_example_8": " ",
+      "geolexica:eng_language_code": " ",
+      "geolexica:eng_lineage_source": " ",
+      "geolexica:eng_note_1": " ",
+      "geolexica:eng_note_2": " ",
+      "geolexica:eng_note_3": " ",
+      "geolexica:eng_note_4": " ",
+      "geolexica:eng_note_5": " ",
+      "geolexica:eng_note_6": " ",
+      "geolexica:eng_note_7": " ",
+      "geolexica:eng_note_8": " ",
+      "geolexica:eng_ref": " ",
+      "geolexica:eng_release": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:eng_review_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:eng_review_decision": " ",
+      "geolexica:eng_review_decision_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:eng_review_decision_event": " ",
+      "geolexica:eng_review_decision_notes": " ",
+      "geolexica:eng_review_indicator": " ",
+      "geolexica:eng_review_status": " ",
+      "geolexica:eng_similarity_authoritative": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:eng_similarity_lineage": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:eng_term": {
+        "@language": "en",
+        "@value": " "
+      },
+      "geolexica:eng_termID": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:entry_status": " ",
+      "geolexica:example_1": " ",
+      "geolexica:example_2": " ",
+      "geolexica:example_3": " ",
+      "geolexica:example_4": " ",
+      "geolexica:example_5": " ",
+      "geolexica:example_6": " ",
+      "geolexica:example_7": " ",
+      "geolexica:example_8": " ",
+      "geolexica:fin_authoritative_source": " ",
+      "geolexica:fin_authority_clause": " ",
+      "geolexica:fin_authority_link": " ",
+      "geolexica:fin_classification": " ",
+      "geolexica:fin_clause": " ",
+      "geolexica:fin_country_code": " ",
+      "geolexica:fin_date_accepted": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:fin_date_amended": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:fin_definition": {
+        "@language": "fi",
+        "@value": " "
+      },
+      "geolexica:fin_entry_status": " ",
+      "geolexica:fin_example_1": " ",
+      "geolexica:fin_example_2": " ",
+      "geolexica:fin_example_3": " ",
+      "geolexica:fin_example_4": " ",
+      "geolexica:fin_example_5": " ",
+      "geolexica:fin_example_6": " ",
+      "geolexica:fin_example_7": " ",
+      "geolexica:fin_example_8": " ",
+      "geolexica:fin_language_code": " ",
+      "geolexica:fin_lineage_source": " ",
+      "geolexica:fin_note_1": " ",
+      "geolexica:fin_note_2": " ",
+      "geolexica:fin_note_3": " ",
+      "geolexica:fin_note_4": " ",
+      "geolexica:fin_note_5": " ",
+      "geolexica:fin_note_6": " ",
+      "geolexica:fin_note_7": " ",
+      "geolexica:fin_note_8": " ",
+      "geolexica:fin_ref": " ",
+      "geolexica:fin_release": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:fin_review_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:fin_review_decision": " ",
+      "geolexica:fin_review_decision_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:fin_review_decision_event": " ",
+      "geolexica:fin_review_decision_notes": " ",
+      "geolexica:fin_review_indicator": " ",
+      "geolexica:fin_review_status": " ",
+      "geolexica:fin_similarity_authoritative": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:fin_similarity_lineage": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:fin_term": {
+        "@language": "fi",
+        "@value": " "
+      },
+      "geolexica:fin_termID": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:fre_authoritative_source": " ",
+      "geolexica:fre_authority_clause": " ",
+      "geolexica:fre_authority_link": " ",
+      "geolexica:fre_classification": " ",
+      "geolexica:fre_clause": " ",
+      "geolexica:fre_country_code": " ",
+      "geolexica:fre_date_accepted": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:fre_date_amended": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:fre_definition": {
+        "@language": "fr",
+        "@value": " "
+      },
+      "geolexica:fre_entry_status": " ",
+      "geolexica:fre_example_1": " ",
+      "geolexica:fre_example_2": " ",
+      "geolexica:fre_example_3": " ",
+      "geolexica:fre_example_4": " ",
+      "geolexica:fre_example_5": " ",
+      "geolexica:fre_example_6": " ",
+      "geolexica:fre_example_7": " ",
+      "geolexica:fre_example_8": " ",
+      "geolexica:fre_language_code": " ",
+      "geolexica:fre_lineage_source": " ",
+      "geolexica:fre_note_1": " ",
+      "geolexica:fre_note_2": " ",
+      "geolexica:fre_note_3": " ",
+      "geolexica:fre_note_4": " ",
+      "geolexica:fre_note_5": " ",
+      "geolexica:fre_note_6": " ",
+      "geolexica:fre_note_7": " ",
+      "geolexica:fre_note_8": " ",
+      "geolexica:fre_ref": " ",
+      "geolexica:fre_release": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:fre_review_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:fre_review_decision": " ",
+      "geolexica:fre_review_decision_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:fre_review_decision_event": " ",
+      "geolexica:fre_review_decision_notes": " ",
+      "geolexica:fre_review_indicator": " ",
+      "geolexica:fre_review_status": " ",
+      "geolexica:fre_similarity_authoritative": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:fre_similarity_lineage": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:fre_term": {
+        "@language": "ar",
+        "@value": " "
+      },
+      "geolexica:fre_termID": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:ger_authoritative_source": " ",
+      "geolexica:ger_authority_clause": " ",
+      "geolexica:ger_authority_link": " ",
+      "geolexica:ger_classification": " ",
+      "geolexica:ger_clause": " ",
+      "geolexica:ger_country_code": " ",
+      "geolexica:ger_date_accepted": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:ger_date_amended": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:ger_definition": {
+        "@language": "de",
+        "@value": " "
+      },
+      "geolexica:ger_entry_status": " ",
+      "geolexica:ger_example_1": " ",
+      "geolexica:ger_example_2": " ",
+      "geolexica:ger_example_3": " ",
+      "geolexica:ger_example_4": " ",
+      "geolexica:ger_example_5": " ",
+      "geolexica:ger_example_6": " ",
+      "geolexica:ger_example_7": " ",
+      "geolexica:ger_example_8": " ",
+      "geolexica:ger_language_code": " ",
+      "geolexica:ger_lineage_source": " ",
+      "geolexica:ger_note_1": " ",
+      "geolexica:ger_note_2": " ",
+      "geolexica:ger_note_3": " ",
+      "geolexica:ger_note_4": " ",
+      "geolexica:ger_note_5": " ",
+      "geolexica:ger_note_6": " ",
+      "geolexica:ger_note_7": " ",
+      "geolexica:ger_note_8": " ",
+      "geolexica:ger_ref": " ",
+      "geolexica:ger_release": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:ger_review_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:ger_review_decision": " ",
+      "geolexica:ger_review_decision_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:ger_review_decision_event": " ",
+      "geolexica:ger_review_decision_notes": " ",
+      "geolexica:ger_review_indicator": " ",
+      "geolexica:ger_review_status": " ",
+      "geolexica:ger_similarity_authoritative": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:ger_similarity_lineage": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:ger_term": {
+        "@language": "de",
+        "@value": " "
+      },
+      "geolexica:ger_termID": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:jpn_authoritative_source": " ",
+      "geolexica:jpn_authority_clause": " ",
+      "geolexica:jpn_authority_link": " ",
+      "geolexica:jpn_classification": " ",
+      "geolexica:jpn_clause": " ",
+      "geolexica:jpn_country_code": " ",
+      "geolexica:jpn_date_accepted": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:jpn_date_amended": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:jpn_definition": {
+        "@language": "ja",
+        "@value": " "
+      },
+      "geolexica:jpn_entry_status": " ",
+      "geolexica:jpn_example_1": " ",
+      "geolexica:jpn_example_2": " ",
+      "geolexica:jpn_example_3": " ",
+      "geolexica:jpn_example_4": " ",
+      "geolexica:jpn_example_5": " ",
+      "geolexica:jpn_example_6": " ",
+      "geolexica:jpn_example_7": " ",
+      "geolexica:jpn_example_8": " ",
+      "geolexica:jpn_language_code": " ",
+      "geolexica:jpn_lineage_source": " ",
+      "geolexica:jpn_note_1": " ",
+      "geolexica:jpn_note_2": " ",
+      "geolexica:jpn_note_3": " ",
+      "geolexica:jpn_note_4": " ",
+      "geolexica:jpn_note_5": " ",
+      "geolexica:jpn_note_6": " ",
+      "geolexica:jpn_note_7": " ",
+      "geolexica:jpn_note_8": " ",
+      "geolexica:jpn_ref": " ",
+      "geolexica:jpn_release": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:jpn_review_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:jpn_review_decision": " ",
+      "geolexica:jpn_review_decision_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:jpn_review_decision_event": " ",
+      "geolexica:jpn_review_decision_notes": " ",
+      "geolexica:jpn_review_indicator": " ",
+      "geolexica:jpn_review_status": " ",
+      "geolexica:jpn_similarity_authoritative": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:jpn_similarity_lineage": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:jpn_term": {
+        "@language": "ja",
+        "@value": " "
+      },
+      "geolexica:jpn_termID": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:kor_authoritative_source": " ",
+      "geolexica:kor_authority_clause": " ",
+      "geolexica:kor_authority_link": " ",
+      "geolexica:kor_classification": " ",
+      "geolexica:kor_clause": " ",
+      "geolexica:kor_country_code": " ",
+      "geolexica:kor_date_accepted": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:kor_date_amended": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:kor_definition": {
+        "@language": "ko",
+        "@value": " "
+      },
+      "geolexica:kor_entry_status": " ",
+      "geolexica:kor_example_1": " ",
+      "geolexica:kor_example_2": " ",
+      "geolexica:kor_example_3": " ",
+      "geolexica:kor_example_4": " ",
+      "geolexica:kor_example_5": " ",
+      "geolexica:kor_example_6": " ",
+      "geolexica:kor_example_7": " ",
+      "geolexica:kor_example_8": " ",
+      "geolexica:kor_language_code": " ",
+      "geolexica:kor_lineage_source": " ",
+      "geolexica:kor_note_1": " ",
+      "geolexica:kor_note_2": " ",
+      "geolexica:kor_note_3": " ",
+      "geolexica:kor_note_4": " ",
+      "geolexica:kor_note_5": " ",
+      "geolexica:kor_note_6": " ",
+      "geolexica:kor_note_7": " ",
+      "geolexica:kor_note_8": " ",
+      "geolexica:kor_ref": " ",
+      "geolexica:kor_release": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:kor_review_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:kor_review_decision": " ",
+      "geolexica:kor_review_decision_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:kor_review_decision_event": " ",
+      "geolexica:kor_review_decision_notes": " ",
+      "geolexica:kor_review_indicator": " ",
+      "geolexica:kor_review_status": " ",
+      "geolexica:kor_similarity_authoritative": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:kor_similarity_lineage": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:kor_term": {
+        "@language": "ako",
+        "@value": " "
+      },
+      "geolexica:kor_termID": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:language_code": " ",
+      "geolexica:lineage_source": " ",
+      "geolexica:msa_authoritative_source": " ",
+      "geolexica:msa_authority_clause": " ",
+      "geolexica:msa_authority_link": " ",
+      "geolexica:msa_classification": " ",
+      "geolexica:msa_clause": " ",
+      "geolexica:msa_country_code": " ",
+      "geolexica:msa_date_accepted": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:msa_date_amended": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:msa_definition": {
+        "@language": "ms",
+        "@value": " "
+      },
+      "geolexica:msa_entry_status": " ",
+      "geolexica:msa_example_1": " ",
+      "geolexica:msa_example_2": " ",
+      "geolexica:msa_example_3": " ",
+      "geolexica:msa_example_4": " ",
+      "geolexica:msa_example_5": " ",
+      "geolexica:msa_example_6": " ",
+      "geolexica:msa_example_7": " ",
+      "geolexica:msa_example_8": " ",
+      "geolexica:msa_language_code": " ",
+      "geolexica:msa_lineage_source": " ",
+      "geolexica:msa_note_1": " ",
+      "geolexica:msa_note_2": " ",
+      "geolexica:msa_note_3": " ",
+      "geolexica:msa_note_4": " ",
+      "geolexica:msa_note_5": " ",
+      "geolexica:msa_note_6": " ",
+      "geolexica:msa_note_7": " ",
+      "geolexica:msa_note_8": " ",
+      "geolexica:msa_ref": " ",
+      "geolexica:msa_release": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:msa_review_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:msa_review_decision": " ",
+      "geolexica:msa_review_decision_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:msa_review_decision_event": " ",
+      "geolexica:msa_review_decision_notes": " ",
+      "geolexica:msa_review_indicator": " ",
+      "geolexica:msa_review_status": " ",
+      "geolexica:msa_similarity_authoritative": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:msa_similarity_lineage": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:msa_term": {
+        "@language": "ms",
+        "@value": " "
+      },
+      "geolexica:msa_termID": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:note_1": " ",
+      "geolexica:note_2": " ",
+      "geolexica:note_3": " ",
+      "geolexica:note_4": " ",
+      "geolexica:note_5": " ",
+      "geolexica:note_6": " ",
+      "geolexica:note_7": " ",
+      "geolexica:note_8": " ",
+      "geolexica:pol_authoritative_source": " ",
+      "geolexica:pol_authority_clause": " ",
+      "geolexica:pol_authority_link": " ",
+      "geolexica:pol_classification": " ",
+      "geolexica:pol_clause": " ",
+      "geolexica:pol_country_code": " ",
+      "geolexica:pol_date_accepted": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:pol_date_amended": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:pol_definition": {
+        "@language": "pl",
+        "@value": " "
+      },
+      "geolexica:pol_entry_status": " ",
+      "geolexica:pol_example_1": " ",
+      "geolexica:pol_example_2": " ",
+      "geolexica:pol_example_3": " ",
+      "geolexica:pol_example_4": " ",
+      "geolexica:pol_example_5": " ",
+      "geolexica:pol_example_6": " ",
+      "geolexica:pol_example_7": " ",
+      "geolexica:pol_example_8": " ",
+      "geolexica:pol_language_code": " ",
+      "geolexica:pol_lineage_source": " ",
+      "geolexica:pol_note_1": " ",
+      "geolexica:pol_note_2": " ",
+      "geolexica:pol_note_3": " ",
+      "geolexica:pol_note_4": " ",
+      "geolexica:pol_note_5": " ",
+      "geolexica:pol_note_6": " ",
+      "geolexica:pol_note_7": " ",
+      "geolexica:pol_note_8": " ",
+      "geolexica:pol_ref": " ",
+      "geolexica:pol_release": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:pol_review_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:pol_review_decision": " ",
+      "geolexica:pol_review_decision_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:pol_review_decision_event": " ",
+      "geolexica:pol_review_decision_notes": " ",
+      "geolexica:pol_review_indicator": " ",
+      "geolexica:pol_review_status": " ",
+      "geolexica:pol_similarity_authoritative": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:pol_similarity_lineage": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:pol_term": {
+        "@language": "pl",
+        "@value": " "
+      },
+      "geolexica:pol_termID": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:ref": " ",
+      "geolexica:release": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:review_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:review_decision": " ",
+      "geolexica:review_decision_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:review_decision_event": " ",
+      "geolexica:review_decision_notes": " ",
+      "geolexica:review_indicator": " ",
+      "geolexica:review_status": " ",
+      "geolexica:rus_authoritative_source": " ",
+      "geolexica:rus_authority_clause": " ",
+      "geolexica:rus_authority_link": " ",
+      "geolexica:rus_classification": " ",
+      "geolexica:rus_clause": " ",
+      "geolexica:rus_country_code": " ",
+      "geolexica:rus_date_accepted": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:rus_date_amended": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:rus_definition": {
+        "@language": "ru",
+        "@value": " "
+      },
+      "geolexica:rus_entry_status": " ",
+      "geolexica:rus_example_1": " ",
+      "geolexica:rus_example_2": " ",
+      "geolexica:rus_example_3": " ",
+      "geolexica:rus_example_4": " ",
+      "geolexica:rus_example_5": " ",
+      "geolexica:rus_example_6": " ",
+      "geolexica:rus_example_7": " ",
+      "geolexica:rus_example_8": " ",
+      "geolexica:rus_language_code": " ",
+      "geolexica:rus_lineage_source": " ",
+      "geolexica:rus_note_1": " ",
+      "geolexica:rus_note_2": " ",
+      "geolexica:rus_note_3": " ",
+      "geolexica:rus_note_4": " ",
+      "geolexica:rus_note_5": " ",
+      "geolexica:rus_note_6": " ",
+      "geolexica:rus_note_7": " ",
+      "geolexica:rus_note_8": " ",
+      "geolexica:rus_ref": " ",
+      "geolexica:rus_release": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:rus_review_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:rus_review_decision": " ",
+      "geolexica:rus_review_decision_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:rus_review_decision_event": " ",
+      "geolexica:rus_review_decision_notes": " ",
+      "geolexica:rus_review_indicator": " ",
+      "geolexica:rus_review_status": " ",
+      "geolexica:rus_similarity_authoritative": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:rus_similarity_lineage": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:rus_term": {
+        "@language": "ru",
+        "@value": " "
+      },
+      "geolexica:rus_termID": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:similarity_authoritative": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:similarity_lineage": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:spa_authoritative_source": " ",
+      "geolexica:spa_authority_clause": " ",
+      "geolexica:spa_authority_link": " ",
+      "geolexica:spa_classification": " ",
+      "geolexica:spa_clause": " ",
+      "geolexica:spa_country_code": " ",
+      "geolexica:spa_date_accepted": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:spa_date_amended": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:spa_definition": {
+        "@language": "es",
+        "@value": " "
+      },
+      "geolexica:spa_entry_status": " ",
+      "geolexica:spa_example_1": " ",
+      "geolexica:spa_example_2": " ",
+      "geolexica:spa_example_3": " ",
+      "geolexica:spa_example_4": " ",
+      "geolexica:spa_example_5": " ",
+      "geolexica:spa_example_6": " ",
+      "geolexica:spa_example_7": " ",
+      "geolexica:spa_example_8": " ",
+      "geolexica:spa_language_code": " ",
+      "geolexica:spa_lineage_source": " ",
+      "geolexica:spa_note_1": " ",
+      "geolexica:spa_note_2": " ",
+      "geolexica:spa_note_3": " ",
+      "geolexica:spa_note_4": " ",
+      "geolexica:spa_note_5": " ",
+      "geolexica:spa_note_6": " ",
+      "geolexica:spa_note_7": " ",
+      "geolexica:spa_note_8": " ",
+      "geolexica:spa_ref": " ",
+      "geolexica:spa_release": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:spa_review_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:spa_review_decision": " ",
+      "geolexica:spa_review_decision_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:spa_review_decision_event": " ",
+      "geolexica:spa_review_decision_notes": " ",
+      "geolexica:spa_review_indicator": " ",
+      "geolexica:spa_review_status": " ",
+      "geolexica:spa_similarity_authoritative": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:spa_similarity_lineage": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:spa_term": {
+        "@language": "es",
+        "@value": " "
+      },
+      "geolexica:spa_termID": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:swe_authoritative_source": " ",
+      "geolexica:swe_authority_clause": " ",
+      "geolexica:swe_authority_link": " ",
+      "geolexica:swe_classification": " ",
+      "geolexica:swe_clause": " ",
+      "geolexica:swe_country_code": " ",
+      "geolexica:swe_date_accepted": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:swe_date_amended": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:swe_definition": {
+        "@language": "sv",
+        "@value": " "
+      },
+      "geolexica:swe_entry_status": " ",
+      "geolexica:swe_example_1": " ",
+      "geolexica:swe_example_2": " ",
+      "geolexica:swe_example_3": " ",
+      "geolexica:swe_example_4": " ",
+      "geolexica:swe_example_5": " ",
+      "geolexica:swe_example_6": " ",
+      "geolexica:swe_example_7": " ",
+      "geolexica:swe_example_8": " ",
+      "geolexica:swe_language_code": " ",
+      "geolexica:swe_lineage_source": " ",
+      "geolexica:swe_note_1": " ",
+      "geolexica:swe_note_2": " ",
+      "geolexica:swe_note_3": " ",
+      "geolexica:swe_note_4": " ",
+      "geolexica:swe_note_5": " ",
+      "geolexica:swe_note_6": " ",
+      "geolexica:swe_note_7": " ",
+      "geolexica:swe_note_8": " ",
+      "geolexica:swe_ref": " ",
+      "geolexica:swe_release": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:swe_review_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:swe_review_decision": " ",
+      "geolexica:swe_review_decision_date": {
+        "@type": "xsd:dateTime",
+        "@value": " "
+      },
+      "geolexica:swe_review_decision_event": " ",
+      "geolexica:swe_review_decision_notes": " ",
+      "geolexica:swe_review_indicator": " ",
+      "geolexica:swe_review_status": " ",
+      "geolexica:swe_similarity_authoritative": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:swe_similarity_lineage": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:swe_term": {
+        "@language": "sv",
+        "@value": " "
+      },
+      "geolexica:swe_termID": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "geolexica:term": {
+        "@language": "en",
+        "@value": " "
+      },
+      "geolexica:termID": {
+        "@type": "xsd:int",
+        "@value": " "
+      },
+      "skos:inScheme": {
+        "@id": "geolexica:GeolexicaConceptScheme"
+      }
+    }
+  ]
+}

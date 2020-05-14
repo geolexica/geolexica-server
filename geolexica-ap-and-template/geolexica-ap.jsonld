@@ -1,0 +1,4236 @@
+{
+  "@graph" : [ {
+    "@id" : "./",
+    "@type" : "owl:Ontology",
+    "label" : "Geolexica SKOS-RDF",
+    "imports" : [ "http://www.w3.org/2008/05/skos-xl", "http://www.w3.org/2004/02/skos/core", "http://topbraid.org/schema/", "http://purl.org/dc/terms/" ]
+  }, {
+    "@id" : ":Authoritative_Source",
+    "@type" : "owl:Class",
+    "label" : "Authoritative Source",
+    "subClassOf" : "schema:Intangible",
+    "inScheme" : ":GeolexicaConceptScheme",
+    "prefLabel" : "AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":Country_Code",
+    "@type" : "owl:Class",
+    "comment" : "ISO 3166 code list.",
+    "label" : "Country code",
+    "subClassOf" : "schema:Intangible",
+    "inScheme" : ":GeolexicaConceptScheme",
+    "prefLabel" : "COUNTRY CODE"
+  }, {
+    "@id" : ":EntryStatus",
+    "@type" : "owl:Class",
+    "label" : "Entry Status",
+    "subClassOf" : "schema:Intangible",
+    "inScheme" : ":GeolexicaConceptScheme",
+    "prefLabel" : "ENTRY STATUS"
+  }, {
+    "@id" : ":Example",
+    "@type" : "owl:Class",
+    "label" : "Example",
+    "subClassOf" : "schema:Intangible",
+    "inScheme" : ":GeolexicaConceptScheme",
+    "prefLabel" : "EXAMPLE"
+  }, {
+    "@id" : ":GeolexicaConceptScheme",
+    "@type" : "skos:ConceptScheme",
+    "prefLabel" : "Geolexica Concept Scheme"
+  }, {
+    "@id" : ":GlossaryRelease",
+    "@type" : "owl:Class",
+    "label" : "Glossary Release",
+    "subClassOf" : "schema:Intangible",
+    "inScheme" : ":GeolexicaConceptScheme",
+    "prefLabel" : "GLOSSARY RELEASE"
+  }, {
+    "@id" : ":ISO_19132_2007",
+    "@type" : ":Authoritative_Source",
+    "comment" : "ISO 19132:2007 defines a reference model and conceptual framework for location-based services (LBS).",
+    "prefLabel" : "ISO 19132:2007",
+    "link" : "https://www.iso.org/standard/40601.html"
+  }, {
+    "@id" : ":LanguageCode",
+    "@type" : "owl:Class",
+    "subClassOf" : "schema:Intangible",
+    "inScheme" : ":GeolexicaConceptScheme",
+    "note" : "ISO 3166 two- and three-letter language codes.",
+    "prefLabel" : "Language Code"
+  }, {
+    "@id" : ":LineageSource",
+    "@type" : "owl:Class",
+    "label" : "Lineage Source",
+    "subClassOf" : "schema:Intangible",
+    "inScheme" : ":GeolexicaConceptScheme",
+    "prefLabel" : "LINEAGE SOURCE"
+  }, {
+    "@id" : ":Not_Valid",
+    "@type" : ":EntryStatus",
+    "label" : "Not valid",
+    "prefLabel" : "notValid"
+  }, {
+    "@id" : ":Note",
+    "@type" : "owl:Class",
+    "label" : "Note",
+    "subClassOf" : "schema:Intangible",
+    "inScheme" : ":GeolexicaConceptScheme",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":Retired",
+    "@type" : ":EntryStatus",
+    "label" : "Retired",
+    "prefLabel" : "retired"
+  }, {
+    "@id" : ":ReviewDecision",
+    "@type" : "owl:Class",
+    "label" : "Review Decision",
+    "subClassOf" : "schema:Intangible",
+    "inScheme" : ":GeolexicaConceptScheme",
+    "prefLabel" : "REVIEW DECISION"
+  }, {
+    "@id" : ":ReviewDecisionNotes",
+    "@type" : "owl:Class",
+    "label" : "Review Decision Notes",
+    "subClassOf" : "schema:Intangible",
+    "inScheme" : ":GeolexicaConceptScheme",
+    "prefLabel" : "REVIEW DECISION NOTES"
+  }, {
+    "@id" : ":ReviewIndicator",
+    "@type" : "owl:Class",
+    "label" : "Review Indicator",
+    "subClassOf" : "schema:Intangible",
+    "inScheme" : ":GeolexicaConceptScheme",
+    "prefLabel" : "REVIEW INDICATOR"
+  }, {
+    "@id" : ":ReviewType",
+    "@type" : "owl:Class",
+    "label" : "Review Type",
+    "subClassOf" : "schema:Intangible",
+    "inScheme" : ":GeolexicaConceptScheme",
+    "prefLabel" : "REVIEW TYPE"
+  }, {
+    "@id" : ":Review_Decision_Note",
+    "@type" : ":ReviewDecisionNotes",
+    "label" : "Review Decision Note 1",
+    "prefLabel" : "REVIEW DECISION NOTE 1",
+    "review_decision_notes" : {
+      "@language" : "en",
+      "@value" : "review decision note text"
+    }
+  }, {
+    "@id" : ":SimilarityAuthoritative",
+    "@type" : "owl:Class",
+    "label" : "Similarity to Authoritative Source",
+    "subClassOf" : "schema:Intangible",
+    "inScheme" : ":GeolexicaConceptScheme",
+    "prefLabel" : "SIMILARITY TO AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":SimilarityLineage",
+    "@type" : "owl:Class",
+    "label" : "Similarity to Lineage Source",
+    "subClassOf" : "schema:Intangible",
+    "inScheme" : ":GeolexicaConceptScheme",
+    "prefLabel" : "SIMILARITY TO LINEAGE SOURCE"
+  }, {
+    "@id" : ":Status",
+    "@type" : "owl:Class",
+    "label" : "Status",
+    "subClassOf" : "schema:Intangible",
+    "inScheme" : ":GeolexicaConceptScheme",
+    "prefLabel" : "STATUS"
+  }, {
+    "@id" : ":Superceded",
+    "@type" : ":EntryStatus",
+    "label" : "Superceded",
+    "prefLabel" : "superceded"
+  }, {
+    "@id" : ":Term",
+    "@type" : "owl:Class",
+    "label" : "Concept Term",
+    "subClassOf" : "schema:Intangible",
+    "prefLabel" : "CONCEPT TERM"
+  }, {
+    "@id" : ":TermAbbreviation",
+    "@type" : "owl:Class",
+    "label" : "Term Synonym",
+    "subClassOf" : "schema:Intangible",
+    "inScheme" : ":GeolexicaConceptScheme",
+    "prefLabel" : "TERM SYNONYM"
+  }, {
+    "@id" : ":TermClassification",
+    "@type" : "owl:Class",
+    "label" : "Term classification",
+    "subClassOf" : "schema:Intangible",
+    "inScheme" : ":GeolexicaConceptScheme",
+    "prefLabel" : "TERM CLASSIFICATION"
+  }, {
+    "@id" : ":TermSynonym",
+    "@type" : "owl:Class",
+    "label" : "Term Synonym",
+    "subClassOf" : "schema:Intangible",
+    "inScheme" : ":GeolexicaConceptScheme",
+    "prefLabel" : "TERM SYNONYM"
+  }, {
+    "@id" : ":Valid",
+    "@type" : ":EntryStatus",
+    "label" : "Valid",
+    "prefLabel" : "valid"
+  }, {
+    "@id" : ":accepted",
+    "@type" : ":ReviewDecision",
+    "label" : "Accepted",
+    "prefLabel" : "ACCEPTED"
+  }, {
+    "@id" : ":admitted",
+    "@type" : ":TermClassification",
+    "label" : "Admitted",
+    "prefLabel" : "admitted"
+  }, {
+    "@id" : ":ara_authoritative_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Authoritative Source",
+    "range" : "xsd:string",
+    "prefLabel" : "AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":ara_authority_clause",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "clause",
+    "range" : "xsd:string",
+    "prefLabel" : "CLAUSE"
+  }, {
+    "@id" : ":ara_authority_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "link",
+    "range" : "xsd:anyURI",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":ara_classification",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "classification",
+    "prefLabel" : "CLASSIFICATION"
+  }, {
+    "@id" : ":ara_country_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Country Code",
+    "prefLabel" : "COUNTRY CODE"
+  }, {
+    "@id" : ":ara_date_accepted",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Accepted",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE ACCEPTED"
+  }, {
+    "@id" : ":ara_date_amended",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Amended",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE AMENDED"
+  }, {
+    "@id" : ":ara_definition",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "definition",
+    "range" : "xsd:string",
+    "sameAs" : "skos:definition",
+    "prefLabel" : "Definition"
+  }, {
+    "@id" : ":ara_entry_status",
+    "@type" : "owl:DatatypeProperty",
+    "prefLabel" : "Entry Status"
+  }, {
+    "@id" : ":ara_example_1",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":ara_example_2",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":ara_example_3",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":ara_example_4",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":ara_example_5",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":ara_example_6",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":ara_example_7",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":ara_example_8",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":ara_language_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "3 Letter Language Code",
+    "prefLabel" : "3 LETTER LANGUAGE CODE"
+  }, {
+    "@id" : ":ara_lineage_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Lineage Source",
+    "range" : "xsd:string",
+    "prefLabel" : "LINEAGE SOURCE"
+  }, {
+    "@id" : ":ara_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Link",
+    "range" : "xsd:string",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":ara_note_1",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":ara_note_2",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":ara_note_3",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":ara_note_4",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":ara_note_5",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":ara_note_6",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":ara_note_7",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":ara_note_8",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":ara_ref",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Reference",
+    "prefLabel" : "REFERENCE"
+  }, {
+    "@id" : ":ara_release",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Release",
+    "altLabel" : "RELEASE",
+    "prefLabel" : "RELEASE"
+  }, {
+    "@id" : ":ara_review_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DATE"
+  }, {
+    "@id" : ":ara_review_decision",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision",
+    "prefLabel" : "REVIEW DECISION"
+  }, {
+    "@id" : ":ara_review_decision_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DECISION DATE"
+  }, {
+    "@id" : ":ara_review_decision_event",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Event",
+    "prefLabel" : "REVIEW DECISION EVENT"
+  }, {
+    "@id" : ":ara_review_decision_notes",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Notes",
+    "prefLabel" : "REVIEW DECISION NOTES"
+  }, {
+    "@id" : ":ara_review_indicator",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Indicator",
+    "prefLabel" : "REVIEW INDICATOR"
+  }, {
+    "@id" : ":ara_review_status",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Status",
+    "prefLabel" : "REVIEW STATUS"
+  }, {
+    "@id" : ":ara_review_type",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Type",
+    "prefLabel" : "REVIEW TYPE"
+  }, {
+    "@id" : ":ara_similarity_authoritative",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Authoritative Source",
+    "prefLabel" : "SIMILARITY TO AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":ara_similarity_lineage",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Lineage Source",
+    "prefLabel" : "SIMILARITY TO LINEAGE SOURCE"
+  }, {
+    "@id" : ":ara_term",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "term",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM"
+  }, {
+    "@id" : ":ara_termID",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:integer",
+    "prefLabel" : "id"
+  }, {
+    "@id" : ":ara_term_abbreviation",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Abbrevation",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM ABBREVIATION"
+  }, {
+    "@id" : ":ara_term_synonym",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Synonyms",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM SYNONYMS"
+  }, {
+    "@id" : ":authoritative_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Authoritative Source",
+    "range" : "xsd:string",
+    "sameAs" : "dcterms:source",
+    "prefLabel" : "AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":authority_clause",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "clause",
+    "range" : "xsd:string",
+    "prefLabel" : "CLAUSE"
+  }, {
+    "@id" : ":authority_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "link",
+    "range" : "xsd:anyURI",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":chn_authoritative_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Authoritative Source",
+    "range" : "xsd:string",
+    "prefLabel" : "AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":chn_authority_clause",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "clause",
+    "range" : "xsd:string",
+    "prefLabel" : "CLAUSE"
+  }, {
+    "@id" : ":chn_authority_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "link",
+    "range" : "xsd:anyURI",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":chn_classification",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "classification",
+    "prefLabel" : "CLASSIFICATION"
+  }, {
+    "@id" : ":chn_country_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Country Code",
+    "prefLabel" : "COUNTRY CODE"
+  }, {
+    "@id" : ":chn_date_accepted",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Accepted",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE ACCEPTED"
+  }, {
+    "@id" : ":chn_date_amended",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Amended",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE AMENDED"
+  }, {
+    "@id" : ":chn_definition",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "definition",
+    "range" : "xsd:string",
+    "sameAs" : "skos:definition",
+    "prefLabel" : "Definition"
+  }, {
+    "@id" : ":chn_entry_status",
+    "@type" : "owl:DatatypeProperty",
+    "prefLabel" : "Entry Status"
+  }, {
+    "@id" : ":chn_example_1",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":chn_example_2",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":chn_example_3",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":chn_example_4",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":chn_example_5",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":chn_example_6",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":chn_example_7",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":chn_example_8",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":chn_language_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "3 Letter Language Code",
+    "prefLabel" : "3 LETTER LANGUAGE CODE"
+  }, {
+    "@id" : ":chn_lineage_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Lineage Source",
+    "range" : "xsd:string",
+    "prefLabel" : "LINEAGE SOURCE"
+  }, {
+    "@id" : ":chn_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Link",
+    "range" : "xsd:string",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":chn_note_1",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":chn_note_2",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":chn_note_3",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":chn_note_4",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":chn_note_5",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":chn_note_6",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":chn_note_7",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":chn_note_8",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":chn_ref",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Reference",
+    "prefLabel" : "REFERENCE"
+  }, {
+    "@id" : ":chn_release",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Release",
+    "altLabel" : "RELEASE",
+    "prefLabel" : "RELEASE"
+  }, {
+    "@id" : ":chn_review_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DATE"
+  }, {
+    "@id" : ":chn_review_decision",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision",
+    "prefLabel" : "REVIEW DECISION"
+  }, {
+    "@id" : ":chn_review_decision_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DECISION DATE"
+  }, {
+    "@id" : ":chn_review_decision_event",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Event",
+    "prefLabel" : "REVIEW DECISION EVENT"
+  }, {
+    "@id" : ":chn_review_decision_notes",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Notes",
+    "prefLabel" : "REVIEW DECISION NOTES"
+  }, {
+    "@id" : ":chn_review_indicator",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Indicator",
+    "prefLabel" : "REVIEW INDICATOR"
+  }, {
+    "@id" : ":chn_review_status",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Status",
+    "prefLabel" : "REVIEW STATUS"
+  }, {
+    "@id" : ":chn_review_type",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Type",
+    "prefLabel" : "REVIEW TYPE"
+  }, {
+    "@id" : ":chn_similarity_authoritative",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Authoritative Source",
+    "prefLabel" : "SIMILARITY TO AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":chn_similarity_lineage",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Lineage Source",
+    "prefLabel" : "SIMILARITY TO LINEAGE SOURCE"
+  }, {
+    "@id" : ":chn_term",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "term",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM"
+  }, {
+    "@id" : ":chn_termID",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:integer",
+    "prefLabel" : "id"
+  }, {
+    "@id" : ":chn_term_abbreviation",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Abbrevation",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM ABBREVIATION"
+  }, {
+    "@id" : ":chn_term_synonym",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Synonyms",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM SYNONYMS"
+  }, {
+    "@id" : ":classification",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "classification",
+    "prefLabel" : "CLASSIFICATION"
+  }, {
+    "@id" : ":context_added",
+    "@type" : [ ":SimilarityLineage", ":SimilarityAuthoritative" ],
+    "label" : "Context added",
+    "hiddenLabel" : "3",
+    "prefLabel" : "context added"
+  }, {
+    "@id" : ":country_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Country Code",
+    "prefLabel" : "COUNTRY CODE"
+  }, {
+    "@id" : ":dan_authoritative_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Authoritative Source",
+    "range" : "xsd:string",
+    "prefLabel" : "AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":dan_authority_clause",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "clause",
+    "range" : "xsd:string",
+    "prefLabel" : "CLAUSE"
+  }, {
+    "@id" : ":dan_authority_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "link",
+    "range" : "xsd:anyURI",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":dan_classification",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "classification",
+    "prefLabel" : "CLASSIFICATION"
+  }, {
+    "@id" : ":dan_country_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Country Code",
+    "prefLabel" : "COUNTRY CODE"
+  }, {
+    "@id" : ":dan_date_accepted",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Accepted",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE ACCEPTED"
+  }, {
+    "@id" : ":dan_date_amended",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Amended",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE AMENDED"
+  }, {
+    "@id" : ":dan_definition",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "definition",
+    "range" : "xsd:string",
+    "sameAs" : "skos:definition",
+    "prefLabel" : "Definition"
+  }, {
+    "@id" : ":dan_entry_status",
+    "@type" : "owl:DatatypeProperty",
+    "prefLabel" : "Entry Status"
+  }, {
+    "@id" : ":dan_example_1",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":dan_example_2",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":dan_example_3",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":dan_example_4",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":dan_example_5",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":dan_example_6",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":dan_example_7",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":dan_example_8",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":dan_language_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "3 Letter Language Code",
+    "prefLabel" : "3 LETTER LANGUAGE CODE"
+  }, {
+    "@id" : ":dan_lineage_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Lineage Source",
+    "range" : "xsd:string",
+    "prefLabel" : "LINEAGE SOURCE"
+  }, {
+    "@id" : ":dan_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Link",
+    "range" : "xsd:string",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":dan_note_1",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":dan_note_2",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":dan_note_3",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":dan_note_4",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":dan_note_5",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":dan_note_6",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":dan_note_7",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":dan_note_8",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":dan_ref",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Reference",
+    "prefLabel" : "REFERENCE"
+  }, {
+    "@id" : ":dan_release",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Release",
+    "altLabel" : "RELEASE",
+    "prefLabel" : "RELEASE"
+  }, {
+    "@id" : ":dan_review_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DATE"
+  }, {
+    "@id" : ":dan_review_decision",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision",
+    "prefLabel" : "REVIEW DECISION"
+  }, {
+    "@id" : ":dan_review_decision_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DECISION DATE"
+  }, {
+    "@id" : ":dan_review_decision_event",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Event",
+    "prefLabel" : "REVIEW DECISION EVENT"
+  }, {
+    "@id" : ":dan_review_decision_notes",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Notes",
+    "prefLabel" : "REVIEW DECISION NOTES"
+  }, {
+    "@id" : ":dan_review_indicator",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Indicator",
+    "prefLabel" : "REVIEW INDICATOR"
+  }, {
+    "@id" : ":dan_review_status",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Status",
+    "prefLabel" : "REVIEW STATUS"
+  }, {
+    "@id" : ":dan_review_type",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Type",
+    "prefLabel" : "REVIEW TYPE"
+  }, {
+    "@id" : ":dan_similarity_authoritative",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Authoritative Source",
+    "prefLabel" : "SIMILARITY TO AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":dan_similarity_lineage",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Lineage Source",
+    "prefLabel" : "SIMILARITY TO LINEAGE SOURCE"
+  }, {
+    "@id" : ":dan_term",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "term",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM"
+  }, {
+    "@id" : ":dan_termID",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:integer",
+    "prefLabel" : "id"
+  }, {
+    "@id" : ":dan_term_abbreviation",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Abbrevation",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM ABBREVIATION"
+  }, {
+    "@id" : ":dan_term_synonym",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Synonyms",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM SYNONYMS"
+  }, {
+    "@id" : ":date_accepted",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Accepted",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE ACCEPTED"
+  }, {
+    "@id" : ":date_amended",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Amended",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE AMENDED"
+  }, {
+    "@id" : ":definition",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "definition",
+    "range" : "xsd:string",
+    "sameAs" : "skos:definition",
+    "prefLabel" : "Definition"
+  }, {
+    "@id" : ":deprecated",
+    "@type" : ":TermClassification",
+    "label" : "Deprecated",
+    "prefLabel" : "deprecated"
+  }, {
+    "@id" : ":dut_authoritative_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Authoritative Source",
+    "range" : "xsd:string",
+    "prefLabel" : "AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":dut_authority_clause",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "clause",
+    "range" : "xsd:string",
+    "prefLabel" : "CLAUSE"
+  }, {
+    "@id" : ":dut_authority_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "link",
+    "range" : "xsd:anyURI",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":dut_classification",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "classification",
+    "prefLabel" : "CLASSIFICATION"
+  }, {
+    "@id" : ":dut_country_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Country Code",
+    "prefLabel" : "COUNTRY CODE"
+  }, {
+    "@id" : ":dut_date_accepted",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Accepted",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE ACCEPTED"
+  }, {
+    "@id" : ":dut_date_amended",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Amended",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE AMENDED"
+  }, {
+    "@id" : ":dut_definition",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "definition",
+    "range" : "xsd:string",
+    "sameAs" : "skos:definition",
+    "prefLabel" : "Definition"
+  }, {
+    "@id" : ":dut_entry_status",
+    "@type" : "owl:DatatypeProperty",
+    "prefLabel" : "Entry Status"
+  }, {
+    "@id" : ":dut_example_1",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":dut_example_2",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":dut_example_3",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":dut_example_4",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":dut_example_5",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":dut_example_6",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":dut_example_7",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":dut_example_8",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":dut_language_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "3 Letter Language Code",
+    "prefLabel" : "3 LETTER LANGUAGE CODE"
+  }, {
+    "@id" : ":dut_lineage_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Lineage Source",
+    "range" : "xsd:string",
+    "prefLabel" : "LINEAGE SOURCE"
+  }, {
+    "@id" : ":dut_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Link",
+    "range" : "xsd:string",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":dut_note_1",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":dut_note_2",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":dut_note_3",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":dut_note_4",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":dut_note_5",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":dut_note_6",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":dut_note_7",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":dut_note_8",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":dut_ref",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Reference",
+    "prefLabel" : "REFERENCE"
+  }, {
+    "@id" : ":dut_release",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Release",
+    "altLabel" : "RELEASE",
+    "prefLabel" : "RELEASE"
+  }, {
+    "@id" : ":dut_review_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DATE"
+  }, {
+    "@id" : ":dut_review_decision",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision",
+    "prefLabel" : "REVIEW DECISION"
+  }, {
+    "@id" : ":dut_review_decision_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DECISION DATE"
+  }, {
+    "@id" : ":dut_review_decision_event",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Event",
+    "prefLabel" : "REVIEW DECISION EVENT"
+  }, {
+    "@id" : ":dut_review_decision_notes",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Notes",
+    "prefLabel" : "REVIEW DECISION NOTES"
+  }, {
+    "@id" : ":dut_review_indicator",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Indicator",
+    "prefLabel" : "REVIEW INDICATOR"
+  }, {
+    "@id" : ":dut_review_status",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Status",
+    "prefLabel" : "REVIEW STATUS"
+  }, {
+    "@id" : ":dut_review_type",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Type",
+    "prefLabel" : "REVIEW TYPE"
+  }, {
+    "@id" : ":dut_similarity_authoritative",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Authoritative Source",
+    "prefLabel" : "SIMILARITY TO AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":dut_similarity_lineage",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Lineage Source",
+    "prefLabel" : "SIMILARITY TO LINEAGE SOURCE"
+  }, {
+    "@id" : ":dut_term",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "term",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM"
+  }, {
+    "@id" : ":dut_termID",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:integer",
+    "prefLabel" : "id"
+  }, {
+    "@id" : ":dut_term_abbreviation",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Abbrevation",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM ABBREVIATION"
+  }, {
+    "@id" : ":dut_term_synonym",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Synonyms",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM SYNONYMS"
+  }, {
+    "@id" : ":empty_field",
+    "@type" : "https://www.geolexica.org/api/skos-rdf#ReviewIndicator",
+    "comment" : "Empty text field (placeholder).",
+    "label" : "<empty field>",
+    "prefLabel" : " "
+  }, {
+    "@id" : ":eng_authoritative_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Authoritative Source",
+    "range" : "xsd:string",
+    "prefLabel" : "AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":eng_authority_clause",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "clause",
+    "range" : "xsd:string",
+    "prefLabel" : "CLAUSE"
+  }, {
+    "@id" : ":eng_authority_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "link",
+    "range" : "xsd:anyURI",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":eng_classification",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "classification",
+    "prefLabel" : "CLASSIFICATION"
+  }, {
+    "@id" : ":eng_country_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Country Code",
+    "prefLabel" : "COUNTRY CODE"
+  }, {
+    "@id" : ":eng_date_accepted",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Accepted",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE ACCEPTED"
+  }, {
+    "@id" : ":eng_date_amended",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Amended",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE AMENDED"
+  }, {
+    "@id" : ":eng_definition",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "definition",
+    "range" : "xsd:string",
+    "sameAs" : "skos:definition",
+    "prefLabel" : "Definition"
+  }, {
+    "@id" : ":eng_entry_status",
+    "@type" : "owl:DatatypeProperty",
+    "prefLabel" : "Entry Status"
+  }, {
+    "@id" : ":eng_example_1",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":eng_example_2",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":eng_example_3",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":eng_example_4",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":eng_example_5",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":eng_example_6",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":eng_example_7",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":eng_example_8",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":eng_language_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "3 Letter Language Code",
+    "prefLabel" : "3 LETTER LANGUAGE CODE"
+  }, {
+    "@id" : ":eng_lineage_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Lineage Source",
+    "range" : "xsd:string",
+    "prefLabel" : "LINEAGE SOURCE"
+  }, {
+    "@id" : ":eng_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Link",
+    "range" : "xsd:string",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":eng_note_1",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":eng_note_2",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":eng_note_3",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":eng_note_4",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":eng_note_5",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":eng_note_6",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":eng_note_7",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":eng_note_8",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":eng_ref",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Reference",
+    "prefLabel" : "REFERENCE"
+  }, {
+    "@id" : ":eng_release",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Release",
+    "altLabel" : "RELEASE",
+    "prefLabel" : "RELEASE"
+  }, {
+    "@id" : ":eng_review_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DATE"
+  }, {
+    "@id" : ":eng_review_decision",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision",
+    "prefLabel" : "REVIEW DECISION"
+  }, {
+    "@id" : ":eng_review_decision_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DECISION DATE"
+  }, {
+    "@id" : ":eng_review_decision_event",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Event",
+    "prefLabel" : "REVIEW DECISION EVENT"
+  }, {
+    "@id" : ":eng_review_decision_notes",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Notes",
+    "prefLabel" : "REVIEW DECISION NOTES"
+  }, {
+    "@id" : ":eng_review_indicator",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Indicator",
+    "prefLabel" : "REVIEW INDICATOR"
+  }, {
+    "@id" : ":eng_review_status",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Status",
+    "prefLabel" : "REVIEW STATUS"
+  }, {
+    "@id" : ":eng_review_type",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Type",
+    "prefLabel" : "REVIEW TYPE"
+  }, {
+    "@id" : ":eng_similarity_authoritative",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Authoritative Source",
+    "prefLabel" : "SIMILARITY TO AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":eng_similarity_lineage",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Lineage Source",
+    "prefLabel" : "SIMILARITY TO LINEAGE SOURCE"
+  }, {
+    "@id" : ":eng_term",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term in English",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM IN ENGLISH"
+  }, {
+    "@id" : ":eng_termID",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:integer",
+    "prefLabel" : "id"
+  }, {
+    "@id" : ":eng_term_abbreviation",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Abbrevation",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM ABBREVIATION"
+  }, {
+    "@id" : ":eng_term_synonym",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Synonyms",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM SYNONYMS"
+  }, {
+    "@id" : ":entry_status",
+    "@type" : "owl:DatatypeProperty",
+    "prefLabel" : "Entry Status"
+  }, {
+    "@id" : ":example",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":example_1",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":example_2",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":example_3",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":example_4",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":example_5",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":example_6",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":example_7",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":example_8",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":fin_authoritative_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Authoritative Source",
+    "range" : "xsd:string",
+    "prefLabel" : "AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":fin_authority_clause",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "clause",
+    "range" : "xsd:string",
+    "prefLabel" : "CLAUSE"
+  }, {
+    "@id" : ":fin_authority_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "link",
+    "range" : "xsd:anyURI",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":fin_classification",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "classification",
+    "prefLabel" : "CLASSIFICATION"
+  }, {
+    "@id" : ":fin_country_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Country Code",
+    "prefLabel" : "COUNTRY CODE"
+  }, {
+    "@id" : ":fin_date_accepted",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Accepted",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE ACCEPTED"
+  }, {
+    "@id" : ":fin_date_amended",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Amended",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE AMENDED"
+  }, {
+    "@id" : ":fin_definition",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "definition",
+    "range" : "xsd:string",
+    "sameAs" : "skos:definition",
+    "prefLabel" : "Definition"
+  }, {
+    "@id" : ":fin_entry_status",
+    "@type" : "owl:DatatypeProperty",
+    "prefLabel" : "Entry Status"
+  }, {
+    "@id" : ":fin_example_1",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":fin_example_2",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":fin_example_3",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":fin_example_4",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":fin_example_5",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":fin_example_6",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":fin_example_7",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":fin_example_8",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":fin_language_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "3 Letter Language Code",
+    "prefLabel" : "3 LETTER LANGUAGE CODE"
+  }, {
+    "@id" : ":fin_lineage_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Lineage Source",
+    "range" : "xsd:string",
+    "prefLabel" : "LINEAGE SOURCE"
+  }, {
+    "@id" : ":fin_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Link",
+    "range" : "xsd:string",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":fin_note_1",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":fin_note_2",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":fin_note_3",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":fin_note_4",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":fin_note_5",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":fin_note_6",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":fin_note_7",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":fin_note_8",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":fin_ref",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Reference",
+    "prefLabel" : "REFERENCE"
+  }, {
+    "@id" : ":fin_release",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Release",
+    "altLabel" : "RELEASE",
+    "prefLabel" : "RELEASE"
+  }, {
+    "@id" : ":fin_review_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DATE"
+  }, {
+    "@id" : ":fin_review_decision",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision",
+    "prefLabel" : "REVIEW DECISION"
+  }, {
+    "@id" : ":fin_review_decision_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DECISION DATE"
+  }, {
+    "@id" : ":fin_review_decision_event",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Event",
+    "prefLabel" : "REVIEW DECISION EVENT"
+  }, {
+    "@id" : ":fin_review_decision_notes",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Notes",
+    "prefLabel" : "REVIEW DECISION NOTES"
+  }, {
+    "@id" : ":fin_review_indicator",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Indicator",
+    "prefLabel" : "REVIEW INDICATOR"
+  }, {
+    "@id" : ":fin_review_status",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Status",
+    "prefLabel" : "REVIEW STATUS"
+  }, {
+    "@id" : ":fin_review_type",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Type",
+    "prefLabel" : "REVIEW TYPE"
+  }, {
+    "@id" : ":fin_similarity_authoritative",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Authoritative Source",
+    "prefLabel" : "SIMILARITY TO AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":fin_similarity_lineage",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Lineage Source",
+    "prefLabel" : "SIMILARITY TO LINEAGE SOURCE"
+  }, {
+    "@id" : ":fin_term",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "term",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM"
+  }, {
+    "@id" : ":fin_termID",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:integer",
+    "prefLabel" : "id"
+  }, {
+    "@id" : ":fin_term_abbreviation",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Abbrevation",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM ABBREVIATION"
+  }, {
+    "@id" : ":fin_term_synonym",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Synonyms",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM SYNONYMS"
+  }, {
+    "@id" : ":final",
+    "@type" : ":Status",
+    "label" : "Final",
+    "prefLabel" : "final"
+  }, {
+    "@id" : ":fra_authoritative_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Authoritative Source",
+    "range" : "xsd:string",
+    "prefLabel" : "AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":fra_authority_clause",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "clause",
+    "range" : "xsd:string",
+    "prefLabel" : "CLAUSE"
+  }, {
+    "@id" : ":fra_authority_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "link",
+    "range" : "xsd:anyURI",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":fra_classification",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "classification",
+    "prefLabel" : "CLASSIFICATION"
+  }, {
+    "@id" : ":fra_country_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Country Code",
+    "prefLabel" : "COUNTRY CODE"
+  }, {
+    "@id" : ":fra_date_accepted",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Accepted",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE ACCEPTED"
+  }, {
+    "@id" : ":fra_date_amended",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Amended",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE AMENDED"
+  }, {
+    "@id" : ":fra_definition",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "definition",
+    "range" : "xsd:string",
+    "sameAs" : "skos:definition",
+    "prefLabel" : "Definition"
+  }, {
+    "@id" : ":fra_entry_status",
+    "@type" : "owl:DatatypeProperty",
+    "prefLabel" : "Entry Status"
+  }, {
+    "@id" : ":fra_example_1",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":fra_example_2",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":fra_example_3",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":fra_example_4",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":fra_example_5",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":fra_example_6",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":fra_example_7",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":fra_example_8",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":fra_language_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "3 Letter Language Code",
+    "prefLabel" : "3 LETTER LANGUAGE CODE"
+  }, {
+    "@id" : ":fra_lineage_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Lineage Source",
+    "range" : "xsd:string",
+    "prefLabel" : "LINEAGE SOURCE"
+  }, {
+    "@id" : ":fra_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Link",
+    "range" : "xsd:string",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":fra_note_1",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":fra_note_2",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":fra_note_3",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":fra_note_4",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":fra_note_5",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":fra_note_6",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":fra_note_7",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":fra_note_8",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":fra_ref",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Reference",
+    "prefLabel" : "REFERENCE"
+  }, {
+    "@id" : ":fra_release",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Release",
+    "altLabel" : "RELEASE",
+    "prefLabel" : "RELEASE"
+  }, {
+    "@id" : ":fra_review_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DATE"
+  }, {
+    "@id" : ":fra_review_decision",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision",
+    "prefLabel" : "REVIEW DECISION"
+  }, {
+    "@id" : ":fra_review_decision_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DECISION DATE"
+  }, {
+    "@id" : ":fra_review_decision_event",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Event",
+    "prefLabel" : "REVIEW DECISION EVENT"
+  }, {
+    "@id" : ":fra_review_decision_notes",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Notes",
+    "prefLabel" : "REVIEW DECISION NOTES"
+  }, {
+    "@id" : ":fra_review_indicator",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Indicator",
+    "prefLabel" : "REVIEW INDICATOR"
+  }, {
+    "@id" : ":fra_review_status",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Status",
+    "prefLabel" : "REVIEW STATUS"
+  }, {
+    "@id" : ":fra_review_type",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Type",
+    "prefLabel" : "REVIEW TYPE"
+  }, {
+    "@id" : ":fra_similarity_authoritative",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Authoritative Source",
+    "prefLabel" : "SIMILARITY TO AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":fra_similarity_lineage",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Lineage Source",
+    "prefLabel" : "SIMILARITY TO LINEAGE SOURCE"
+  }, {
+    "@id" : ":fra_term",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "term",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM"
+  }, {
+    "@id" : ":fra_termID",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:integer",
+    "prefLabel" : "id"
+  }, {
+    "@id" : ":fra_term_abbreviation",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Abbrevation",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM ABBREVIATION"
+  }, {
+    "@id" : ":fra_term_synonym",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Synonyms",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM SYNONYMS"
+  }, {
+    "@id" : ":generalisation",
+    "@type" : [ ":SimilarityLineage", ":SimilarityAuthoritative" ],
+    "label" : "Generalisation",
+    "hiddenLabel" : "4",
+    "prefLabel" : "generalisation"
+  }, {
+    "@id" : ":ger_authoritative_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Authoritative Source",
+    "range" : "xsd:string",
+    "prefLabel" : "AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":ger_authority_clause",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "clause",
+    "range" : "xsd:string",
+    "prefLabel" : "CLAUSE"
+  }, {
+    "@id" : ":ger_authority_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "link",
+    "range" : "xsd:anyURI",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":ger_classification",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "classification",
+    "prefLabel" : "CLASSIFICATION"
+  }, {
+    "@id" : ":ger_country_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Country Code",
+    "prefLabel" : "COUNTRY CODE"
+  }, {
+    "@id" : ":ger_date_accepted",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Accepted",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE ACCEPTED"
+  }, {
+    "@id" : ":ger_date_amended",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Amended",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE AMENDED"
+  }, {
+    "@id" : ":ger_definition",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "definition",
+    "range" : "xsd:string",
+    "sameAs" : "skos:definition",
+    "prefLabel" : "Definition"
+  }, {
+    "@id" : ":ger_entry_status",
+    "@type" : "owl:DatatypeProperty",
+    "prefLabel" : "Entry Status"
+  }, {
+    "@id" : ":ger_example_1",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":ger_example_2",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":ger_example_3",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":ger_example_4",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":ger_example_5",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":ger_example_6",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":ger_example_7",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":ger_example_8",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":ger_language_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "3 Letter Language Code",
+    "prefLabel" : "3 LETTER LANGUAGE CODE"
+  }, {
+    "@id" : ":ger_lineage_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Lineage Source",
+    "range" : "xsd:string",
+    "prefLabel" : "LINEAGE SOURCE"
+  }, {
+    "@id" : ":ger_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Link",
+    "range" : "xsd:string",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":ger_note_1",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":ger_note_2",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":ger_note_3",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":ger_note_4",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":ger_note_5",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":ger_note_6",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":ger_note_7",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":ger_note_8",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":ger_ref",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Reference",
+    "prefLabel" : "REFERENCE"
+  }, {
+    "@id" : ":ger_release",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Release",
+    "altLabel" : "RELEASE",
+    "prefLabel" : "RELEASE"
+  }, {
+    "@id" : ":ger_review_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DATE"
+  }, {
+    "@id" : ":ger_review_decision",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision",
+    "prefLabel" : "REVIEW DECISION"
+  }, {
+    "@id" : ":ger_review_decision_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DECISION DATE"
+  }, {
+    "@id" : ":ger_review_decision_event",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Event",
+    "prefLabel" : "REVIEW DECISION EVENT"
+  }, {
+    "@id" : ":ger_review_decision_notes",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Notes",
+    "prefLabel" : "REVIEW DECISION NOTES"
+  }, {
+    "@id" : ":ger_review_indicator",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Indicator",
+    "prefLabel" : "REVIEW INDICATOR"
+  }, {
+    "@id" : ":ger_review_status",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Status",
+    "prefLabel" : "REVIEW STATUS"
+  }, {
+    "@id" : ":ger_review_type",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Type",
+    "prefLabel" : "REVIEW TYPE"
+  }, {
+    "@id" : ":ger_similarity_authoritative",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Authoritative Source",
+    "prefLabel" : "SIMILARITY TO AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":ger_similarity_lineage",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Lineage Source",
+    "prefLabel" : "SIMILARITY TO LINEAGE SOURCE"
+  }, {
+    "@id" : ":ger_term",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "term",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM"
+  }, {
+    "@id" : ":ger_termID",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:integer",
+    "prefLabel" : "id"
+  }, {
+    "@id" : ":ger_term_abbreviation",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Abbrevation",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM ABBREVIATION"
+  }, {
+    "@id" : ":ger_term_synonym",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Synonyms",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM SYNONYMS"
+  }, {
+    "@id" : ":identical",
+    "@type" : [ ":SimilarityLineage", ":SimilarityAuthoritative" ],
+    "label" : "Identical",
+    "hiddenLabel" : "1",
+    "prefLabel" : "identical"
+  }, {
+    "@id" : ":jpn_authoritative_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Authoritative Source",
+    "range" : "xsd:string",
+    "prefLabel" : "AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":jpn_authority_clause",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "clause",
+    "range" : "xsd:string",
+    "prefLabel" : "CLAUSE"
+  }, {
+    "@id" : ":jpn_authority_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "link",
+    "range" : "xsd:anyURI",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":jpn_classification",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "classification",
+    "prefLabel" : "CLASSIFICATION"
+  }, {
+    "@id" : ":jpn_country_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Country Code",
+    "prefLabel" : "COUNTRY CODE"
+  }, {
+    "@id" : ":jpn_date_accepted",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Accepted",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE ACCEPTED"
+  }, {
+    "@id" : ":jpn_date_amended",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Amended",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE AMENDED"
+  }, {
+    "@id" : ":jpn_definition",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "definition",
+    "range" : "xsd:string",
+    "sameAs" : "skos:definition",
+    "prefLabel" : "Definition"
+  }, {
+    "@id" : ":jpn_entry_status",
+    "@type" : "owl:DatatypeProperty",
+    "prefLabel" : "Entry Status"
+  }, {
+    "@id" : ":jpn_example_1",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":jpn_example_2",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":jpn_example_3",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":jpn_example_4",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":jpn_example_5",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":jpn_example_6",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":jpn_example_7",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":jpn_example_8",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":jpn_language_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "3 Letter Language Code",
+    "prefLabel" : "3 LETTER LANGUAGE CODE"
+  }, {
+    "@id" : ":jpn_lineage_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Lineage Source",
+    "range" : "xsd:string",
+    "prefLabel" : "LINEAGE SOURCE"
+  }, {
+    "@id" : ":jpn_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Link",
+    "range" : "xsd:string",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":jpn_note_1",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":jpn_note_2",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":jpn_note_3",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":jpn_note_4",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":jpn_note_5",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":jpn_note_6",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":jpn_note_7",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":jpn_note_8",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":jpn_ref",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Reference",
+    "prefLabel" : "REFERENCE"
+  }, {
+    "@id" : ":jpn_release",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Release",
+    "altLabel" : "RELEASE",
+    "prefLabel" : "RELEASE"
+  }, {
+    "@id" : ":jpn_review_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DATE"
+  }, {
+    "@id" : ":jpn_review_decision",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision",
+    "prefLabel" : "REVIEW DECISION"
+  }, {
+    "@id" : ":jpn_review_decision_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DECISION DATE"
+  }, {
+    "@id" : ":jpn_review_decision_event",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Event",
+    "prefLabel" : "REVIEW DECISION EVENT"
+  }, {
+    "@id" : ":jpn_review_decision_notes",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Notes",
+    "prefLabel" : "REVIEW DECISION NOTES"
+  }, {
+    "@id" : ":jpn_review_indicator",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Indicator",
+    "prefLabel" : "REVIEW INDICATOR"
+  }, {
+    "@id" : ":jpn_review_status",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Status",
+    "prefLabel" : "REVIEW STATUS"
+  }, {
+    "@id" : ":jpn_review_type",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Type",
+    "prefLabel" : "REVIEW TYPE"
+  }, {
+    "@id" : ":jpn_similarity_authoritative",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Authoritative Source",
+    "prefLabel" : "SIMILARITY TO AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":jpn_similarity_lineage",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Lineage Source",
+    "prefLabel" : "SIMILARITY TO LINEAGE SOURCE"
+  }, {
+    "@id" : ":jpn_term",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "term",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM"
+  }, {
+    "@id" : ":jpn_termID",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:integer",
+    "prefLabel" : "id"
+  }, {
+    "@id" : ":jpn_term_abbreviation",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Abbrevation",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM ABBREVIATION"
+  }, {
+    "@id" : ":jpn_term_synonym",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Synonyms",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM SYNONYMS"
+  }, {
+    "@id" : ":kor_authoritative_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Authoritative Source",
+    "range" : "xsd:string",
+    "prefLabel" : "AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":kor_authority_clause",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "clause",
+    "range" : "xsd:string",
+    "prefLabel" : "CLAUSE"
+  }, {
+    "@id" : ":kor_authority_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "link",
+    "range" : "xsd:anyURI",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":kor_classification",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "classification",
+    "prefLabel" : "CLASSIFICATION"
+  }, {
+    "@id" : ":kor_country_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Country Code",
+    "prefLabel" : "COUNTRY CODE"
+  }, {
+    "@id" : ":kor_date_accepted",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Accepted",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE ACCEPTED"
+  }, {
+    "@id" : ":kor_date_amended",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Amended",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE AMENDED"
+  }, {
+    "@id" : ":kor_definition",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "definition",
+    "range" : "xsd:string",
+    "sameAs" : "skos:definition",
+    "prefLabel" : "Definition"
+  }, {
+    "@id" : ":kor_entry_status",
+    "@type" : "owl:DatatypeProperty",
+    "prefLabel" : "Entry Status"
+  }, {
+    "@id" : ":kor_example_1",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":kor_example_2",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":kor_example_3",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":kor_example_4",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":kor_example_5",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":kor_example_6",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":kor_example_7",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":kor_example_8",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":kor_language_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "3 Letter Language Code",
+    "prefLabel" : "3 LETTER LANGUAGE CODE"
+  }, {
+    "@id" : ":kor_lineage_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Lineage Source",
+    "range" : "xsd:string",
+    "prefLabel" : "LINEAGE SOURCE"
+  }, {
+    "@id" : ":kor_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Link",
+    "range" : "xsd:string",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":kor_note_1",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":kor_note_2",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":kor_note_3",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":kor_note_4",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":kor_note_5",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":kor_note_6",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":kor_note_7",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":kor_note_8",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":kor_ref",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Reference",
+    "prefLabel" : "REFERENCE"
+  }, {
+    "@id" : ":kor_release",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Release",
+    "altLabel" : "RELEASE",
+    "prefLabel" : "RELEASE"
+  }, {
+    "@id" : ":kor_review_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DATE"
+  }, {
+    "@id" : ":kor_review_decision",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision",
+    "prefLabel" : "REVIEW DECISION"
+  }, {
+    "@id" : ":kor_review_decision_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DECISION DATE"
+  }, {
+    "@id" : ":kor_review_decision_event",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Event",
+    "prefLabel" : "REVIEW DECISION EVENT"
+  }, {
+    "@id" : ":kor_review_decision_notes",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Notes",
+    "prefLabel" : "REVIEW DECISION NOTES"
+  }, {
+    "@id" : ":kor_review_indicator",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Indicator",
+    "prefLabel" : "REVIEW INDICATOR"
+  }, {
+    "@id" : ":kor_review_status",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Status",
+    "prefLabel" : "REVIEW STATUS"
+  }, {
+    "@id" : ":kor_review_type",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Type",
+    "prefLabel" : "REVIEW TYPE"
+  }, {
+    "@id" : ":kor_similarity_authoritative",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Authoritative Source",
+    "prefLabel" : "SIMILARITY TO AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":kor_similarity_lineage",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Lineage Source",
+    "prefLabel" : "SIMILARITY TO LINEAGE SOURCE"
+  }, {
+    "@id" : ":kor_term",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "term",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM"
+  }, {
+    "@id" : ":kor_termID",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:integer",
+    "prefLabel" : "id"
+  }, {
+    "@id" : ":kor_term_abbreviation",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Abbrevation",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM ABBREVIATION"
+  }, {
+    "@id" : ":kor_term_synonym",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Synonyms",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM SYNONYMS"
+  }, {
+    "@id" : ":language_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "3 Letter Language Code",
+    "prefLabel" : "3 LETTER LANGUAGE CODE"
+  }, {
+    "@id" : ":lineage_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Lineage Source",
+    "range" : "xsd:string",
+    "prefLabel" : "LINEAGE SOURCE"
+  }, {
+    "@id" : ":link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Link",
+    "range" : "xsd:string",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":msa_authoritative_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Authoritative Source",
+    "range" : "xsd:string",
+    "prefLabel" : "AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":msa_authority_clause",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "clause",
+    "range" : "xsd:string",
+    "prefLabel" : "CLAUSE"
+  }, {
+    "@id" : ":msa_authority_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "link",
+    "range" : "xsd:anyURI",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":msa_classification",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "classification",
+    "prefLabel" : "CLASSIFICATION"
+  }, {
+    "@id" : ":msa_country_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Country Code",
+    "prefLabel" : "COUNTRY CODE"
+  }, {
+    "@id" : ":msa_date_accepted",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Accepted",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE ACCEPTED"
+  }, {
+    "@id" : ":msa_date_amended",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Amended",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE AMENDED"
+  }, {
+    "@id" : ":msa_definition",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "definition",
+    "range" : "xsd:string",
+    "sameAs" : "skos:definition",
+    "prefLabel" : "Definition"
+  }, {
+    "@id" : ":msa_entry_status",
+    "@type" : "owl:DatatypeProperty",
+    "prefLabel" : "Entry Status"
+  }, {
+    "@id" : ":msa_example_1",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":msa_example_2",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":msa_example_3",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":msa_example_4",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":msa_example_5",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":msa_example_6",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":msa_example_7",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":msa_example_8",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":msa_language_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "3 Letter Language Code",
+    "prefLabel" : "3 LETTER LANGUAGE CODE"
+  }, {
+    "@id" : ":msa_lineage_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Lineage Source",
+    "range" : "xsd:string",
+    "prefLabel" : "LINEAGE SOURCE"
+  }, {
+    "@id" : ":msa_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Link",
+    "range" : "xsd:string",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":msa_note_1",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":msa_note_2",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":msa_note_3",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":msa_note_4",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":msa_note_5",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":msa_note_6",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":msa_note_7",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":msa_note_8",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":msa_ref",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Reference",
+    "prefLabel" : "REFERENCE"
+  }, {
+    "@id" : ":msa_release",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Release",
+    "altLabel" : "RELEASE",
+    "prefLabel" : "RELEASE"
+  }, {
+    "@id" : ":msa_review_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DATE"
+  }, {
+    "@id" : ":msa_review_decision",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision",
+    "prefLabel" : "REVIEW DECISION"
+  }, {
+    "@id" : ":msa_review_decision_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DECISION DATE"
+  }, {
+    "@id" : ":msa_review_decision_event",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Event",
+    "prefLabel" : "REVIEW DECISION EVENT"
+  }, {
+    "@id" : ":msa_review_decision_notes",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Notes",
+    "prefLabel" : "REVIEW DECISION NOTES"
+  }, {
+    "@id" : ":msa_review_indicator",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Indicator",
+    "prefLabel" : "REVIEW INDICATOR"
+  }, {
+    "@id" : ":msa_review_status",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Status",
+    "prefLabel" : "REVIEW STATUS"
+  }, {
+    "@id" : ":msa_review_type",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Type",
+    "prefLabel" : "REVIEW TYPE"
+  }, {
+    "@id" : ":msa_similarity_authoritative",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Authoritative Source",
+    "prefLabel" : "SIMILARITY TO AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":msa_similarity_lineage",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Lineage Source",
+    "prefLabel" : "SIMILARITY TO LINEAGE SOURCE"
+  }, {
+    "@id" : ":msa_term",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "term",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM"
+  }, {
+    "@id" : ":msa_termID",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:integer",
+    "prefLabel" : "id"
+  }, {
+    "@id" : ":msa_term_abbreviation",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Abbrevation",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM ABBREVIATION"
+  }, {
+    "@id" : ":msa_term_synonym",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Synonyms",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM SYNONYMS"
+  }, {
+    "@id" : ":notAccepted",
+    "@type" : "https://www.geolexica.org/api/skos-rdf#ReviewDecision",
+    "label" : "Not Accepted",
+    "prefLabel" : "notAccepted"
+  }, {
+    "@id" : ":note",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":note_1",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":note_2",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":note_3",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":note_4",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":note_5",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":note_6",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":note_7",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":note_8",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":pending",
+    "@type" : ":Status",
+    "label" : "Pending",
+    "prefLabel" : "pending"
+  }, {
+    "@id" : ":pol_authoritative_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Authoritative Source",
+    "range" : "xsd:string",
+    "prefLabel" : "AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":pol_authority_clause",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "clause",
+    "range" : "xsd:string",
+    "prefLabel" : "CLAUSE"
+  }, {
+    "@id" : ":pol_authority_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "link",
+    "range" : "xsd:anyURI",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":pol_classification",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "classification",
+    "prefLabel" : "CLASSIFICATION"
+  }, {
+    "@id" : ":pol_country_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Country Code",
+    "prefLabel" : "COUNTRY CODE"
+  }, {
+    "@id" : ":pol_date_accepted",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Accepted",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE ACCEPTED"
+  }, {
+    "@id" : ":pol_date_amended",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Amended",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE AMENDED"
+  }, {
+    "@id" : ":pol_definition",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "definition",
+    "range" : "xsd:string",
+    "sameAs" : "skos:definition",
+    "prefLabel" : "Definition"
+  }, {
+    "@id" : ":pol_entry_status",
+    "@type" : "owl:DatatypeProperty",
+    "prefLabel" : "Entry Status"
+  }, {
+    "@id" : ":pol_example_1",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":pol_example_2",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":pol_example_3",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":pol_example_4",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":pol_example_5",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":pol_example_6",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":pol_example_7",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":pol_example_8",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":pol_language_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "3 Letter Language Code",
+    "prefLabel" : "3 LETTER LANGUAGE CODE"
+  }, {
+    "@id" : ":pol_lineage_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Lineage Source",
+    "range" : "xsd:string",
+    "prefLabel" : "LINEAGE SOURCE"
+  }, {
+    "@id" : ":pol_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Link",
+    "range" : "xsd:string",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":pol_note_1",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":pol_note_2",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":pol_note_3",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":pol_note_4",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":pol_note_5",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":pol_note_6",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":pol_note_7",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":pol_note_8",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":pol_ref",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Reference",
+    "prefLabel" : "REFERENCE"
+  }, {
+    "@id" : ":pol_release",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Release",
+    "altLabel" : "RELEASE",
+    "prefLabel" : "RELEASE"
+  }, {
+    "@id" : ":pol_review_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DATE"
+  }, {
+    "@id" : ":pol_review_decision",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision",
+    "prefLabel" : "REVIEW DECISION"
+  }, {
+    "@id" : ":pol_review_decision_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DECISION DATE"
+  }, {
+    "@id" : ":pol_review_decision_event",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Event",
+    "prefLabel" : "REVIEW DECISION EVENT"
+  }, {
+    "@id" : ":pol_review_decision_notes",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Notes",
+    "prefLabel" : "REVIEW DECISION NOTES"
+  }, {
+    "@id" : ":pol_review_indicator",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Indicator",
+    "prefLabel" : "REVIEW INDICATOR"
+  }, {
+    "@id" : ":pol_review_status",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Status",
+    "prefLabel" : "REVIEW STATUS"
+  }, {
+    "@id" : ":pol_review_type",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Type",
+    "prefLabel" : "REVIEW TYPE"
+  }, {
+    "@id" : ":pol_similarity_authoritative",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Authoritative Source",
+    "prefLabel" : "SIMILARITY TO AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":pol_similarity_lineage",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Lineage Source",
+    "prefLabel" : "SIMILARITY TO LINEAGE SOURCE"
+  }, {
+    "@id" : ":pol_term",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "term",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM"
+  }, {
+    "@id" : ":pol_termID",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:integer",
+    "prefLabel" : "id"
+  }, {
+    "@id" : ":pol_term_abbreviation",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Abbrevation",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM ABBREVIATION"
+  }, {
+    "@id" : ":pol_term_synonym",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Synonyms",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM SYNONYMS"
+  }, {
+    "@id" : ":preferred",
+    "@type" : ":TermClassification",
+    "label" : "Preferred",
+    "prefLabel" : "preferred"
+  }, {
+    "@id" : ":ref",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Reference",
+    "prefLabel" : "REFERENCE"
+  }, {
+    "@id" : ":release",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Release",
+    "altLabel" : "RELEASE",
+    "prefLabel" : "RELEASE"
+  }, {
+    "@id" : ":release1",
+    "@type" : ":GlossaryRelease",
+    "label" : "Release 1",
+    "hiddenLabel" : "1",
+    "prefLabel" : "release1"
+  }, {
+    "@id" : ":release1_retired",
+    "@type" : ":GlossaryRelease",
+    "label" : "Release 1 Retired",
+    "hiddenLabel" : "-1",
+    "prefLabel" : "release1_retired"
+  }, {
+    "@id" : ":release2",
+    "@type" : ":GlossaryRelease",
+    "label" : "Release 2",
+    "hiddenLabel" : "-2",
+    "prefLabel" : "release2"
+  }, {
+    "@id" : ":release2_retired",
+    "@type" : ":GlossaryRelease",
+    "label" : "Release 2 Retired",
+    "hiddenLabel" : "-2",
+    "prefLabel" : "release2_retired"
+  }, {
+    "@id" : ":restyled",
+    "@type" : [ ":SimilarityLineage", ":SimilarityAuthoritative" ],
+    "label" : "Restyled",
+    "hiddenLabel" : "2",
+    "prefLabel" : "restyled"
+  }, {
+    "@id" : ":retirement",
+    "@type" : ":ReviewType",
+    "label" : "Retirement",
+    "prefLabel" : "retirement"
+  }, {
+    "@id" : ":review_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DATE"
+  }, {
+    "@id" : ":review_decision",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision",
+    "prefLabel" : "REVIEW DECISION"
+  }, {
+    "@id" : ":review_decision_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DECISION DATE"
+  }, {
+    "@id" : ":review_decision_event",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Event",
+    "prefLabel" : "REVIEW DECISION EVENT"
+  }, {
+    "@id" : ":review_decision_notes",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Notes",
+    "prefLabel" : "REVIEW DECISION NOTES"
+  }, {
+    "@id" : ":review_indicator",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Indicator",
+    "prefLabel" : "REVIEW INDICATOR"
+  }, {
+    "@id" : ":review_status",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Status",
+    "prefLabel" : "REVIEW STATUS"
+  }, {
+    "@id" : ":review_type",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Type",
+    "prefLabel" : "REVIEW TYPE"
+  }, {
+    "@id" : ":rus_authoritative_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Authoritative Source",
+    "range" : "xsd:string",
+    "prefLabel" : "AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":rus_authority_clause",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "clause",
+    "range" : "xsd:string",
+    "prefLabel" : "CLAUSE"
+  }, {
+    "@id" : ":rus_authority_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "link",
+    "range" : "xsd:anyURI",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":rus_classification",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "classification",
+    "prefLabel" : "CLASSIFICATION"
+  }, {
+    "@id" : ":rus_country_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Country Code",
+    "prefLabel" : "COUNTRY CODE"
+  }, {
+    "@id" : ":rus_date_accepted",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Accepted",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE ACCEPTED"
+  }, {
+    "@id" : ":rus_date_amended",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Amended",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE AMENDED"
+  }, {
+    "@id" : ":rus_definition",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "definition",
+    "range" : "xsd:string",
+    "sameAs" : "skos:definition",
+    "prefLabel" : "Definition"
+  }, {
+    "@id" : ":rus_entry_status",
+    "@type" : "owl:DatatypeProperty",
+    "prefLabel" : "Entry Status"
+  }, {
+    "@id" : ":rus_example_1",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":rus_example_2",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":rus_example_3",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":rus_example_4",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":rus_example_5",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":rus_example_6",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":rus_example_7",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":rus_example_8",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":rus_language_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "3 Letter Language Code",
+    "prefLabel" : "3 LETTER LANGUAGE CODE"
+  }, {
+    "@id" : ":rus_lineage_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Lineage Source",
+    "range" : "xsd:string",
+    "prefLabel" : "LINEAGE SOURCE"
+  }, {
+    "@id" : ":rus_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Link",
+    "range" : "xsd:string",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":rus_note_1",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":rus_note_2",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":rus_note_3",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":rus_note_4",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":rus_note_5",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":rus_note_6",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":rus_note_7",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":rus_note_8",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":rus_ref",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Reference",
+    "prefLabel" : "REFERENCE"
+  }, {
+    "@id" : ":rus_release",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Release",
+    "altLabel" : "RELEASE",
+    "prefLabel" : "RELEASE"
+  }, {
+    "@id" : ":rus_review_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DATE"
+  }, {
+    "@id" : ":rus_review_decision",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision",
+    "prefLabel" : "REVIEW DECISION"
+  }, {
+    "@id" : ":rus_review_decision_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DECISION DATE"
+  }, {
+    "@id" : ":rus_review_decision_event",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Event",
+    "prefLabel" : "REVIEW DECISION EVENT"
+  }, {
+    "@id" : ":rus_review_decision_notes",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Notes",
+    "prefLabel" : "REVIEW DECISION NOTES"
+  }, {
+    "@id" : ":rus_review_indicator",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Indicator",
+    "prefLabel" : "REVIEW INDICATOR"
+  }, {
+    "@id" : ":rus_review_status",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Status",
+    "prefLabel" : "REVIEW STATUS"
+  }, {
+    "@id" : ":rus_review_type",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Type",
+    "prefLabel" : "REVIEW TYPE"
+  }, {
+    "@id" : ":rus_similarity_authoritative",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Authoritative Source",
+    "prefLabel" : "SIMILARITY TO AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":rus_similarity_lineage",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Lineage Source",
+    "prefLabel" : "SIMILARITY TO LINEAGE SOURCE"
+  }, {
+    "@id" : ":rus_term",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "term",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM"
+  }, {
+    "@id" : ":rus_termID",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:integer",
+    "prefLabel" : "id"
+  }, {
+    "@id" : ":rus_term_abbreviation",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Abbrevation",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM ABBREVIATION"
+  }, {
+    "@id" : ":rus_term_synonym",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Synonyms",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM SYNONYMS"
+  }, {
+    "@id" : ":similarity_authoritative",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Authoritative Source",
+    "prefLabel" : "SIMILARITY TO AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":similarity_lineage",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Lineage Source",
+    "prefLabel" : "SIMILARITY TO LINEAGE SOURCE"
+  }, {
+    "@id" : ":spa_authoritative_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Authoritative Source",
+    "range" : "xsd:string",
+    "prefLabel" : "AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":spa_authority_clause",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "clause",
+    "range" : "xsd:string",
+    "prefLabel" : "CLAUSE"
+  }, {
+    "@id" : ":spa_authority_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "link",
+    "range" : "xsd:anyURI",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":spa_classification",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "classification",
+    "prefLabel" : "CLASSIFICATION"
+  }, {
+    "@id" : ":spa_country_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Country Code",
+    "prefLabel" : "COUNTRY CODE"
+  }, {
+    "@id" : ":spa_date_accepted",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Accepted",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE ACCEPTED"
+  }, {
+    "@id" : ":spa_date_amended",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Amended",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE AMENDED"
+  }, {
+    "@id" : ":spa_definition",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "definition",
+    "range" : "xsd:string",
+    "sameAs" : "skos:definition",
+    "prefLabel" : "Definition"
+  }, {
+    "@id" : ":spa_entry_status",
+    "@type" : "owl:DatatypeProperty",
+    "prefLabel" : "Entry Status"
+  }, {
+    "@id" : ":spa_example_1",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":spa_example_2",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":spa_example_3",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":spa_example_4",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":spa_example_5",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":spa_example_6",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":spa_example_7",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":spa_example_8",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":spa_language_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "3 Letter Language Code",
+    "prefLabel" : "3 LETTER LANGUAGE CODE"
+  }, {
+    "@id" : ":spa_lineage_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Lineage Source",
+    "range" : "xsd:string",
+    "prefLabel" : "LINEAGE SOURCE"
+  }, {
+    "@id" : ":spa_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Link",
+    "range" : "xsd:string",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":spa_note_1",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":spa_note_2",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":spa_note_3",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":spa_note_4",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":spa_note_5",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":spa_note_6",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":spa_note_7",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":spa_note_8",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":spa_ref",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Reference",
+    "prefLabel" : "REFERENCE"
+  }, {
+    "@id" : ":spa_release",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Release",
+    "altLabel" : "RELEASE",
+    "prefLabel" : "RELEASE"
+  }, {
+    "@id" : ":spa_review_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DATE"
+  }, {
+    "@id" : ":spa_review_decision",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision",
+    "prefLabel" : "REVIEW DECISION"
+  }, {
+    "@id" : ":spa_review_decision_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DECISION DATE"
+  }, {
+    "@id" : ":spa_review_decision_event",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Event",
+    "prefLabel" : "REVIEW DECISION EVENT"
+  }, {
+    "@id" : ":spa_review_decision_notes",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Notes",
+    "prefLabel" : "REVIEW DECISION NOTES"
+  }, {
+    "@id" : ":spa_review_indicator",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Indicator",
+    "prefLabel" : "REVIEW INDICATOR"
+  }, {
+    "@id" : ":spa_review_status",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Status",
+    "prefLabel" : "REVIEW STATUS"
+  }, {
+    "@id" : ":spa_review_type",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Type",
+    "prefLabel" : "REVIEW TYPE"
+  }, {
+    "@id" : ":spa_similarity_authoritative",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Authoritative Source",
+    "prefLabel" : "SIMILARITY TO AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":spa_similarity_lineage",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Lineage Source",
+    "prefLabel" : "SIMILARITY TO LINEAGE SOURCE"
+  }, {
+    "@id" : ":spa_term",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "term",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM"
+  }, {
+    "@id" : ":spa_termID",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:integer",
+    "prefLabel" : "id"
+  }, {
+    "@id" : ":spa_term_abbreviation",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Abbrevation",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM ABBREVIATION"
+  }, {
+    "@id" : ":spa_term_synonym",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Synonyms",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM SYNONYMS"
+  }, {
+    "@id" : ":specialisation",
+    "@type" : [ ":SimilarityLineage", ":SimilarityAuthoritative" ],
+    "label" : "Specialisation",
+    "hiddenLabel" : "5",
+    "prefLabel" : "specialisation"
+  }, {
+    "@id" : ":supersession",
+    "@type" : ":ReviewType",
+    "label" : "Supersession",
+    "prefLabel" : "supersession"
+  }, {
+    "@id" : ":swe_authoritative_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Authoritative Source",
+    "range" : "xsd:string",
+    "prefLabel" : "AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":swe_authority_clause",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "clause",
+    "range" : "xsd:string",
+    "prefLabel" : "CLAUSE"
+  }, {
+    "@id" : ":swe_authority_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "link",
+    "range" : "xsd:anyURI",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":swe_classification",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "classification",
+    "prefLabel" : "CLASSIFICATION"
+  }, {
+    "@id" : ":swe_country_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Country Code",
+    "prefLabel" : "COUNTRY CODE"
+  }, {
+    "@id" : ":swe_date_accepted",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Accepted",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE ACCEPTED"
+  }, {
+    "@id" : ":swe_date_amended",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Date Amended",
+    "range" : "xsd:date",
+    "prefLabel" : "DATE AMENDED"
+  }, {
+    "@id" : ":swe_definition",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "definition",
+    "range" : "xsd:string",
+    "sameAs" : "skos:definition",
+    "prefLabel" : "Definition"
+  }, {
+    "@id" : ":swe_entry_status",
+    "@type" : "owl:DatatypeProperty",
+    "prefLabel" : "Entry Status"
+  }, {
+    "@id" : ":swe_example_1",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":swe_example_2",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":swe_example_3",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":swe_example_4",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":swe_example_5",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":swe_example_6",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":swe_example_7",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":swe_example_8",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:string",
+    "prefLabel" : "Example"
+  }, {
+    "@id" : ":swe_language_code",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "3 Letter Language Code",
+    "prefLabel" : "3 LETTER LANGUAGE CODE"
+  }, {
+    "@id" : ":swe_lineage_source",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Lineage Source",
+    "range" : "xsd:string",
+    "prefLabel" : "LINEAGE SOURCE"
+  }, {
+    "@id" : ":swe_link",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Link",
+    "range" : "xsd:string",
+    "prefLabel" : "LINK"
+  }, {
+    "@id" : ":swe_note_1",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":swe_note_2",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":swe_note_3",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":swe_note_4",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":swe_note_5",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":swe_note_6",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":swe_note_7",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":swe_note_8",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Note",
+    "range" : "xsd:string",
+    "prefLabel" : "NOTE"
+  }, {
+    "@id" : ":swe_ref",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Reference",
+    "prefLabel" : "REFERENCE"
+  }, {
+    "@id" : ":swe_release",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Release",
+    "altLabel" : "RELEASE",
+    "prefLabel" : "RELEASE"
+  }, {
+    "@id" : ":swe_review_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DATE"
+  }, {
+    "@id" : ":swe_review_decision",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision",
+    "prefLabel" : "REVIEW DECISION"
+  }, {
+    "@id" : ":swe_review_decision_date",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Date",
+    "range" : "xsd:date",
+    "prefLabel" : "REVIEW DECISION DATE"
+  }, {
+    "@id" : ":swe_review_decision_event",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Event",
+    "prefLabel" : "REVIEW DECISION EVENT"
+  }, {
+    "@id" : ":swe_review_decision_notes",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Decision Notes",
+    "prefLabel" : "REVIEW DECISION NOTES"
+  }, {
+    "@id" : ":swe_review_indicator",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Indicator",
+    "prefLabel" : "REVIEW INDICATOR"
+  }, {
+    "@id" : ":swe_review_status",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Status",
+    "prefLabel" : "REVIEW STATUS"
+  }, {
+    "@id" : ":swe_review_type",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Review Type",
+    "prefLabel" : "REVIEW TYPE"
+  }, {
+    "@id" : ":swe_similarity_authoritative",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Authoritative Source",
+    "prefLabel" : "SIMILARITY TO AUTHORITATIVE SOURCE"
+  }, {
+    "@id" : ":swe_similarity_lineage",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Similarity to Lineage Source",
+    "prefLabel" : "SIMILARITY TO LINEAGE SOURCE"
+  }, {
+    "@id" : ":swe_term",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "term",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM"
+  }, {
+    "@id" : ":swe_termID",
+    "@type" : "owl:DatatypeProperty",
+    "range" : "xsd:integer",
+    "prefLabel" : "id"
+  }, {
+    "@id" : ":swe_term_abbreviation",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Abbrevation",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM ABBREVIATION"
+  }, {
+    "@id" : ":swe_term_synonym",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Synonyms",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM SYNONYMS"
+  }, {
+    "@id" : ":tentative",
+    "@type" : ":Status",
+    "label" : "Tentative",
+    "prefLabel" : "tentative"
+  }, {
+    "@id" : ":term",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "term",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM"
+  }, {
+    "@id" : ":termID",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term ID",
+    "range" : "xsd:integer",
+    "prefLabel" : "TERM ID"
+  }, {
+    "@id" : ":term_abbreviation",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Abbrevation",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM ABBREVIATION"
+  }, {
+    "@id" : ":term_english",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "term (English)",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM (English)"
+  }, {
+    "@id" : ":term_synonym",
+    "@type" : "owl:DatatypeProperty",
+    "label" : "Term Synonyms",
+    "range" : "xsd:string",
+    "prefLabel" : "TERM SYNONYMS"
+  }, {
+    "@id" : ":under_review",
+    "@type" : ":ReviewIndicator",
+    "prefLabel" : "Under Review in Source Document"
+  }, {
+    "@id" : ":unspecified",
+    "@type" : [ ":SimilarityLineage", ":SimilarityAuthoritative" ],
+    "label" : "Unspecified",
+    "hiddenLabel" : "6",
+    "prefLabel" : "unspecified"
+  }, {
+    "@id" : ":withdrawn",
+    "@type" : ":ReviewDecision",
+    "label" : "Withdrawn",
+    "prefLabel" : "withdrawn"
+  } ],
+  "@id" : "urn:x-arq:DefaultGraphNode",
+  "@context" : {
+    "prefLabel" : "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "range" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#range",
+      "@type" : "@id"
+    },
+    "label" : "http://www.w3.org/2000/01/rdf-schema#label",
+    "inScheme" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#inScheme",
+      "@type" : "@id"
+    },
+    "subClassOf" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "@type" : "@id"
+    },
+    "comment" : "http://www.w3.org/2000/01/rdf-schema#comment",
+    "sameAs" : {
+      "@id" : "http://www.w3.org/2002/07/owl#sameAs",
+      "@type" : "@id"
+    },
+    "altLabel" : "http://www.w3.org/2004/02/skos/core#altLabel",
+    "hiddenLabel" : "http://www.w3.org/2004/02/skos/core#hiddenLabel",
+    "link" : "https://www.geolexica.org/api/rdf#link",
+    "review_decision_notes" : "https://www.geolexica.org/api/rdf#review_decision_notes",
+    "imports" : {
+      "@id" : "http://www.w3.org/2002/07/owl#imports",
+      "@type" : "@id"
+    },
+    "note" : "http://www.w3.org/2004/02/skos/core#note",
+    "@base" : "https://www.geolexica.org/api/rdf#",
+    "" : "https://www.geolexica.org/api/rdf#",
+    "schema" : "http://schema.org/",
+    "owl" : "http://www.w3.org/2002/07/owl#",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "dcterms" : "http://purl.org/dc/terms/",
+    "skos" : "http://www.w3.org/2004/02/skos/core#",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#"
+  }
+}

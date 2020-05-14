@@ -1,0 +1,4214 @@
+# baseURI: https://www.geolexica.org/api/rdf#
+# imports: http://purl.org/dc/terms/
+# imports: http://topbraid.org/schema/
+# imports: http://www.w3.org/2004/02/skos/core
+# imports: http://www.w3.org/2008/05/skos-xl
+
+@prefix : <https://www.geolexica.org/api/rdf#>
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://www.geolexica.org/api/rdf#>
+  rdf:type owl:Ontology ;
+  rdfs:label "Geolexica SKOS-RDF" ;
+  owl:imports dcterms: ;
+  owl:imports <http://topbraid.org/schema/> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:imports <http://www.w3.org/2008/05/skos-xl> ;
+.
+<https://www.geolexica.org/api/rdf#Authoritative_Source>
+  rdf:type owl:Class ;
+  rdfs:label "Authoritative Source" ;
+  rdfs:subClassOf schema:Intangible ;
+  skos:inScheme <https://www.geolexica.org/api/rdf#GeolexicaConceptScheme> ;
+  skos:prefLabel "AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#Country_Code>
+  rdf:type owl:Class ;
+  rdfs:comment "ISO 3166 code list." ;
+  rdfs:label "Country code" ;
+  rdfs:subClassOf schema:Intangible ;
+  skos:inScheme <https://www.geolexica.org/api/rdf#GeolexicaConceptScheme> ;
+  skos:prefLabel "COUNTRY CODE" ;
+.
+<https://www.geolexica.org/api/rdf#EntryStatus>
+  rdf:type owl:Class ;
+  rdfs:label "Entry Status" ;
+  rdfs:subClassOf schema:Intangible ;
+  skos:inScheme <https://www.geolexica.org/api/rdf#GeolexicaConceptScheme> ;
+  skos:prefLabel "ENTRY STATUS" ;
+.
+<https://www.geolexica.org/api/rdf#Example>
+  rdf:type owl:Class ;
+  rdfs:label "Example" ;
+  rdfs:subClassOf schema:Intangible ;
+  skos:inScheme <https://www.geolexica.org/api/rdf#GeolexicaConceptScheme> ;
+  skos:prefLabel "EXAMPLE" ;
+.
+<https://www.geolexica.org/api/rdf#GeolexicaConceptScheme>
+  rdf:type skos:ConceptScheme ;
+  skos:prefLabel "Geolexica Concept Scheme" ;
+.
+<https://www.geolexica.org/api/rdf#GlossaryRelease>
+  rdf:type owl:Class ;
+  rdfs:label "Glossary Release" ;
+  rdfs:subClassOf schema:Intangible ;
+  skos:inScheme <https://www.geolexica.org/api/rdf#GeolexicaConceptScheme> ;
+  skos:prefLabel "GLOSSARY RELEASE" ;
+.
+<https://www.geolexica.org/api/rdf#ISO_19132_2007>
+  rdf:type <https://www.geolexica.org/api/rdf#Authoritative_Source> ;
+  rdfs:comment "ISO 19132:2007 defines a reference model and conceptual framework for location-based services (LBS)." ;
+  skos:prefLabel "ISO 19132:2007" ;
+  <https://www.geolexica.org/api/rdf#link> "https://www.iso.org/standard/40601.html" ;
+.
+<https://www.geolexica.org/api/rdf#LanguageCode>
+  rdf:type owl:Class ;
+  rdfs:subClassOf schema:Intangible ;
+  skos:inScheme <https://www.geolexica.org/api/rdf#GeolexicaConceptScheme> ;
+  skos:note "ISO 3166 two- and three-letter language codes." ;
+  skos:prefLabel "Language Code" ;
+.
+<https://www.geolexica.org/api/rdf#LineageSource>
+  rdf:type owl:Class ;
+  rdfs:label "Lineage Source" ;
+  rdfs:subClassOf schema:Intangible ;
+  skos:inScheme <https://www.geolexica.org/api/rdf#GeolexicaConceptScheme> ;
+  skos:prefLabel "LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#Not_Valid>
+  rdf:type <https://www.geolexica.org/api/rdf#EntryStatus> ;
+  rdfs:label "Not valid" ;
+  skos:prefLabel "notValid" ;
+.
+<https://www.geolexica.org/api/rdf#Note>
+  rdf:type owl:Class ;
+  rdfs:label "Note" ;
+  rdfs:subClassOf schema:Intangible ;
+  skos:inScheme <https://www.geolexica.org/api/rdf#GeolexicaConceptScheme> ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#Retired>
+  rdf:type <https://www.geolexica.org/api/rdf#EntryStatus> ;
+  rdfs:label "Retired" ;
+  skos:prefLabel "retired" ;
+.
+<https://www.geolexica.org/api/rdf#ReviewDecision>
+  rdf:type owl:Class ;
+  rdfs:label "Review Decision" ;
+  rdfs:subClassOf schema:Intangible ;
+  skos:inScheme <https://www.geolexica.org/api/rdf#GeolexicaConceptScheme> ;
+  skos:prefLabel "REVIEW DECISION" ;
+.
+<https://www.geolexica.org/api/rdf#ReviewDecisionNotes>
+  rdf:type owl:Class ;
+  rdfs:label "Review Decision Notes" ;
+  rdfs:subClassOf schema:Intangible ;
+  skos:inScheme <https://www.geolexica.org/api/rdf#GeolexicaConceptScheme> ;
+  skos:prefLabel "REVIEW DECISION NOTES" ;
+.
+<https://www.geolexica.org/api/rdf#ReviewIndicator>
+  rdf:type owl:Class ;
+  rdfs:label "Review Indicator" ;
+  rdfs:subClassOf schema:Intangible ;
+  skos:inScheme <https://www.geolexica.org/api/rdf#GeolexicaConceptScheme> ;
+  skos:prefLabel "REVIEW INDICATOR" ;
+.
+<https://www.geolexica.org/api/rdf#ReviewType>
+  rdf:type owl:Class ;
+  rdfs:label "Review Type" ;
+  rdfs:subClassOf schema:Intangible ;
+  skos:inScheme <https://www.geolexica.org/api/rdf#GeolexicaConceptScheme> ;
+  skos:prefLabel "REVIEW TYPE" ;
+.
+<https://www.geolexica.org/api/rdf#Review_Decision_Note>
+  rdf:type <https://www.geolexica.org/api/rdf#ReviewDecisionNotes> ;
+  rdfs:label "Review Decision Note 1" ;
+  skos:prefLabel "REVIEW DECISION NOTE 1" ;
+  <https://www.geolexica.org/api/rdf#review_decision_notes> "review decision note text"@en ;
+.
+<https://www.geolexica.org/api/rdf#SimilarityAuthoritative>
+  rdf:type owl:Class ;
+  rdfs:label "Similarity to Authoritative Source" ;
+  rdfs:subClassOf schema:Intangible ;
+  skos:inScheme <https://www.geolexica.org/api/rdf#GeolexicaConceptScheme> ;
+  skos:prefLabel "SIMILARITY TO AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#SimilarityLineage>
+  rdf:type owl:Class ;
+  rdfs:label "Similarity to Lineage Source" ;
+  rdfs:subClassOf schema:Intangible ;
+  skos:inScheme <https://www.geolexica.org/api/rdf#GeolexicaConceptScheme> ;
+  skos:prefLabel "SIMILARITY TO LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#Status>
+  rdf:type owl:Class ;
+  rdfs:label "Status" ;
+  rdfs:subClassOf schema:Intangible ;
+  skos:inScheme <https://www.geolexica.org/api/rdf#GeolexicaConceptScheme> ;
+  skos:prefLabel "STATUS" ;
+.
+<https://www.geolexica.org/api/rdf#Superceded>
+  rdf:type <https://www.geolexica.org/api/rdf#EntryStatus> ;
+  rdfs:label "Superceded" ;
+  skos:prefLabel "superceded" ;
+.
+<https://www.geolexica.org/api/rdf#Term>
+  rdf:type owl:Class ;
+  rdfs:label "Concept Term" ;
+  rdfs:subClassOf schema:Intangible ;
+  skos:prefLabel "CONCEPT TERM" ;
+.
+<https://www.geolexica.org/api/rdf#TermAbbreviation>
+  rdf:type owl:Class ;
+  rdfs:label "Term Synonym" ;
+  rdfs:subClassOf schema:Intangible ;
+  skos:inScheme <https://www.geolexica.org/api/rdf#GeolexicaConceptScheme> ;
+  skos:prefLabel "TERM SYNONYM" ;
+.
+<https://www.geolexica.org/api/rdf#TermClassification>
+  rdf:type owl:Class ;
+  rdfs:label "Term classification" ;
+  rdfs:subClassOf schema:Intangible ;
+  skos:inScheme <https://www.geolexica.org/api/rdf#GeolexicaConceptScheme> ;
+  skos:prefLabel "TERM CLASSIFICATION" ;
+.
+<https://www.geolexica.org/api/rdf#TermSynonym>
+  rdf:type owl:Class ;
+  rdfs:label "Term Synonym" ;
+  rdfs:subClassOf schema:Intangible ;
+  skos:inScheme <https://www.geolexica.org/api/rdf#GeolexicaConceptScheme> ;
+  skos:prefLabel "TERM SYNONYM" ;
+.
+<https://www.geolexica.org/api/rdf#Valid>
+  rdf:type <https://www.geolexica.org/api/rdf#EntryStatus> ;
+  rdfs:label "Valid" ;
+  skos:prefLabel "valid" ;
+.
+<https://www.geolexica.org/api/rdf#accepted>
+  rdf:type <https://www.geolexica.org/api/rdf#ReviewDecision> ;
+  rdfs:label "Accepted" ;
+  skos:prefLabel "ACCEPTED" ;
+.
+<https://www.geolexica.org/api/rdf#admitted>
+  rdf:type <https://www.geolexica.org/api/rdf#TermClassification> ;
+  rdfs:label "Admitted" ;
+  skos:prefLabel "admitted" ;
+.
+<https://www.geolexica.org/api/rdf#ara_authoritative_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Authoritative Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#ara_authority_clause>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "clause" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "CLAUSE" ;
+.
+<https://www.geolexica.org/api/rdf#ara_authority_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "link" ;
+  rdfs:range xsd:anyURI ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#ara_classification>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "classification" ;
+  skos:prefLabel "CLASSIFICATION" ;
+.
+<https://www.geolexica.org/api/rdf#ara_country_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Country Code" ;
+  skos:prefLabel "COUNTRY CODE" ;
+.
+<https://www.geolexica.org/api/rdf#ara_date_accepted>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Accepted" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE ACCEPTED" ;
+.
+<https://www.geolexica.org/api/rdf#ara_date_amended>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Amended" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE AMENDED" ;
+.
+<https://www.geolexica.org/api/rdf#ara_definition>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "definition" ;
+  rdfs:range xsd:string ;
+  owl:sameAs skos:definition ;
+  skos:prefLabel "Definition" ;
+.
+<https://www.geolexica.org/api/rdf#ara_entry_status>
+  rdf:type owl:DatatypeProperty ;
+  skos:prefLabel "Entry Status" ;
+.
+<https://www.geolexica.org/api/rdf#ara_example_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#ara_example_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#ara_example_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#ara_example_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#ara_example_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#ara_example_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#ara_example_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#ara_example_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#ara_language_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "3 Letter Language Code" ;
+  skos:prefLabel "3 LETTER LANGUAGE CODE" ;
+.
+<https://www.geolexica.org/api/rdf#ara_lineage_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Lineage Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#ara_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Link" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#ara_note_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#ara_note_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#ara_note_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#ara_note_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#ara_note_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#ara_note_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#ara_note_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#ara_note_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#ara_ref>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Reference" ;
+  skos:prefLabel "REFERENCE" ;
+.
+<https://www.geolexica.org/api/rdf#ara_release>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Release" ;
+  skos:altLabel "RELEASE" ;
+  skos:prefLabel "RELEASE" ;
+.
+<https://www.geolexica.org/api/rdf#ara_review_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DATE" ;
+.
+<https://www.geolexica.org/api/rdf#ara_review_decision>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision" ;
+  skos:prefLabel "REVIEW DECISION" ;
+.
+<https://www.geolexica.org/api/rdf#ara_review_decision_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DECISION DATE" ;
+.
+<https://www.geolexica.org/api/rdf#ara_review_decision_event>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Event" ;
+  skos:prefLabel "REVIEW DECISION EVENT" ;
+.
+<https://www.geolexica.org/api/rdf#ara_review_decision_notes>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Notes" ;
+  skos:prefLabel "REVIEW DECISION NOTES" ;
+.
+<https://www.geolexica.org/api/rdf#ara_review_indicator>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Indicator" ;
+  skos:prefLabel "REVIEW INDICATOR" ;
+.
+<https://www.geolexica.org/api/rdf#ara_review_status>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Status" ;
+  skos:prefLabel "REVIEW STATUS" ;
+.
+<https://www.geolexica.org/api/rdf#ara_review_type>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Type" ;
+  skos:prefLabel "REVIEW TYPE" ;
+.
+<https://www.geolexica.org/api/rdf#ara_similarity_authoritative>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Authoritative Source" ;
+  skos:prefLabel "SIMILARITY TO AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#ara_similarity_lineage>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Lineage Source" ;
+  skos:prefLabel "SIMILARITY TO LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#ara_term>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "term" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM" ;
+.
+<https://www.geolexica.org/api/rdf#ara_termID>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "id" ;
+.
+<https://www.geolexica.org/api/rdf#ara_term_abbreviation>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Abbrevation" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM ABBREVIATION" ;
+.
+<https://www.geolexica.org/api/rdf#ara_term_synonym>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Synonyms" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM SYNONYMS" ;
+.
+<https://www.geolexica.org/api/rdf#authoritative_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Authoritative Source" ;
+  rdfs:range xsd:string ;
+  owl:sameAs dcterms:source ;
+  skos:prefLabel "AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#authority_clause>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "clause" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "CLAUSE" ;
+.
+<https://www.geolexica.org/api/rdf#authority_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "link" ;
+  rdfs:range xsd:anyURI ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#chn_authoritative_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Authoritative Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#chn_authority_clause>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "clause" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "CLAUSE" ;
+.
+<https://www.geolexica.org/api/rdf#chn_authority_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "link" ;
+  rdfs:range xsd:anyURI ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#chn_classification>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "classification" ;
+  skos:prefLabel "CLASSIFICATION" ;
+.
+<https://www.geolexica.org/api/rdf#chn_country_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Country Code" ;
+  skos:prefLabel "COUNTRY CODE" ;
+.
+<https://www.geolexica.org/api/rdf#chn_date_accepted>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Accepted" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE ACCEPTED" ;
+.
+<https://www.geolexica.org/api/rdf#chn_date_amended>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Amended" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE AMENDED" ;
+.
+<https://www.geolexica.org/api/rdf#chn_definition>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "definition" ;
+  rdfs:range xsd:string ;
+  owl:sameAs skos:definition ;
+  skos:prefLabel "Definition" ;
+.
+<https://www.geolexica.org/api/rdf#chn_entry_status>
+  rdf:type owl:DatatypeProperty ;
+  skos:prefLabel "Entry Status" ;
+.
+<https://www.geolexica.org/api/rdf#chn_example_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#chn_example_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#chn_example_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#chn_example_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#chn_example_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#chn_example_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#chn_example_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#chn_example_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#chn_language_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "3 Letter Language Code" ;
+  skos:prefLabel "3 LETTER LANGUAGE CODE" ;
+.
+<https://www.geolexica.org/api/rdf#chn_lineage_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Lineage Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#chn_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Link" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#chn_note_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#chn_note_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#chn_note_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#chn_note_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#chn_note_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#chn_note_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#chn_note_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#chn_note_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#chn_ref>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Reference" ;
+  skos:prefLabel "REFERENCE" ;
+.
+<https://www.geolexica.org/api/rdf#chn_release>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Release" ;
+  skos:altLabel "RELEASE" ;
+  skos:prefLabel "RELEASE" ;
+.
+<https://www.geolexica.org/api/rdf#chn_review_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DATE" ;
+.
+<https://www.geolexica.org/api/rdf#chn_review_decision>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision" ;
+  skos:prefLabel "REVIEW DECISION" ;
+.
+<https://www.geolexica.org/api/rdf#chn_review_decision_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DECISION DATE" ;
+.
+<https://www.geolexica.org/api/rdf#chn_review_decision_event>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Event" ;
+  skos:prefLabel "REVIEW DECISION EVENT" ;
+.
+<https://www.geolexica.org/api/rdf#chn_review_decision_notes>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Notes" ;
+  skos:prefLabel "REVIEW DECISION NOTES" ;
+.
+<https://www.geolexica.org/api/rdf#chn_review_indicator>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Indicator" ;
+  skos:prefLabel "REVIEW INDICATOR" ;
+.
+<https://www.geolexica.org/api/rdf#chn_review_status>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Status" ;
+  skos:prefLabel "REVIEW STATUS" ;
+.
+<https://www.geolexica.org/api/rdf#chn_review_type>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Type" ;
+  skos:prefLabel "REVIEW TYPE" ;
+.
+<https://www.geolexica.org/api/rdf#chn_similarity_authoritative>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Authoritative Source" ;
+  skos:prefLabel "SIMILARITY TO AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#chn_similarity_lineage>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Lineage Source" ;
+  skos:prefLabel "SIMILARITY TO LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#chn_term>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "term" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM" ;
+.
+<https://www.geolexica.org/api/rdf#chn_termID>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "id" ;
+.
+<https://www.geolexica.org/api/rdf#chn_term_abbreviation>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Abbrevation" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM ABBREVIATION" ;
+.
+<https://www.geolexica.org/api/rdf#chn_term_synonym>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Synonyms" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM SYNONYMS" ;
+.
+<https://www.geolexica.org/api/rdf#classification>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "classification" ;
+  skos:prefLabel "CLASSIFICATION" ;
+.
+<https://www.geolexica.org/api/rdf#context_added>
+  rdf:type <https://www.geolexica.org/api/rdf#SimilarityAuthoritative> ;
+  rdf:type <https://www.geolexica.org/api/rdf#SimilarityLineage> ;
+  rdfs:label "Context added" ;
+  skos:hiddenLabel "3" ;
+  skos:prefLabel "context added" ;
+.
+<https://www.geolexica.org/api/rdf#country_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Country Code" ;
+  skos:prefLabel "COUNTRY CODE" ;
+.
+<https://www.geolexica.org/api/rdf#dan_authoritative_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Authoritative Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#dan_authority_clause>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "clause" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "CLAUSE" ;
+.
+<https://www.geolexica.org/api/rdf#dan_authority_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "link" ;
+  rdfs:range xsd:anyURI ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#dan_classification>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "classification" ;
+  skos:prefLabel "CLASSIFICATION" ;
+.
+<https://www.geolexica.org/api/rdf#dan_country_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Country Code" ;
+  skos:prefLabel "COUNTRY CODE" ;
+.
+<https://www.geolexica.org/api/rdf#dan_date_accepted>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Accepted" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE ACCEPTED" ;
+.
+<https://www.geolexica.org/api/rdf#dan_date_amended>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Amended" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE AMENDED" ;
+.
+<https://www.geolexica.org/api/rdf#dan_definition>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "definition" ;
+  rdfs:range xsd:string ;
+  owl:sameAs skos:definition ;
+  skos:prefLabel "Definition" ;
+.
+<https://www.geolexica.org/api/rdf#dan_entry_status>
+  rdf:type owl:DatatypeProperty ;
+  skos:prefLabel "Entry Status" ;
+.
+<https://www.geolexica.org/api/rdf#dan_example_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#dan_example_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#dan_example_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#dan_example_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#dan_example_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#dan_example_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#dan_example_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#dan_example_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#dan_language_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "3 Letter Language Code" ;
+  skos:prefLabel "3 LETTER LANGUAGE CODE" ;
+.
+<https://www.geolexica.org/api/rdf#dan_lineage_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Lineage Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#dan_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Link" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#dan_note_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#dan_note_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#dan_note_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#dan_note_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#dan_note_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#dan_note_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#dan_note_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#dan_note_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#dan_ref>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Reference" ;
+  skos:prefLabel "REFERENCE" ;
+.
+<https://www.geolexica.org/api/rdf#dan_release>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Release" ;
+  skos:altLabel "RELEASE" ;
+  skos:prefLabel "RELEASE" ;
+.
+<https://www.geolexica.org/api/rdf#dan_review_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DATE" ;
+.
+<https://www.geolexica.org/api/rdf#dan_review_decision>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision" ;
+  skos:prefLabel "REVIEW DECISION" ;
+.
+<https://www.geolexica.org/api/rdf#dan_review_decision_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DECISION DATE" ;
+.
+<https://www.geolexica.org/api/rdf#dan_review_decision_event>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Event" ;
+  skos:prefLabel "REVIEW DECISION EVENT" ;
+.
+<https://www.geolexica.org/api/rdf#dan_review_decision_notes>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Notes" ;
+  skos:prefLabel "REVIEW DECISION NOTES" ;
+.
+<https://www.geolexica.org/api/rdf#dan_review_indicator>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Indicator" ;
+  skos:prefLabel "REVIEW INDICATOR" ;
+.
+<https://www.geolexica.org/api/rdf#dan_review_status>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Status" ;
+  skos:prefLabel "REVIEW STATUS" ;
+.
+<https://www.geolexica.org/api/rdf#dan_review_type>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Type" ;
+  skos:prefLabel "REVIEW TYPE" ;
+.
+<https://www.geolexica.org/api/rdf#dan_similarity_authoritative>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Authoritative Source" ;
+  skos:prefLabel "SIMILARITY TO AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#dan_similarity_lineage>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Lineage Source" ;
+  skos:prefLabel "SIMILARITY TO LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#dan_term>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "term" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM" ;
+.
+<https://www.geolexica.org/api/rdf#dan_termID>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "id" ;
+.
+<https://www.geolexica.org/api/rdf#dan_term_abbreviation>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Abbrevation" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM ABBREVIATION" ;
+.
+<https://www.geolexica.org/api/rdf#dan_term_synonym>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Synonyms" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM SYNONYMS" ;
+.
+<https://www.geolexica.org/api/rdf#date_accepted>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Accepted" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE ACCEPTED" ;
+.
+<https://www.geolexica.org/api/rdf#date_amended>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Amended" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE AMENDED" ;
+.
+<https://www.geolexica.org/api/rdf#definition>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "definition" ;
+  rdfs:range xsd:string ;
+  owl:sameAs skos:definition ;
+  skos:prefLabel "Definition" ;
+.
+<https://www.geolexica.org/api/rdf#deprecated>
+  rdf:type <https://www.geolexica.org/api/rdf#TermClassification> ;
+  rdfs:label "Deprecated" ;
+  skos:prefLabel "deprecated" ;
+.
+<https://www.geolexica.org/api/rdf#dut_authoritative_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Authoritative Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#dut_authority_clause>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "clause" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "CLAUSE" ;
+.
+<https://www.geolexica.org/api/rdf#dut_authority_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "link" ;
+  rdfs:range xsd:anyURI ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#dut_classification>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "classification" ;
+  skos:prefLabel "CLASSIFICATION" ;
+.
+<https://www.geolexica.org/api/rdf#dut_country_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Country Code" ;
+  skos:prefLabel "COUNTRY CODE" ;
+.
+<https://www.geolexica.org/api/rdf#dut_date_accepted>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Accepted" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE ACCEPTED" ;
+.
+<https://www.geolexica.org/api/rdf#dut_date_amended>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Amended" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE AMENDED" ;
+.
+<https://www.geolexica.org/api/rdf#dut_definition>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "definition" ;
+  rdfs:range xsd:string ;
+  owl:sameAs skos:definition ;
+  skos:prefLabel "Definition" ;
+.
+<https://www.geolexica.org/api/rdf#dut_entry_status>
+  rdf:type owl:DatatypeProperty ;
+  skos:prefLabel "Entry Status" ;
+.
+<https://www.geolexica.org/api/rdf#dut_example_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#dut_example_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#dut_example_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#dut_example_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#dut_example_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#dut_example_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#dut_example_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#dut_example_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#dut_language_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "3 Letter Language Code" ;
+  skos:prefLabel "3 LETTER LANGUAGE CODE" ;
+.
+<https://www.geolexica.org/api/rdf#dut_lineage_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Lineage Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#dut_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Link" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#dut_note_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#dut_note_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#dut_note_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#dut_note_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#dut_note_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#dut_note_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#dut_note_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#dut_note_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#dut_ref>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Reference" ;
+  skos:prefLabel "REFERENCE" ;
+.
+<https://www.geolexica.org/api/rdf#dut_release>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Release" ;
+  skos:altLabel "RELEASE" ;
+  skos:prefLabel "RELEASE" ;
+.
+<https://www.geolexica.org/api/rdf#dut_review_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DATE" ;
+.
+<https://www.geolexica.org/api/rdf#dut_review_decision>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision" ;
+  skos:prefLabel "REVIEW DECISION" ;
+.
+<https://www.geolexica.org/api/rdf#dut_review_decision_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DECISION DATE" ;
+.
+<https://www.geolexica.org/api/rdf#dut_review_decision_event>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Event" ;
+  skos:prefLabel "REVIEW DECISION EVENT" ;
+.
+<https://www.geolexica.org/api/rdf#dut_review_decision_notes>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Notes" ;
+  skos:prefLabel "REVIEW DECISION NOTES" ;
+.
+<https://www.geolexica.org/api/rdf#dut_review_indicator>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Indicator" ;
+  skos:prefLabel "REVIEW INDICATOR" ;
+.
+<https://www.geolexica.org/api/rdf#dut_review_status>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Status" ;
+  skos:prefLabel "REVIEW STATUS" ;
+.
+<https://www.geolexica.org/api/rdf#dut_review_type>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Type" ;
+  skos:prefLabel "REVIEW TYPE" ;
+.
+<https://www.geolexica.org/api/rdf#dut_similarity_authoritative>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Authoritative Source" ;
+  skos:prefLabel "SIMILARITY TO AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#dut_similarity_lineage>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Lineage Source" ;
+  skos:prefLabel "SIMILARITY TO LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#dut_term>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "term" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM" ;
+.
+<https://www.geolexica.org/api/rdf#dut_termID>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "id" ;
+.
+<https://www.geolexica.org/api/rdf#dut_term_abbreviation>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Abbrevation" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM ABBREVIATION" ;
+.
+<https://www.geolexica.org/api/rdf#dut_term_synonym>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Synonyms" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM SYNONYMS" ;
+.
+<https://www.geolexica.org/api/rdf#empty_field>
+  rdf:type <https://www.geolexica.org/api/skos-rdf#ReviewIndicator> ;
+  rdfs:comment "Empty text field (placeholder)." ;
+  rdfs:label "<empty field>" ;
+  skos:prefLabel " " ;
+.
+<https://www.geolexica.org/api/rdf#eng_authoritative_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Authoritative Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#eng_authority_clause>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "clause" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "CLAUSE" ;
+.
+<https://www.geolexica.org/api/rdf#eng_authority_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "link" ;
+  rdfs:range xsd:anyURI ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#eng_classification>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "classification" ;
+  skos:prefLabel "CLASSIFICATION" ;
+.
+<https://www.geolexica.org/api/rdf#eng_country_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Country Code" ;
+  skos:prefLabel "COUNTRY CODE" ;
+.
+<https://www.geolexica.org/api/rdf#eng_date_accepted>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Accepted" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE ACCEPTED" ;
+.
+<https://www.geolexica.org/api/rdf#eng_date_amended>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Amended" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE AMENDED" ;
+.
+<https://www.geolexica.org/api/rdf#eng_definition>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "definition" ;
+  rdfs:range xsd:string ;
+  owl:sameAs skos:definition ;
+  skos:prefLabel "Definition" ;
+.
+<https://www.geolexica.org/api/rdf#eng_entry_status>
+  rdf:type owl:DatatypeProperty ;
+  skos:prefLabel "Entry Status" ;
+.
+<https://www.geolexica.org/api/rdf#eng_example_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#eng_example_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#eng_example_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#eng_example_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#eng_example_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#eng_example_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#eng_example_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#eng_example_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#eng_language_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "3 Letter Language Code" ;
+  skos:prefLabel "3 LETTER LANGUAGE CODE" ;
+.
+<https://www.geolexica.org/api/rdf#eng_lineage_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Lineage Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#eng_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Link" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#eng_note_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#eng_note_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#eng_note_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#eng_note_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#eng_note_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#eng_note_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#eng_note_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#eng_note_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#eng_ref>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Reference" ;
+  skos:prefLabel "REFERENCE" ;
+.
+<https://www.geolexica.org/api/rdf#eng_release>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Release" ;
+  skos:altLabel "RELEASE" ;
+  skos:prefLabel "RELEASE" ;
+.
+<https://www.geolexica.org/api/rdf#eng_review_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DATE" ;
+.
+<https://www.geolexica.org/api/rdf#eng_review_decision>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision" ;
+  skos:prefLabel "REVIEW DECISION" ;
+.
+<https://www.geolexica.org/api/rdf#eng_review_decision_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DECISION DATE" ;
+.
+<https://www.geolexica.org/api/rdf#eng_review_decision_event>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Event" ;
+  skos:prefLabel "REVIEW DECISION EVENT" ;
+.
+<https://www.geolexica.org/api/rdf#eng_review_decision_notes>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Notes" ;
+  skos:prefLabel "REVIEW DECISION NOTES" ;
+.
+<https://www.geolexica.org/api/rdf#eng_review_indicator>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Indicator" ;
+  skos:prefLabel "REVIEW INDICATOR" ;
+.
+<https://www.geolexica.org/api/rdf#eng_review_status>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Status" ;
+  skos:prefLabel "REVIEW STATUS" ;
+.
+<https://www.geolexica.org/api/rdf#eng_review_type>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Type" ;
+  skos:prefLabel "REVIEW TYPE" ;
+.
+<https://www.geolexica.org/api/rdf#eng_similarity_authoritative>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Authoritative Source" ;
+  skos:prefLabel "SIMILARITY TO AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#eng_similarity_lineage>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Lineage Source" ;
+  skos:prefLabel "SIMILARITY TO LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#eng_term>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term in English" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM IN ENGLISH" ;
+.
+<https://www.geolexica.org/api/rdf#eng_termID>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "id" ;
+.
+<https://www.geolexica.org/api/rdf#eng_term_abbreviation>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Abbrevation" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM ABBREVIATION" ;
+.
+<https://www.geolexica.org/api/rdf#eng_term_synonym>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Synonyms" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM SYNONYMS" ;
+.
+<https://www.geolexica.org/api/rdf#entry_status>
+  rdf:type owl:DatatypeProperty ;
+  skos:prefLabel "Entry Status" ;
+.
+<https://www.geolexica.org/api/rdf#example>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#example_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#example_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#example_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#example_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#example_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#example_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#example_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#example_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#fin_authoritative_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Authoritative Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#fin_authority_clause>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "clause" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "CLAUSE" ;
+.
+<https://www.geolexica.org/api/rdf#fin_authority_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "link" ;
+  rdfs:range xsd:anyURI ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#fin_classification>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "classification" ;
+  skos:prefLabel "CLASSIFICATION" ;
+.
+<https://www.geolexica.org/api/rdf#fin_country_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Country Code" ;
+  skos:prefLabel "COUNTRY CODE" ;
+.
+<https://www.geolexica.org/api/rdf#fin_date_accepted>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Accepted" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE ACCEPTED" ;
+.
+<https://www.geolexica.org/api/rdf#fin_date_amended>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Amended" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE AMENDED" ;
+.
+<https://www.geolexica.org/api/rdf#fin_definition>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "definition" ;
+  rdfs:range xsd:string ;
+  owl:sameAs skos:definition ;
+  skos:prefLabel "Definition" ;
+.
+<https://www.geolexica.org/api/rdf#fin_entry_status>
+  rdf:type owl:DatatypeProperty ;
+  skos:prefLabel "Entry Status" ;
+.
+<https://www.geolexica.org/api/rdf#fin_example_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#fin_example_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#fin_example_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#fin_example_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#fin_example_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#fin_example_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#fin_example_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#fin_example_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#fin_language_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "3 Letter Language Code" ;
+  skos:prefLabel "3 LETTER LANGUAGE CODE" ;
+.
+<https://www.geolexica.org/api/rdf#fin_lineage_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Lineage Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#fin_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Link" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#fin_note_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#fin_note_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#fin_note_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#fin_note_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#fin_note_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#fin_note_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#fin_note_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#fin_note_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#fin_ref>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Reference" ;
+  skos:prefLabel "REFERENCE" ;
+.
+<https://www.geolexica.org/api/rdf#fin_release>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Release" ;
+  skos:altLabel "RELEASE" ;
+  skos:prefLabel "RELEASE" ;
+.
+<https://www.geolexica.org/api/rdf#fin_review_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DATE" ;
+.
+<https://www.geolexica.org/api/rdf#fin_review_decision>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision" ;
+  skos:prefLabel "REVIEW DECISION" ;
+.
+<https://www.geolexica.org/api/rdf#fin_review_decision_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DECISION DATE" ;
+.
+<https://www.geolexica.org/api/rdf#fin_review_decision_event>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Event" ;
+  skos:prefLabel "REVIEW DECISION EVENT" ;
+.
+<https://www.geolexica.org/api/rdf#fin_review_decision_notes>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Notes" ;
+  skos:prefLabel "REVIEW DECISION NOTES" ;
+.
+<https://www.geolexica.org/api/rdf#fin_review_indicator>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Indicator" ;
+  skos:prefLabel "REVIEW INDICATOR" ;
+.
+<https://www.geolexica.org/api/rdf#fin_review_status>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Status" ;
+  skos:prefLabel "REVIEW STATUS" ;
+.
+<https://www.geolexica.org/api/rdf#fin_review_type>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Type" ;
+  skos:prefLabel "REVIEW TYPE" ;
+.
+<https://www.geolexica.org/api/rdf#fin_similarity_authoritative>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Authoritative Source" ;
+  skos:prefLabel "SIMILARITY TO AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#fin_similarity_lineage>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Lineage Source" ;
+  skos:prefLabel "SIMILARITY TO LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#fin_term>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "term" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM" ;
+.
+<https://www.geolexica.org/api/rdf#fin_termID>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "id" ;
+.
+<https://www.geolexica.org/api/rdf#fin_term_abbreviation>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Abbrevation" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM ABBREVIATION" ;
+.
+<https://www.geolexica.org/api/rdf#fin_term_synonym>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Synonyms" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM SYNONYMS" ;
+.
+<https://www.geolexica.org/api/rdf#final>
+  rdf:type <https://www.geolexica.org/api/rdf#Status> ;
+  rdfs:label "Final" ;
+  skos:prefLabel "final" ;
+.
+<https://www.geolexica.org/api/rdf#fra_authoritative_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Authoritative Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#fra_authority_clause>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "clause" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "CLAUSE" ;
+.
+<https://www.geolexica.org/api/rdf#fra_authority_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "link" ;
+  rdfs:range xsd:anyURI ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#fra_classification>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "classification" ;
+  skos:prefLabel "CLASSIFICATION" ;
+.
+<https://www.geolexica.org/api/rdf#fra_country_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Country Code" ;
+  skos:prefLabel "COUNTRY CODE" ;
+.
+<https://www.geolexica.org/api/rdf#fra_date_accepted>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Accepted" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE ACCEPTED" ;
+.
+<https://www.geolexica.org/api/rdf#fra_date_amended>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Amended" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE AMENDED" ;
+.
+<https://www.geolexica.org/api/rdf#fra_definition>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "definition" ;
+  rdfs:range xsd:string ;
+  owl:sameAs skos:definition ;
+  skos:prefLabel "Definition" ;
+.
+<https://www.geolexica.org/api/rdf#fra_entry_status>
+  rdf:type owl:DatatypeProperty ;
+  skos:prefLabel "Entry Status" ;
+.
+<https://www.geolexica.org/api/rdf#fra_example_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#fra_example_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#fra_example_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#fra_example_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#fra_example_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#fra_example_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#fra_example_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#fra_example_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#fra_language_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "3 Letter Language Code" ;
+  skos:prefLabel "3 LETTER LANGUAGE CODE" ;
+.
+<https://www.geolexica.org/api/rdf#fra_lineage_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Lineage Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#fra_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Link" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#fra_note_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#fra_note_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#fra_note_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#fra_note_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#fra_note_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#fra_note_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#fra_note_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#fra_note_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#fra_ref>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Reference" ;
+  skos:prefLabel "REFERENCE" ;
+.
+<https://www.geolexica.org/api/rdf#fra_release>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Release" ;
+  skos:altLabel "RELEASE" ;
+  skos:prefLabel "RELEASE" ;
+.
+<https://www.geolexica.org/api/rdf#fra_review_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DATE" ;
+.
+<https://www.geolexica.org/api/rdf#fra_review_decision>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision" ;
+  skos:prefLabel "REVIEW DECISION" ;
+.
+<https://www.geolexica.org/api/rdf#fra_review_decision_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DECISION DATE" ;
+.
+<https://www.geolexica.org/api/rdf#fra_review_decision_event>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Event" ;
+  skos:prefLabel "REVIEW DECISION EVENT" ;
+.
+<https://www.geolexica.org/api/rdf#fra_review_decision_notes>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Notes" ;
+  skos:prefLabel "REVIEW DECISION NOTES" ;
+.
+<https://www.geolexica.org/api/rdf#fra_review_indicator>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Indicator" ;
+  skos:prefLabel "REVIEW INDICATOR" ;
+.
+<https://www.geolexica.org/api/rdf#fra_review_status>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Status" ;
+  skos:prefLabel "REVIEW STATUS" ;
+.
+<https://www.geolexica.org/api/rdf#fra_review_type>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Type" ;
+  skos:prefLabel "REVIEW TYPE" ;
+.
+<https://www.geolexica.org/api/rdf#fra_similarity_authoritative>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Authoritative Source" ;
+  skos:prefLabel "SIMILARITY TO AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#fra_similarity_lineage>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Lineage Source" ;
+  skos:prefLabel "SIMILARITY TO LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#fra_term>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "term" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM" ;
+.
+<https://www.geolexica.org/api/rdf#fra_termID>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "id" ;
+.
+<https://www.geolexica.org/api/rdf#fra_term_abbreviation>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Abbrevation" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM ABBREVIATION" ;
+.
+<https://www.geolexica.org/api/rdf#fra_term_synonym>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Synonyms" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM SYNONYMS" ;
+.
+<https://www.geolexica.org/api/rdf#generalisation>
+  rdf:type <https://www.geolexica.org/api/rdf#SimilarityAuthoritative> ;
+  rdf:type <https://www.geolexica.org/api/rdf#SimilarityLineage> ;
+  rdfs:label "Generalisation" ;
+  skos:hiddenLabel "4" ;
+  skos:prefLabel "generalisation" ;
+.
+<https://www.geolexica.org/api/rdf#ger_authoritative_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Authoritative Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#ger_authority_clause>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "clause" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "CLAUSE" ;
+.
+<https://www.geolexica.org/api/rdf#ger_authority_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "link" ;
+  rdfs:range xsd:anyURI ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#ger_classification>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "classification" ;
+  skos:prefLabel "CLASSIFICATION" ;
+.
+<https://www.geolexica.org/api/rdf#ger_country_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Country Code" ;
+  skos:prefLabel "COUNTRY CODE" ;
+.
+<https://www.geolexica.org/api/rdf#ger_date_accepted>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Accepted" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE ACCEPTED" ;
+.
+<https://www.geolexica.org/api/rdf#ger_date_amended>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Amended" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE AMENDED" ;
+.
+<https://www.geolexica.org/api/rdf#ger_definition>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "definition" ;
+  rdfs:range xsd:string ;
+  owl:sameAs skos:definition ;
+  skos:prefLabel "Definition" ;
+.
+<https://www.geolexica.org/api/rdf#ger_entry_status>
+  rdf:type owl:DatatypeProperty ;
+  skos:prefLabel "Entry Status" ;
+.
+<https://www.geolexica.org/api/rdf#ger_example_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#ger_example_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#ger_example_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#ger_example_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#ger_example_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#ger_example_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#ger_example_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#ger_example_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#ger_language_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "3 Letter Language Code" ;
+  skos:prefLabel "3 LETTER LANGUAGE CODE" ;
+.
+<https://www.geolexica.org/api/rdf#ger_lineage_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Lineage Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#ger_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Link" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#ger_note_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#ger_note_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#ger_note_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#ger_note_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#ger_note_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#ger_note_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#ger_note_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#ger_note_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#ger_ref>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Reference" ;
+  skos:prefLabel "REFERENCE" ;
+.
+<https://www.geolexica.org/api/rdf#ger_release>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Release" ;
+  skos:altLabel "RELEASE" ;
+  skos:prefLabel "RELEASE" ;
+.
+<https://www.geolexica.org/api/rdf#ger_review_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DATE" ;
+.
+<https://www.geolexica.org/api/rdf#ger_review_decision>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision" ;
+  skos:prefLabel "REVIEW DECISION" ;
+.
+<https://www.geolexica.org/api/rdf#ger_review_decision_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DECISION DATE" ;
+.
+<https://www.geolexica.org/api/rdf#ger_review_decision_event>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Event" ;
+  skos:prefLabel "REVIEW DECISION EVENT" ;
+.
+<https://www.geolexica.org/api/rdf#ger_review_decision_notes>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Notes" ;
+  skos:prefLabel "REVIEW DECISION NOTES" ;
+.
+<https://www.geolexica.org/api/rdf#ger_review_indicator>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Indicator" ;
+  skos:prefLabel "REVIEW INDICATOR" ;
+.
+<https://www.geolexica.org/api/rdf#ger_review_status>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Status" ;
+  skos:prefLabel "REVIEW STATUS" ;
+.
+<https://www.geolexica.org/api/rdf#ger_review_type>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Type" ;
+  skos:prefLabel "REVIEW TYPE" ;
+.
+<https://www.geolexica.org/api/rdf#ger_similarity_authoritative>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Authoritative Source" ;
+  skos:prefLabel "SIMILARITY TO AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#ger_similarity_lineage>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Lineage Source" ;
+  skos:prefLabel "SIMILARITY TO LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#ger_term>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "term" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM" ;
+.
+<https://www.geolexica.org/api/rdf#ger_termID>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "id" ;
+.
+<https://www.geolexica.org/api/rdf#ger_term_abbreviation>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Abbrevation" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM ABBREVIATION" ;
+.
+<https://www.geolexica.org/api/rdf#ger_term_synonym>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Synonyms" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM SYNONYMS" ;
+.
+<https://www.geolexica.org/api/rdf#identical>
+  rdf:type <https://www.geolexica.org/api/rdf#SimilarityAuthoritative> ;
+  rdf:type <https://www.geolexica.org/api/rdf#SimilarityLineage> ;
+  rdfs:label "Identical" ;
+  skos:hiddenLabel "1" ;
+  skos:prefLabel "identical" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_authoritative_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Authoritative Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_authority_clause>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "clause" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "CLAUSE" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_authority_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "link" ;
+  rdfs:range xsd:anyURI ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_classification>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "classification" ;
+  skos:prefLabel "CLASSIFICATION" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_country_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Country Code" ;
+  skos:prefLabel "COUNTRY CODE" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_date_accepted>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Accepted" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE ACCEPTED" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_date_amended>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Amended" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE AMENDED" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_definition>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "definition" ;
+  rdfs:range xsd:string ;
+  owl:sameAs skos:definition ;
+  skos:prefLabel "Definition" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_entry_status>
+  rdf:type owl:DatatypeProperty ;
+  skos:prefLabel "Entry Status" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_example_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_example_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_example_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_example_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_example_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_example_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_example_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_example_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_language_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "3 Letter Language Code" ;
+  skos:prefLabel "3 LETTER LANGUAGE CODE" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_lineage_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Lineage Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Link" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_note_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_note_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_note_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_note_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_note_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_note_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_note_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_note_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_ref>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Reference" ;
+  skos:prefLabel "REFERENCE" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_release>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Release" ;
+  skos:altLabel "RELEASE" ;
+  skos:prefLabel "RELEASE" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_review_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DATE" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_review_decision>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision" ;
+  skos:prefLabel "REVIEW DECISION" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_review_decision_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DECISION DATE" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_review_decision_event>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Event" ;
+  skos:prefLabel "REVIEW DECISION EVENT" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_review_decision_notes>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Notes" ;
+  skos:prefLabel "REVIEW DECISION NOTES" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_review_indicator>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Indicator" ;
+  skos:prefLabel "REVIEW INDICATOR" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_review_status>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Status" ;
+  skos:prefLabel "REVIEW STATUS" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_review_type>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Type" ;
+  skos:prefLabel "REVIEW TYPE" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_similarity_authoritative>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Authoritative Source" ;
+  skos:prefLabel "SIMILARITY TO AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_similarity_lineage>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Lineage Source" ;
+  skos:prefLabel "SIMILARITY TO LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_term>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "term" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_termID>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "id" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_term_abbreviation>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Abbrevation" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM ABBREVIATION" ;
+.
+<https://www.geolexica.org/api/rdf#jpn_term_synonym>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Synonyms" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM SYNONYMS" ;
+.
+<https://www.geolexica.org/api/rdf#kor_authoritative_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Authoritative Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#kor_authority_clause>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "clause" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "CLAUSE" ;
+.
+<https://www.geolexica.org/api/rdf#kor_authority_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "link" ;
+  rdfs:range xsd:anyURI ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#kor_classification>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "classification" ;
+  skos:prefLabel "CLASSIFICATION" ;
+.
+<https://www.geolexica.org/api/rdf#kor_country_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Country Code" ;
+  skos:prefLabel "COUNTRY CODE" ;
+.
+<https://www.geolexica.org/api/rdf#kor_date_accepted>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Accepted" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE ACCEPTED" ;
+.
+<https://www.geolexica.org/api/rdf#kor_date_amended>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Amended" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE AMENDED" ;
+.
+<https://www.geolexica.org/api/rdf#kor_definition>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "definition" ;
+  rdfs:range xsd:string ;
+  owl:sameAs skos:definition ;
+  skos:prefLabel "Definition" ;
+.
+<https://www.geolexica.org/api/rdf#kor_entry_status>
+  rdf:type owl:DatatypeProperty ;
+  skos:prefLabel "Entry Status" ;
+.
+<https://www.geolexica.org/api/rdf#kor_example_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#kor_example_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#kor_example_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#kor_example_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#kor_example_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#kor_example_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#kor_example_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#kor_example_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#kor_language_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "3 Letter Language Code" ;
+  skos:prefLabel "3 LETTER LANGUAGE CODE" ;
+.
+<https://www.geolexica.org/api/rdf#kor_lineage_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Lineage Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#kor_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Link" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#kor_note_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#kor_note_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#kor_note_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#kor_note_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#kor_note_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#kor_note_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#kor_note_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#kor_note_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#kor_ref>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Reference" ;
+  skos:prefLabel "REFERENCE" ;
+.
+<https://www.geolexica.org/api/rdf#kor_release>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Release" ;
+  skos:altLabel "RELEASE" ;
+  skos:prefLabel "RELEASE" ;
+.
+<https://www.geolexica.org/api/rdf#kor_review_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DATE" ;
+.
+<https://www.geolexica.org/api/rdf#kor_review_decision>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision" ;
+  skos:prefLabel "REVIEW DECISION" ;
+.
+<https://www.geolexica.org/api/rdf#kor_review_decision_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DECISION DATE" ;
+.
+<https://www.geolexica.org/api/rdf#kor_review_decision_event>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Event" ;
+  skos:prefLabel "REVIEW DECISION EVENT" ;
+.
+<https://www.geolexica.org/api/rdf#kor_review_decision_notes>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Notes" ;
+  skos:prefLabel "REVIEW DECISION NOTES" ;
+.
+<https://www.geolexica.org/api/rdf#kor_review_indicator>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Indicator" ;
+  skos:prefLabel "REVIEW INDICATOR" ;
+.
+<https://www.geolexica.org/api/rdf#kor_review_status>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Status" ;
+  skos:prefLabel "REVIEW STATUS" ;
+.
+<https://www.geolexica.org/api/rdf#kor_review_type>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Type" ;
+  skos:prefLabel "REVIEW TYPE" ;
+.
+<https://www.geolexica.org/api/rdf#kor_similarity_authoritative>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Authoritative Source" ;
+  skos:prefLabel "SIMILARITY TO AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#kor_similarity_lineage>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Lineage Source" ;
+  skos:prefLabel "SIMILARITY TO LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#kor_term>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "term" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM" ;
+.
+<https://www.geolexica.org/api/rdf#kor_termID>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "id" ;
+.
+<https://www.geolexica.org/api/rdf#kor_term_abbreviation>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Abbrevation" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM ABBREVIATION" ;
+.
+<https://www.geolexica.org/api/rdf#kor_term_synonym>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Synonyms" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM SYNONYMS" ;
+.
+<https://www.geolexica.org/api/rdf#language_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "3 Letter Language Code" ;
+  skos:prefLabel "3 LETTER LANGUAGE CODE" ;
+.
+<https://www.geolexica.org/api/rdf#lineage_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Lineage Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Link" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#msa_authoritative_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Authoritative Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#msa_authority_clause>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "clause" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "CLAUSE" ;
+.
+<https://www.geolexica.org/api/rdf#msa_authority_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "link" ;
+  rdfs:range xsd:anyURI ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#msa_classification>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "classification" ;
+  skos:prefLabel "CLASSIFICATION" ;
+.
+<https://www.geolexica.org/api/rdf#msa_country_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Country Code" ;
+  skos:prefLabel "COUNTRY CODE" ;
+.
+<https://www.geolexica.org/api/rdf#msa_date_accepted>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Accepted" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE ACCEPTED" ;
+.
+<https://www.geolexica.org/api/rdf#msa_date_amended>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Amended" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE AMENDED" ;
+.
+<https://www.geolexica.org/api/rdf#msa_definition>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "definition" ;
+  rdfs:range xsd:string ;
+  owl:sameAs skos:definition ;
+  skos:prefLabel "Definition" ;
+.
+<https://www.geolexica.org/api/rdf#msa_entry_status>
+  rdf:type owl:DatatypeProperty ;
+  skos:prefLabel "Entry Status" ;
+.
+<https://www.geolexica.org/api/rdf#msa_example_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#msa_example_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#msa_example_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#msa_example_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#msa_example_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#msa_example_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#msa_example_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#msa_example_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#msa_language_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "3 Letter Language Code" ;
+  skos:prefLabel "3 LETTER LANGUAGE CODE" ;
+.
+<https://www.geolexica.org/api/rdf#msa_lineage_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Lineage Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#msa_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Link" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#msa_note_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#msa_note_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#msa_note_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#msa_note_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#msa_note_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#msa_note_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#msa_note_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#msa_note_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#msa_ref>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Reference" ;
+  skos:prefLabel "REFERENCE" ;
+.
+<https://www.geolexica.org/api/rdf#msa_release>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Release" ;
+  skos:altLabel "RELEASE" ;
+  skos:prefLabel "RELEASE" ;
+.
+<https://www.geolexica.org/api/rdf#msa_review_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DATE" ;
+.
+<https://www.geolexica.org/api/rdf#msa_review_decision>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision" ;
+  skos:prefLabel "REVIEW DECISION" ;
+.
+<https://www.geolexica.org/api/rdf#msa_review_decision_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DECISION DATE" ;
+.
+<https://www.geolexica.org/api/rdf#msa_review_decision_event>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Event" ;
+  skos:prefLabel "REVIEW DECISION EVENT" ;
+.
+<https://www.geolexica.org/api/rdf#msa_review_decision_notes>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Notes" ;
+  skos:prefLabel "REVIEW DECISION NOTES" ;
+.
+<https://www.geolexica.org/api/rdf#msa_review_indicator>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Indicator" ;
+  skos:prefLabel "REVIEW INDICATOR" ;
+.
+<https://www.geolexica.org/api/rdf#msa_review_status>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Status" ;
+  skos:prefLabel "REVIEW STATUS" ;
+.
+<https://www.geolexica.org/api/rdf#msa_review_type>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Type" ;
+  skos:prefLabel "REVIEW TYPE" ;
+.
+<https://www.geolexica.org/api/rdf#msa_similarity_authoritative>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Authoritative Source" ;
+  skos:prefLabel "SIMILARITY TO AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#msa_similarity_lineage>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Lineage Source" ;
+  skos:prefLabel "SIMILARITY TO LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#msa_term>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "term" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM" ;
+.
+<https://www.geolexica.org/api/rdf#msa_termID>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "id" ;
+.
+<https://www.geolexica.org/api/rdf#msa_term_abbreviation>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Abbrevation" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM ABBREVIATION" ;
+.
+<https://www.geolexica.org/api/rdf#msa_term_synonym>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Synonyms" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM SYNONYMS" ;
+.
+<https://www.geolexica.org/api/rdf#notAccepted>
+  rdf:type <https://www.geolexica.org/api/skos-rdf#ReviewDecision> ;
+  rdfs:label "Not Accepted" ;
+  skos:prefLabel "notAccepted" ;
+.
+<https://www.geolexica.org/api/rdf#note>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#note_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#note_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#note_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#note_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#note_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#note_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#note_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#note_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#pending>
+  rdf:type <https://www.geolexica.org/api/rdf#Status> ;
+  rdfs:label "Pending" ;
+  skos:prefLabel "pending" ;
+.
+<https://www.geolexica.org/api/rdf#pol_authoritative_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Authoritative Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#pol_authority_clause>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "clause" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "CLAUSE" ;
+.
+<https://www.geolexica.org/api/rdf#pol_authority_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "link" ;
+  rdfs:range xsd:anyURI ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#pol_classification>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "classification" ;
+  skos:prefLabel "CLASSIFICATION" ;
+.
+<https://www.geolexica.org/api/rdf#pol_country_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Country Code" ;
+  skos:prefLabel "COUNTRY CODE" ;
+.
+<https://www.geolexica.org/api/rdf#pol_date_accepted>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Accepted" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE ACCEPTED" ;
+.
+<https://www.geolexica.org/api/rdf#pol_date_amended>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Amended" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE AMENDED" ;
+.
+<https://www.geolexica.org/api/rdf#pol_definition>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "definition" ;
+  rdfs:range xsd:string ;
+  owl:sameAs skos:definition ;
+  skos:prefLabel "Definition" ;
+.
+<https://www.geolexica.org/api/rdf#pol_entry_status>
+  rdf:type owl:DatatypeProperty ;
+  skos:prefLabel "Entry Status" ;
+.
+<https://www.geolexica.org/api/rdf#pol_example_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#pol_example_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#pol_example_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#pol_example_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#pol_example_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#pol_example_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#pol_example_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#pol_example_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#pol_language_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "3 Letter Language Code" ;
+  skos:prefLabel "3 LETTER LANGUAGE CODE" ;
+.
+<https://www.geolexica.org/api/rdf#pol_lineage_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Lineage Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#pol_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Link" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#pol_note_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#pol_note_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#pol_note_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#pol_note_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#pol_note_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#pol_note_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#pol_note_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#pol_note_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#pol_ref>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Reference" ;
+  skos:prefLabel "REFERENCE" ;
+.
+<https://www.geolexica.org/api/rdf#pol_release>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Release" ;
+  skos:altLabel "RELEASE" ;
+  skos:prefLabel "RELEASE" ;
+.
+<https://www.geolexica.org/api/rdf#pol_review_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DATE" ;
+.
+<https://www.geolexica.org/api/rdf#pol_review_decision>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision" ;
+  skos:prefLabel "REVIEW DECISION" ;
+.
+<https://www.geolexica.org/api/rdf#pol_review_decision_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DECISION DATE" ;
+.
+<https://www.geolexica.org/api/rdf#pol_review_decision_event>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Event" ;
+  skos:prefLabel "REVIEW DECISION EVENT" ;
+.
+<https://www.geolexica.org/api/rdf#pol_review_decision_notes>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Notes" ;
+  skos:prefLabel "REVIEW DECISION NOTES" ;
+.
+<https://www.geolexica.org/api/rdf#pol_review_indicator>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Indicator" ;
+  skos:prefLabel "REVIEW INDICATOR" ;
+.
+<https://www.geolexica.org/api/rdf#pol_review_status>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Status" ;
+  skos:prefLabel "REVIEW STATUS" ;
+.
+<https://www.geolexica.org/api/rdf#pol_review_type>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Type" ;
+  skos:prefLabel "REVIEW TYPE" ;
+.
+<https://www.geolexica.org/api/rdf#pol_similarity_authoritative>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Authoritative Source" ;
+  skos:prefLabel "SIMILARITY TO AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#pol_similarity_lineage>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Lineage Source" ;
+  skos:prefLabel "SIMILARITY TO LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#pol_term>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "term" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM" ;
+.
+<https://www.geolexica.org/api/rdf#pol_termID>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "id" ;
+.
+<https://www.geolexica.org/api/rdf#pol_term_abbreviation>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Abbrevation" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM ABBREVIATION" ;
+.
+<https://www.geolexica.org/api/rdf#pol_term_synonym>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Synonyms" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM SYNONYMS" ;
+.
+<https://www.geolexica.org/api/rdf#preferred>
+  rdf:type <https://www.geolexica.org/api/rdf#TermClassification> ;
+  rdfs:label "Preferred" ;
+  skos:prefLabel "preferred" ;
+.
+<https://www.geolexica.org/api/rdf#ref>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Reference" ;
+  skos:prefLabel "REFERENCE" ;
+.
+<https://www.geolexica.org/api/rdf#release>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Release" ;
+  skos:altLabel "RELEASE" ;
+  skos:prefLabel "RELEASE" ;
+.
+<https://www.geolexica.org/api/rdf#release1>
+  rdf:type <https://www.geolexica.org/api/rdf#GlossaryRelease> ;
+  rdfs:label "Release 1" ;
+  skos:hiddenLabel "1" ;
+  skos:prefLabel "release1" ;
+.
+<https://www.geolexica.org/api/rdf#release1_retired>
+  rdf:type <https://www.geolexica.org/api/rdf#GlossaryRelease> ;
+  rdfs:label "Release 1 Retired" ;
+  skos:hiddenLabel "-1" ;
+  skos:prefLabel "release1_retired" ;
+.
+<https://www.geolexica.org/api/rdf#release2>
+  rdf:type <https://www.geolexica.org/api/rdf#GlossaryRelease> ;
+  rdfs:label "Release 2" ;
+  skos:hiddenLabel "-2" ;
+  skos:prefLabel "release2" ;
+.
+<https://www.geolexica.org/api/rdf#release2_retired>
+  rdf:type <https://www.geolexica.org/api/rdf#GlossaryRelease> ;
+  rdfs:label "Release 2 Retired" ;
+  skos:hiddenLabel "-2" ;
+  skos:prefLabel "release2_retired" ;
+.
+<https://www.geolexica.org/api/rdf#restyled>
+  rdf:type <https://www.geolexica.org/api/rdf#SimilarityAuthoritative> ;
+  rdf:type <https://www.geolexica.org/api/rdf#SimilarityLineage> ;
+  rdfs:label "Restyled" ;
+  skos:hiddenLabel "2" ;
+  skos:prefLabel "restyled" ;
+.
+<https://www.geolexica.org/api/rdf#retirement>
+  rdf:type <https://www.geolexica.org/api/rdf#ReviewType> ;
+  rdfs:label "Retirement" ;
+  skos:prefLabel "retirement" ;
+.
+<https://www.geolexica.org/api/rdf#review_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DATE" ;
+.
+<https://www.geolexica.org/api/rdf#review_decision>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision" ;
+  skos:prefLabel "REVIEW DECISION" ;
+.
+<https://www.geolexica.org/api/rdf#review_decision_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DECISION DATE" ;
+.
+<https://www.geolexica.org/api/rdf#review_decision_event>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Event" ;
+  skos:prefLabel "REVIEW DECISION EVENT" ;
+.
+<https://www.geolexica.org/api/rdf#review_decision_notes>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Notes" ;
+  skos:prefLabel "REVIEW DECISION NOTES" ;
+.
+<https://www.geolexica.org/api/rdf#review_indicator>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Indicator" ;
+  skos:prefLabel "REVIEW INDICATOR" ;
+.
+<https://www.geolexica.org/api/rdf#review_status>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Status" ;
+  skos:prefLabel "REVIEW STATUS" ;
+.
+<https://www.geolexica.org/api/rdf#review_type>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Type" ;
+  skos:prefLabel "REVIEW TYPE" ;
+.
+<https://www.geolexica.org/api/rdf#rus_authoritative_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Authoritative Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#rus_authority_clause>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "clause" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "CLAUSE" ;
+.
+<https://www.geolexica.org/api/rdf#rus_authority_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "link" ;
+  rdfs:range xsd:anyURI ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#rus_classification>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "classification" ;
+  skos:prefLabel "CLASSIFICATION" ;
+.
+<https://www.geolexica.org/api/rdf#rus_country_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Country Code" ;
+  skos:prefLabel "COUNTRY CODE" ;
+.
+<https://www.geolexica.org/api/rdf#rus_date_accepted>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Accepted" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE ACCEPTED" ;
+.
+<https://www.geolexica.org/api/rdf#rus_date_amended>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Amended" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE AMENDED" ;
+.
+<https://www.geolexica.org/api/rdf#rus_definition>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "definition" ;
+  rdfs:range xsd:string ;
+  owl:sameAs skos:definition ;
+  skos:prefLabel "Definition" ;
+.
+<https://www.geolexica.org/api/rdf#rus_entry_status>
+  rdf:type owl:DatatypeProperty ;
+  skos:prefLabel "Entry Status" ;
+.
+<https://www.geolexica.org/api/rdf#rus_example_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#rus_example_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#rus_example_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#rus_example_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#rus_example_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#rus_example_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#rus_example_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#rus_example_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#rus_language_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "3 Letter Language Code" ;
+  skos:prefLabel "3 LETTER LANGUAGE CODE" ;
+.
+<https://www.geolexica.org/api/rdf#rus_lineage_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Lineage Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#rus_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Link" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#rus_note_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#rus_note_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#rus_note_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#rus_note_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#rus_note_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#rus_note_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#rus_note_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#rus_note_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#rus_ref>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Reference" ;
+  skos:prefLabel "REFERENCE" ;
+.
+<https://www.geolexica.org/api/rdf#rus_release>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Release" ;
+  skos:altLabel "RELEASE" ;
+  skos:prefLabel "RELEASE" ;
+.
+<https://www.geolexica.org/api/rdf#rus_review_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DATE" ;
+.
+<https://www.geolexica.org/api/rdf#rus_review_decision>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision" ;
+  skos:prefLabel "REVIEW DECISION" ;
+.
+<https://www.geolexica.org/api/rdf#rus_review_decision_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DECISION DATE" ;
+.
+<https://www.geolexica.org/api/rdf#rus_review_decision_event>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Event" ;
+  skos:prefLabel "REVIEW DECISION EVENT" ;
+.
+<https://www.geolexica.org/api/rdf#rus_review_decision_notes>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Notes" ;
+  skos:prefLabel "REVIEW DECISION NOTES" ;
+.
+<https://www.geolexica.org/api/rdf#rus_review_indicator>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Indicator" ;
+  skos:prefLabel "REVIEW INDICATOR" ;
+.
+<https://www.geolexica.org/api/rdf#rus_review_status>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Status" ;
+  skos:prefLabel "REVIEW STATUS" ;
+.
+<https://www.geolexica.org/api/rdf#rus_review_type>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Type" ;
+  skos:prefLabel "REVIEW TYPE" ;
+.
+<https://www.geolexica.org/api/rdf#rus_similarity_authoritative>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Authoritative Source" ;
+  skos:prefLabel "SIMILARITY TO AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#rus_similarity_lineage>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Lineage Source" ;
+  skos:prefLabel "SIMILARITY TO LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#rus_term>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "term" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM" ;
+.
+<https://www.geolexica.org/api/rdf#rus_termID>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "id" ;
+.
+<https://www.geolexica.org/api/rdf#rus_term_abbreviation>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Abbrevation" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM ABBREVIATION" ;
+.
+<https://www.geolexica.org/api/rdf#rus_term_synonym>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Synonyms" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM SYNONYMS" ;
+.
+<https://www.geolexica.org/api/rdf#similarity_authoritative>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Authoritative Source" ;
+  skos:prefLabel "SIMILARITY TO AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#similarity_lineage>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Lineage Source" ;
+  skos:prefLabel "SIMILARITY TO LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#spa_authoritative_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Authoritative Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#spa_authority_clause>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "clause" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "CLAUSE" ;
+.
+<https://www.geolexica.org/api/rdf#spa_authority_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "link" ;
+  rdfs:range xsd:anyURI ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#spa_classification>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "classification" ;
+  skos:prefLabel "CLASSIFICATION" ;
+.
+<https://www.geolexica.org/api/rdf#spa_country_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Country Code" ;
+  skos:prefLabel "COUNTRY CODE" ;
+.
+<https://www.geolexica.org/api/rdf#spa_date_accepted>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Accepted" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE ACCEPTED" ;
+.
+<https://www.geolexica.org/api/rdf#spa_date_amended>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Amended" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE AMENDED" ;
+.
+<https://www.geolexica.org/api/rdf#spa_definition>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "definition" ;
+  rdfs:range xsd:string ;
+  owl:sameAs skos:definition ;
+  skos:prefLabel "Definition" ;
+.
+<https://www.geolexica.org/api/rdf#spa_entry_status>
+  rdf:type owl:DatatypeProperty ;
+  skos:prefLabel "Entry Status" ;
+.
+<https://www.geolexica.org/api/rdf#spa_example_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#spa_example_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#spa_example_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#spa_example_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#spa_example_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#spa_example_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#spa_example_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#spa_example_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#spa_language_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "3 Letter Language Code" ;
+  skos:prefLabel "3 LETTER LANGUAGE CODE" ;
+.
+<https://www.geolexica.org/api/rdf#spa_lineage_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Lineage Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#spa_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Link" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#spa_note_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#spa_note_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#spa_note_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#spa_note_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#spa_note_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#spa_note_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#spa_note_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#spa_note_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#spa_ref>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Reference" ;
+  skos:prefLabel "REFERENCE" ;
+.
+<https://www.geolexica.org/api/rdf#spa_release>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Release" ;
+  skos:altLabel "RELEASE" ;
+  skos:prefLabel "RELEASE" ;
+.
+<https://www.geolexica.org/api/rdf#spa_review_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DATE" ;
+.
+<https://www.geolexica.org/api/rdf#spa_review_decision>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision" ;
+  skos:prefLabel "REVIEW DECISION" ;
+.
+<https://www.geolexica.org/api/rdf#spa_review_decision_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DECISION DATE" ;
+.
+<https://www.geolexica.org/api/rdf#spa_review_decision_event>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Event" ;
+  skos:prefLabel "REVIEW DECISION EVENT" ;
+.
+<https://www.geolexica.org/api/rdf#spa_review_decision_notes>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Notes" ;
+  skos:prefLabel "REVIEW DECISION NOTES" ;
+.
+<https://www.geolexica.org/api/rdf#spa_review_indicator>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Indicator" ;
+  skos:prefLabel "REVIEW INDICATOR" ;
+.
+<https://www.geolexica.org/api/rdf#spa_review_status>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Status" ;
+  skos:prefLabel "REVIEW STATUS" ;
+.
+<https://www.geolexica.org/api/rdf#spa_review_type>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Type" ;
+  skos:prefLabel "REVIEW TYPE" ;
+.
+<https://www.geolexica.org/api/rdf#spa_similarity_authoritative>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Authoritative Source" ;
+  skos:prefLabel "SIMILARITY TO AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#spa_similarity_lineage>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Lineage Source" ;
+  skos:prefLabel "SIMILARITY TO LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#spa_term>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "term" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM" ;
+.
+<https://www.geolexica.org/api/rdf#spa_termID>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "id" ;
+.
+<https://www.geolexica.org/api/rdf#spa_term_abbreviation>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Abbrevation" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM ABBREVIATION" ;
+.
+<https://www.geolexica.org/api/rdf#spa_term_synonym>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Synonyms" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM SYNONYMS" ;
+.
+<https://www.geolexica.org/api/rdf#specialisation>
+  rdf:type <https://www.geolexica.org/api/rdf#SimilarityAuthoritative> ;
+  rdf:type <https://www.geolexica.org/api/rdf#SimilarityLineage> ;
+  rdfs:label "Specialisation" ;
+  skos:hiddenLabel "5" ;
+  skos:prefLabel "specialisation" ;
+.
+<https://www.geolexica.org/api/rdf#supersession>
+  rdf:type <https://www.geolexica.org/api/rdf#ReviewType> ;
+  rdfs:label "Supersession" ;
+  skos:prefLabel "supersession" ;
+.
+<https://www.geolexica.org/api/rdf#swe_authoritative_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Authoritative Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#swe_authority_clause>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "clause" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "CLAUSE" ;
+.
+<https://www.geolexica.org/api/rdf#swe_authority_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "link" ;
+  rdfs:range xsd:anyURI ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#swe_classification>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "classification" ;
+  skos:prefLabel "CLASSIFICATION" ;
+.
+<https://www.geolexica.org/api/rdf#swe_country_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Country Code" ;
+  skos:prefLabel "COUNTRY CODE" ;
+.
+<https://www.geolexica.org/api/rdf#swe_date_accepted>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Accepted" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE ACCEPTED" ;
+.
+<https://www.geolexica.org/api/rdf#swe_date_amended>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Date Amended" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "DATE AMENDED" ;
+.
+<https://www.geolexica.org/api/rdf#swe_definition>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "definition" ;
+  rdfs:range xsd:string ;
+  owl:sameAs skos:definition ;
+  skos:prefLabel "Definition" ;
+.
+<https://www.geolexica.org/api/rdf#swe_entry_status>
+  rdf:type owl:DatatypeProperty ;
+  skos:prefLabel "Entry Status" ;
+.
+<https://www.geolexica.org/api/rdf#swe_example_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#swe_example_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#swe_example_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#swe_example_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#swe_example_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#swe_example_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#swe_example_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#swe_example_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Example" ;
+.
+<https://www.geolexica.org/api/rdf#swe_language_code>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "3 Letter Language Code" ;
+  skos:prefLabel "3 LETTER LANGUAGE CODE" ;
+.
+<https://www.geolexica.org/api/rdf#swe_lineage_source>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Lineage Source" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#swe_link>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Link" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "LINK" ;
+.
+<https://www.geolexica.org/api/rdf#swe_note_1>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#swe_note_2>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#swe_note_3>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#swe_note_4>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#swe_note_5>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#swe_note_6>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#swe_note_7>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#swe_note_8>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Note" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "NOTE" ;
+.
+<https://www.geolexica.org/api/rdf#swe_ref>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Reference" ;
+  skos:prefLabel "REFERENCE" ;
+.
+<https://www.geolexica.org/api/rdf#swe_release>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Release" ;
+  skos:altLabel "RELEASE" ;
+  skos:prefLabel "RELEASE" ;
+.
+<https://www.geolexica.org/api/rdf#swe_review_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DATE" ;
+.
+<https://www.geolexica.org/api/rdf#swe_review_decision>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision" ;
+  skos:prefLabel "REVIEW DECISION" ;
+.
+<https://www.geolexica.org/api/rdf#swe_review_decision_date>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Date" ;
+  rdfs:range xsd:date ;
+  skos:prefLabel "REVIEW DECISION DATE" ;
+.
+<https://www.geolexica.org/api/rdf#swe_review_decision_event>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Event" ;
+  skos:prefLabel "REVIEW DECISION EVENT" ;
+.
+<https://www.geolexica.org/api/rdf#swe_review_decision_notes>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Decision Notes" ;
+  skos:prefLabel "REVIEW DECISION NOTES" ;
+.
+<https://www.geolexica.org/api/rdf#swe_review_indicator>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Indicator" ;
+  skos:prefLabel "REVIEW INDICATOR" ;
+.
+<https://www.geolexica.org/api/rdf#swe_review_status>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Status" ;
+  skos:prefLabel "REVIEW STATUS" ;
+.
+<https://www.geolexica.org/api/rdf#swe_review_type>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Review Type" ;
+  skos:prefLabel "REVIEW TYPE" ;
+.
+<https://www.geolexica.org/api/rdf#swe_similarity_authoritative>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Authoritative Source" ;
+  skos:prefLabel "SIMILARITY TO AUTHORITATIVE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#swe_similarity_lineage>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Similarity to Lineage Source" ;
+  skos:prefLabel "SIMILARITY TO LINEAGE SOURCE" ;
+.
+<https://www.geolexica.org/api/rdf#swe_term>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "term" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM" ;
+.
+<https://www.geolexica.org/api/rdf#swe_termID>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "id" ;
+.
+<https://www.geolexica.org/api/rdf#swe_term_abbreviation>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Abbrevation" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM ABBREVIATION" ;
+.
+<https://www.geolexica.org/api/rdf#swe_term_synonym>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Synonyms" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM SYNONYMS" ;
+.
+<https://www.geolexica.org/api/rdf#tentative>
+  rdf:type <https://www.geolexica.org/api/rdf#Status> ;
+  rdfs:label "Tentative" ;
+  skos:prefLabel "tentative" ;
+.
+<https://www.geolexica.org/api/rdf#term>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "term" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM" ;
+.
+<https://www.geolexica.org/api/rdf#termID>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term ID" ;
+  rdfs:range xsd:integer ;
+  skos:prefLabel "TERM ID" ;
+.
+<https://www.geolexica.org/api/rdf#term_abbreviation>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Abbrevation" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM ABBREVIATION" ;
+.
+<https://www.geolexica.org/api/rdf#term_english>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "term (English)" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM (English)" ;
+.
+<https://www.geolexica.org/api/rdf#term_synonym>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "Term Synonyms" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "TERM SYNONYMS" ;
+.
+<https://www.geolexica.org/api/rdf#under_review>
+  rdf:type <https://www.geolexica.org/api/rdf#ReviewIndicator> ;
+  skos:prefLabel "Under Review in Source Document" ;
+.
+<https://www.geolexica.org/api/rdf#unspecified>
+  rdf:type <https://www.geolexica.org/api/rdf#SimilarityAuthoritative> ;
+  rdf:type <https://www.geolexica.org/api/rdf#SimilarityLineage> ;
+  rdfs:label "Unspecified" ;
+  skos:hiddenLabel "6" ;
+  skos:prefLabel "unspecified" ;
+.
+<https://www.geolexica.org/api/rdf#withdrawn>
+  rdf:type <https://www.geolexica.org/api/rdf#ReviewDecision> ;
+  rdfs:label "Withdrawn" ;
+  skos:prefLabel "withdrawn" ;
+.
