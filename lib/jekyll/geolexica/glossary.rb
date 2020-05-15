@@ -24,6 +24,10 @@ module Jekyll
         super(concept.data["termid"], concept)
       end
 
+      def language_statistics
+        @language_statistics ||= calculate_language_statistics
+      end
+
       protected
 
       def load_concept(concept_file_path)
@@ -45,6 +49,13 @@ module Jekyll
 
       # Does nothing, but some sites may replace this method.
       def preprocess_concept_hash(concept_hash)
+      end
+
+      def calculate_language_statistics
+        each_value.lazy.
+          flat_map{ |concept| term_languages & concept.data.keys }.
+          group_by(&:itself).
+          transform_values(&:count)
       end
 
       class Concept
