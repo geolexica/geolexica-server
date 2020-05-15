@@ -28,6 +28,13 @@ module Jekyll
         @language_statistics ||= calculate_language_statistics
       end
 
+      # Defines how Glossary is exposed in Liquid templates.
+      def to_liquid
+        {
+          # TODO
+        }
+      end
+
       protected
 
       def load_concept(concept_file_path)
