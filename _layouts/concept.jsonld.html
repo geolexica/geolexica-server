@@ -23,7 +23,7 @@ layout: null
     {%- if localized_term.terms.size > 0 -%}
     {
       "@language": "{{ site.data.lang[lang].iso-639-1 }}",
-      "@value": "{{ localized_term.terms.first.designation | escape }}"
+      "@value": {{ localized_term.terms.first.designation | jsonify }}
     }{% unless forloop.last %},{% endunless %}
     {%- endif -%}
     {%- endfor -%}
@@ -37,7 +37,7 @@ layout: null
     {%- unless forloop.first -%}
     {
       "@language": "{{ site.data.lang[lang].iso-639-1 }}",
-      "@value": "{{ term.designation | escape }}"
+      "@value": {{ term.designation | jsonify }}
     }{% unless outer_forloop.last and forloop.last %},{% endunless %}
     {%- endunless -%}
     {%- endfor -%}
@@ -50,7 +50,7 @@ layout: null
     {%- if localized_term.definition -%}
     {
       "@language": "{{ site.data.lang[lang].iso-639-1 }}",
-      "@value": "{{ localized_term.definition | escape }}"
+      "@value": {{ localized_term.definition | jsonify }}
     }{% unless forloop.last %},{% endunless %}
     {%- endif -%}
     {%- endfor -%}
@@ -82,7 +82,7 @@ layout: null
           {%- if lang != "eng" and note == concept.notes[forloop.index0] -%}
           "@value": "notTranslated",
           {%- else -%}
-          "@value": "{{ note | escape }}"
+          "@value": {{ note | jsonify }}
           {%- endif -%}
         }
       }{% unless forloop.last %},{% endunless %}
@@ -112,7 +112,7 @@ layout: null
           {%- if lang != "eng" and example == concept.examples[forloop.index0] -%}
           "@value": "notTranslated",
           {%- else -%}
-          "@value": "{{ example | escape }}"
+          "@value": {{ example | jsonify }}
           {%- endif -%}
         }
       }{% unless forloop.last %},{% endunless %}
@@ -138,13 +138,13 @@ layout: null
 
   {%- if concept.entry_status -%}
   "status": {
-    "@value": "{{ concept.entry_status | escape }}"
+    "@value": {{ concept.entry_status | jsonify }}
   },
   {%- endif -%}
 
   {%- if concept.terms.first.normative_status -%}
   "classification": {
-    "@value": "{{ concept.terms.first.normative_status | escape }}"
+    "@value": {{ concept.terms.first.normative_status | jsonify }}
   },
   {%- endif -%}
 
