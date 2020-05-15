@@ -54,6 +54,12 @@ RSpec.describe ::Jekyll::Geolexica::Configuration do
       langs = fake_geolexica_config["term_languages"]
       expect(langs).to be_an(Array) & include("eng")
     end
+
+    specify "are accessible via #term_languages method" do
+      retval = wrapper.term_languages
+      expect(retval).to be_an(Array)
+      expect(retval).to eq(fake_geolexica_config["term_languages"])
+    end
   end
 
   describe "output formats" do

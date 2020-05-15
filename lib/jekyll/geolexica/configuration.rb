@@ -9,6 +9,10 @@ module Jekyll
         File.expand_path(glob_string, site.source)
       end
 
+      def term_languages
+        glossary_config["term_languages"]
+      end
+
       def output_html?
         glossary_config["formats"].include?("html")
       end
