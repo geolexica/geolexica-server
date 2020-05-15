@@ -29,7 +29,7 @@ module Jekyll
       def make_pages
         site.glossary.each_concept do |concept|
           Jekyll.logger.debug("Geolexica:",
-            "building pages for concept #{concept.data["termid"]}")
+            "building pages for concept #{concept.termid}")
           add_page ConceptPage::HTML.new(site, concept) if output_html?
           add_page ConceptPage::JSON.new(site, concept) if output_json?
           add_page ConceptPage::JSONLD.new(site, concept) if output_jsonld?
