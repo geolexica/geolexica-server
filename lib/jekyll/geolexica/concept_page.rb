@@ -4,17 +4,17 @@
 module Jekyll
   module Geolexica
     class ConceptPage < PageWithoutAFile
-      attr_reader :concept_hash
+      attr_reader :concept
 
-      def initialize(site, concept_hash)
-        @concept_hash = concept_hash
-        @data = default_data.merge(concept_hash)
+      def initialize(site, concept)
+        @concept = concept
+        @data = default_data.merge(concept.data)
 
         super(site, site.source, "concepts", page_name)
       end
 
       def termid
-        concept_hash["termid"]
+        concept.data["termid"]
       end
 
       def type
