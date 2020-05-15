@@ -53,6 +53,10 @@ module Jekyll
         def initialize(data)
           @data = data
         end
+
+        def termid
+          data["termid"]
+        end
       end
     end
   end

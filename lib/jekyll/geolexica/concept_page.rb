@@ -14,7 +14,7 @@ module Jekyll
       end
 
       def termid
-        concept.data["termid"]
+        concept.termid
       end
 
       def type
