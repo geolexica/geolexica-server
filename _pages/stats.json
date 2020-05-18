@@ -2,4 +2,4 @@
 permalink: "/api/stats.json"
 layout: null
 ---
-{{ site.glossary.statistics | jsonify }}
+{{ glossary.language_statistics | jsonify }}

@@ -4,21 +4,22 @@ layout: base-page
 nav_items: [concepts, posts, feedback, registers, about]
 bodyClass: page
 title: Statistics
-stats: site.glossary.statistics
 ---
 :page-liquid:
 
 The following languages are provided in Geolexica, with the number of terms displayed below.
 
-{{ stats | jsonify }}
-{{ glossary.statistics | jsonify }}
+[source]
+----
 {{ glossary | jsonify }}
-{{ page.stats | jsonify }}
+
+{{ glossary.language_statistics | jsonify }}
+----
 
 {% for lang in site.geolexica.term_languages %}
 {% assign lang = lang_pair[0] %}
-{% assign counter = site.geolexica.statistics[lang] %}
-* {{ site.data.lang[lang].lang_native }}{% if lang != "eng" %} ({{ site.data.lang[lang].lang_en }}){% endif %}: {{ counter }}
+{% assign counter = glossary.language_statistics[lang] %}
+* {{ site.data.lang[lang].lang_native }}{% if lang != "eng" %} ({{ site.data.lang[lang].lang_en }}){% endif %}: {{ counter | default: 0 }}
 {% endfor %}
 
 JSON: link:/api/stats.json[/api/stats.json]

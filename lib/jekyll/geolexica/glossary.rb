@@ -11,6 +11,8 @@ module Jekyll
       alias_method :each_concept, :each_value
       alias_method :each_termid, :each_key
 
+      EXPOSED_IN_LIQUID = %i[language_statistics]
+
       def initialize(site)
         @site = site
       end
@@ -26,6 +28,14 @@ module Jekyll
 
       def language_statistics
         @language_statistics ||= calculate_language_statistics
+      end
+
+      def to_liquid
+        concepts_hash = super
+        EXPOSED_IN_LIQUID.inject(concepts_hash) do |hash, attrib|
+          hash[attrib.to_s] = public_send(attrib)
+          hash
+        end
       end
 
       protected
