@@ -55,7 +55,11 @@ module Jekyll
         end
 
         def layout
-          "concept.json"
+          nil
+        end
+
+        def content
+          ConceptSerializer.new(concept, site).to_json
         end
 
         def permalink
