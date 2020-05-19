@@ -72,15 +72,18 @@ RSpec.describe ::Jekyll::Geolexica::Configuration do
       expect(wrapper).to respond_to(:output_html?)
       expect(wrapper).to respond_to(:output_json?)
       expect(wrapper).to respond_to(:output_jsonld?)
+      expect(wrapper).to respond_to(:output_tbx?)
       expect(wrapper).to respond_to(:output_turtle?)
     end
 
     specify "can be enabled in configuration" do
-      fake_geolexica_config["formats"] = %w[html json json-ld turtle]
+      fake_geolexica_config["formats"] =
+        %w[html json json-ld tbx-iso-tml turtle]
 
       expect(wrapper.output_html?).to be(true)
       expect(wrapper.output_json?).to be(true)
       expect(wrapper.output_jsonld?).to be(true)
+      expect(wrapper.output_tbx?).to be(true)
       expect(wrapper.output_turtle?).to be(true)
     end
 
@@ -90,6 +93,7 @@ RSpec.describe ::Jekyll::Geolexica::Configuration do
       expect(wrapper.output_html?).to be(false)
       expect(wrapper.output_json?).to be(false)
       expect(wrapper.output_jsonld?).to be(false)
+      expect(wrapper.output_tbx?).to be(false)
       expect(wrapper.output_turtle?).to be(false)
     end
   end
