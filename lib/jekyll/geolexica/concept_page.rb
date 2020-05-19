@@ -27,6 +27,21 @@ module Jekyll
         {"layout" => layout, "permalink" => permalink}
       end
 
+      # Disables Liquid processing for given content.
+      #
+      # FIXME Still may break if +content+ contains the "{% endraw %}" sequence,
+      #       which is very unlikely as we work with trusted input.
+      #       Preferred solution is to make the whole page a non-Liquid file,
+      #       or mark as already processed, or something, but it is unclear how
+      #       to achieve that.
+      def escape_liquid(content)
+        [
+          "{\% raw \%}",
+          content,
+          "{\% endraw \%}",
+        ].join("")
+      end
+
       class HTML < ConceptPage
         def page_name
           "#{termid}.html"
@@ -59,7 +74,8 @@ module Jekyll
         end
 
         def content
-          ConceptSerializer.new(concept, site).to_json
+          s = ConceptSerializer.new(concept, site)
+          escape_liquid(s.to_json)
         end
 
         def permalink
