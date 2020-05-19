@@ -10,6 +10,7 @@ end
 
 require_relative "geolexica/configuration"
 require_relative "geolexica/concept_page"
+require_relative "geolexica/concept_serializer"
 require_relative "geolexica/concepts_generator"
 require_relative "geolexica/glossary"
 require_relative "geolexica/hooks"
