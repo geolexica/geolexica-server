@@ -19,6 +19,10 @@ module Jekyll
         JSON.dump(in_all_languages)
       end
 
+      def to_yaml
+        YAML.dump(in_all_languages)
+      end
+
       private
 
       # Returns concept hash in all supported languages, with +nil+ value for
