@@ -137,6 +137,29 @@ module Jekyll
         end
       end
 
+      class YAML < ConceptPage
+        def page_name
+          "#{termid}.yaml"
+        end
+
+        def collection_name
+          "concepts_yaml"
+        end
+
+        def layout
+          nil
+        end
+
+        def content
+          s = ConceptSerializer.new(concept, site)
+          escape_liquid(s.to_yaml)
+        end
+
+        def permalink
+          "/api/concepts/#{termid}.yaml"
+        end
+      end
+
     end
   end
 end

@@ -61,6 +61,15 @@ term_attributes:
 </section>
 {%- endif %}
 
+{% if site.geolexica.formats contains 'json' -%}
+{% assign yaml_concept = site.concepts_yaml | where: 'termid', page.termid | first -%}
+{% assign yaml_url = yaml_concept.url -%}
+<section class="field yaml">
+  <p class="field-name">YAML</p>
+  <p class="field-value"><a href="{{ yaml_url }}">{{ yaml_url }}</a></p>
+</section>
+{%- endif %}
+
 {% if site.geolexica.formats contains 'json-ld' -%}
 {% assign json_concept = site.concepts_jsonld | where: 'termid', page.termid | first -%}
 {% assign json_url = json_concept.url -%}
