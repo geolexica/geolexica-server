@@ -50,4 +50,23 @@ RSpec.describe ::Jekyll::Geolexica::ConceptSerializer do
       expect(parsed_retval["unknown"]).to be_nil
     end
   end
+
+  describe "#to_yaml" do
+    subject { described_class.instance_method(:to_yaml) }
+
+    it "returns a YAML in expected format" do
+      retval = subject.bind(serializer_10).call
+      expect(retval).to be_kind_of(String) & start_with("---\n")
+      expect { YAML.parse(retval) }.not_to raise_error # be valid YAML
+
+      parsed_retval = YAML.load retval
+
+      expect(parsed_retval.keys).to contain_exactly(
+        "term", "termid", "eng", "jpn", "pol", "unknown")
+      expect(parsed_retval["term"]).to eq(concept_10.data["term"])
+      expect(parsed_retval["termid"]).to eq(concept_10.data["termid"])
+      expect(parsed_retval["eng"]).to eq(concept_10.data["eng"])
+      expect(parsed_retval.fetch("unknown", :missing)).to be_nil
+    end
+  end
 end
