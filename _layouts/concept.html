@@ -61,7 +61,7 @@ term_attributes:
 </section>
 {%- endif %}
 
-{% if site.geolexica.formats contains 'json' -%}
+{% if site.geolexica.formats contains 'yaml' -%}
 {% assign yaml_concept = site.concepts_yaml | where: 'termid', page.termid | first -%}
 {% assign yaml_url = yaml_concept.url -%}
 <section class="field yaml">
