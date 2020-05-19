@@ -35,6 +35,7 @@ module Jekyll
           add_page ConceptPage::JSONLD.new(site, concept) if output_jsonld?
           add_page ConceptPage::TBX.new(site, concept) if output_tbx?
           add_page ConceptPage::Turtle.new(site, concept) if output_turtle?
+          add_page ConceptPage::YAML.new(site, concept) if output_yaml?
         end
       end
 

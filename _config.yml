@@ -50,6 +50,9 @@ collections:
   concepts_tbx:
     output: true
     output_ext: .tbx.xml
+  concepts_yaml:
+    output: true
+    output_ext: .yaml
 
 geolexica:
   concepts_glob: "./geolexica-database/concepts/*.yaml"

@@ -33,6 +33,10 @@ module Jekyll
         glossary_config["formats"].include?("turtle")
       end
 
+      def output_yaml?
+        glossary_config["formats"].include?("yaml")
+      end
+
       protected
 
       def glossary_config
