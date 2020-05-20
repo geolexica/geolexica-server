@@ -30,12 +30,15 @@ module Jekyll
         site.glossary.each_concept do |concept|
           Jekyll.logger.debug("Geolexica:",
             "building pages for concept #{concept.termid}")
-          add_page ConceptPage::HTML.new(site, concept) if output_html?
-          add_page ConceptPage::JSON.new(site, concept) if output_json?
-          add_page ConceptPage::JSONLD.new(site, concept) if output_jsonld?
-          add_page ConceptPage::TBX.new(site, concept) if output_tbx?
-          add_page ConceptPage::Turtle.new(site, concept) if output_turtle?
-          add_page ConceptPage::YAML.new(site, concept) if output_yaml?
+          concept.pages.replace({
+            html: (ConceptPage::HTML.new(site, concept) if output_html?),
+            json: (ConceptPage::JSON.new(site, concept) if output_json?),
+            jsonld: (ConceptPage::JSONLD.new(site, concept) if output_jsonld?),
+            tbx: (ConceptPage::TBX.new(site, concept) if output_tbx?),
+            turtle: (ConceptPage::Turtle.new(site, concept) if output_turtle?),
+            yaml: (ConceptPage::YAML.new(site, concept) if output_yaml?),
+          })
+          add_page(*concept.pages.values.compact)
         end
       end
 
