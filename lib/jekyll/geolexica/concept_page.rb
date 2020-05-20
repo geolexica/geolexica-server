@@ -24,7 +24,10 @@ module Jekyll
       protected
 
       def default_data
-        {"layout" => layout, "permalink" => permalink}
+        {
+          "layout" => layout,
+          "permalink" => permalink,
+        }
       end
 
       # Disables Liquid processing for given content.
