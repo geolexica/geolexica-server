@@ -82,8 +82,8 @@ term_attributes:
 {%- endif %}
 
 {% if site.geolexica.formats contains 'tbx-iso-tml' -%}
-{% assign tbx_concept = site.concepts_tbx | where: 'termid', page.termid | first %}
-{% assign tbx_url = tbx_concept.url %}
+{% assign tbx_concept = site.concepts_tbx | where: 'termid', page.termid | first -%}
+{% assign tbx_url = tbx_concept.url -%}
 <section class="field tbx">
   <p class="field-name">TBX-ISO-TML</p>
   <p class="field-value"><a href="{{ tbx_url }}">{{ tbx_url }}</a></p>
