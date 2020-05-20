@@ -50,8 +50,12 @@ module Jekyll
       class Concept
         attr_reader :data
 
+        # TODO Maybe some kind of Struct instead of Hash.
+        attr_reader :pages
+
         def initialize(data)
           @data = data
+          @pages = {}
         end
 
         def termid
