@@ -3,7 +3,7 @@ permalink: "/api/concepts.json"
 ---
 {
   {% for concept in site.concepts %}
-  {% assign json_concept = site.concepts_json | where: 'termid', concept.termid | first %}
+  {% assign json_concept = concept.representations.json %}
   "{{ concept.termid }}": {
     "term": "{{ concept.term }}",
     "termid": {{ concept.termid }},

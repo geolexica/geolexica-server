@@ -27,6 +27,7 @@ module Jekyll
         {
           "layout" => layout,
           "permalink" => permalink,
+          "representations" => concept.pages,
         }
       end
 

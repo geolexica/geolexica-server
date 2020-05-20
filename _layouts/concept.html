@@ -53,8 +53,7 @@ term_attributes:
 {% endfor %}
 
 {% if site.geolexica.formats contains 'json' -%}
-{% assign json_concept = site.concepts_json | where: 'termid', page.termid | first -%}
-{% assign json_url = json_concept.url -%}
+{% assign json_url = page.representations.json.url -%}
 <section class="field json">
   <p class="field-name">JSON</p>
   <p class="field-value"><a href="{{ json_url }}">{{ json_url }}</a></p>
@@ -62,8 +61,7 @@ term_attributes:
 {%- endif %}
 
 {% if site.geolexica.formats contains 'yaml' -%}
-{% assign yaml_concept = site.concepts_yaml | where: 'termid', page.termid | first -%}
-{% assign yaml_url = yaml_concept.url -%}
+{% assign yaml_url = page.representations.yaml.url -%}
 <section class="field yaml">
   <p class="field-name">YAML</p>
   <p class="field-value"><a href="{{ yaml_url }}">{{ yaml_url }}</a></p>
@@ -71,8 +69,7 @@ term_attributes:
 {%- endif %}
 
 {% if site.geolexica.formats contains 'json-ld' -%}
-{% assign json_concept = site.concepts_jsonld | where: 'termid', page.termid | first -%}
-{% assign json_url = json_concept.url -%}
+{% assign json_url = page.representations.jsonld.url -%}
 <section class="field json">
   <p class="field-name">SKOS in JSON-LD</p>
   <p class="field-value"><a href="{{ json_url }}">{{ json_url }}</a></p>
@@ -80,8 +77,7 @@ term_attributes:
 {%- endif %}
 
 {% if site.geolexica.formats contains 'turtle' -%}
-{% assign ttl_concept = site.concepts_ttl | where: 'termid', page.termid | first -%}
-{% assign ttl_url = ttl_concept.url -%}
+{% assign ttl_url = page.representations.turtle.url -%}
 <section class="field ttl">
   <p class="field-name">SKOS in RDF</p>
   <p class="field-value"><a href="{{ ttl_url }}">{{ ttl_url }}</a></p>
@@ -89,8 +85,7 @@ term_attributes:
 {%- endif %}
 
 {% if site.geolexica.formats contains 'tbx-iso-tml' -%}
-{% assign tbx_concept = site.concepts_tbx | where: 'termid', page.termid | first -%}
-{% assign tbx_url = tbx_concept.url -%}
+{% assign tbx_url = page.representations.tbx.url -%}
 <section class="field tbx">
   <p class="field-name">TBX-ISO-TML</p>
   <p class="field-value"><a href="{{ tbx_url }}">{{ tbx_url }}</a></p>

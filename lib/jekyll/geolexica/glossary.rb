@@ -55,11 +55,17 @@ module Jekyll
 
         def initialize(data)
           @data = data
-          @pages = {}
+          @pages = LiquidCompatibleHash.new
         end
 
         def termid
           data["termid"]
+        end
+
+        class LiquidCompatibleHash < Hash
+          def to_liquid
+            Jekyll::Utils.stringify_hash_keys(self)
+          end
         end
       end
     end
