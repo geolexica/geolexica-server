@@ -3,7 +3,7 @@ layout: null
 ---
 {%- assign concept = page["eng"] -%}
 {%- assign rdfprofile = "/api/rdf-profile" -%}
-{%- assign concept_html = site.concepts | where: 'termid', page.termid | first -%}
+{%- assign concept_html = page.representations.html -%}
 {%- assign concept_id = concept_html.url -%}
 {%- assign english = page["eng"] -%}
 # baseURI: "{{ concept_id }}"
