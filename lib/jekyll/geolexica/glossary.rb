@@ -31,7 +31,7 @@ module Jekyll
       # Defines how Glossary is exposed in Liquid templates.
       def to_liquid
         {
-          # TODO
+          "language_statistics" => language_statistics,
         }
       end
 
