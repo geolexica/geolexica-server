@@ -4,10 +4,10 @@ module Jekyll
       module_function
 
       def register_all_hooks
-        Jekyll::Hooks.register :site, :after_init, &method(:initialize_glossary)
-        Jekyll::Hooks.register :site, :post_read, &method(:load_glossary)
-        Jekyll::Hooks.register :documents, :pre_render, &method(:expose_glossary)
-        Jekyll::Hooks.register :pages, :pre_render, &method(:expose_glossary)
+        hook :after_init, :site, :initialize_glossary
+        hook :post_read, :site, :load_glossary
+        hook :pre_render, :documents, :expose_glossary
+        hook :pre_render, :pages, :expose_glossary
       end
 
       # Adds Jekyll::Site#glossary method, and initializes an empty glossary.
@@ -23,6 +23,10 @@ module Jekyll
 
       def expose_glossary(page_or_document, liquid_drop)
         liquid_drop["glossary"] = page_or_document.site.glossary
+      end
+
+      def hook event, target, action
+        Jekyll::Hooks.register target, event, &method(action)
       end
     end
   end
