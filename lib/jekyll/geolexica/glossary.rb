@@ -59,10 +59,14 @@ module Jekyll
       end
 
       def calculate_language_statistics
-        each_value.lazy.
+        unsorted = each_value.lazy.
           flat_map{ |concept| term_languages & concept.data.keys }.
           group_by(&:itself).
           transform_values(&:count)
+
+        # This is not crucial, but gives nicer output, and ensures that
+        # all +term_languages+ are present.
+        term_languages.to_h { |key| [key, unsorted[key] || 0] }
       end
 
       class Concept
