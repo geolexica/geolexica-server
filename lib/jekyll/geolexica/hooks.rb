@@ -24,13 +24,6 @@ module Jekyll
       def expose_glossary(page_or_document, liquid_drop)
         liquid_drop["glossary"] = page_or_document.site.glossary
       end
-
-      # def test(page, drop)
-      #   require "pry"
-      #   if page.basename =~ /stat/
-      #     binding.pry
-      #   end
-      # end
     end
   end
 end
