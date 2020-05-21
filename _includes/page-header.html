@@ -17,7 +17,7 @@
       <h1>{{ title }}</h1>
     {% endif %}
 
-    {% if page.date or page.version %}
+    {% if page.show_header_meta and page.date or page.version %}
       <div class="meta">
         {% if page.date %}
           <p>{{ page.date | date: '%B %d, %Y' }}
