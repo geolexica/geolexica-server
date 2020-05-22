@@ -3,6 +3,8 @@
 
 require_relative "lib/jekyll/geolexica/version"
 
+all_files_in_git = Dir.chdir(__dir__) { `git ls-files -z`.split("\x0") }
+
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-geolexica"
   spec.version       = Jekyll::Geolexica::VERSION
@@ -13,9 +15,11 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/geolexica/geolexica-server"
   spec.license       = "MIT"
 
-  # TODO This should be tweaked.
-  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(%r{^(test|spec|features)/})
+  spec.files         = all_files_in_git.reject do |f|
+    [
+      f.match(%r{^(test|spec|features|.github)/}),
+      f.match(%r{^\.}),
+    ].any?
   end
 
   spec.bindir        = "exe"
