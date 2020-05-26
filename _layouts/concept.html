@@ -19,29 +19,12 @@ term_attributes:
   - release
 ---
 {%- assign english = page["eng"] -%}
-<header>
-  <h2 class="section-title">
-    Concept
-    <span class="term-name"><span class="q-open">“</span>{{ page.term | escape }}”</span>
-  </h2>
-</header>
 
-<section class="field ref">
-  <p class="field-name">Term ID</p>
-  <p class="field-value">{{ page.termid }}</p>
-</section>
+{% include concept-header.html english=english %}
 
+{% include concept-lead-info.html english=english %}
 
-<section class="field source">
-  <p class="field-name">source</p>
-  <p class="field-value">
-    {% if english.authoritative_source.link %}
-      <a href="{{ english.authoritative_source.link }}">{{ english.authoritative_source.ref | default: english.authoritative_source.link | escape_once }}</a>{% if english.authoritative_source.clause %}, {{ english.authoritative_source.clause }}{% endif %}
-    {% else %}
-      {{ english.authoritative_source.ref }}{% if english.authoritative_source.clause %}, {{ english.authoritative_source.clause }}{% endif %}
-    {% endif %}
-  </p>
-</section>
+{% include concept-source.html english=english %}
 
 {% for lang in site.geolexica.term_languages %}
 
@@ -53,103 +36,8 @@ term_attributes:
 
 {% endfor %}
 
-{% assign json_url = page.representations.json.url -%}
-{% if json_url -%}
-<section class="field json">
-  <p class="field-name">JSON</p>
-  <p class="field-value"><a href="{{ json_url }}">{{ json_url }}</a></p>
-</section>
-{%- endif %}
+{% include concept-api-links.html english=english %}
 
-{% assign yaml_url = page.representations.yaml.url -%}
-{% if yaml_url -%}
-<section class="field yaml">
-  <p class="field-name">YAML</p>
-  <p class="field-value"><a href="{{ yaml_url }}">{{ yaml_url }}</a></p>
-</section>
-{%- endif %}
+{% include concept-info.html english=english %}
 
-{% assign json_url = page.representations.jsonld.url -%}
-{% if json_url -%}
-<section class="field json">
-  <p class="field-name">SKOS in JSON-LD</p>
-  <p class="field-value"><a href="{{ json_url }}">{{ json_url }}</a></p>
-</section>
-{%- endif %}
-
-{% assign ttl_url = page.representations.turtle.url -%}
-{% if ttl_url -%}
-<section class="field ttl">
-  <p class="field-name">SKOS in RDF</p>
-  <p class="field-value"><a href="{{ ttl_url }}">{{ ttl_url }}</a></p>
-</section>
-{%- endif %}
-
-{% assign tbx_url = page.representations.tbx.url -%}
-{% if tbx_url -%}
-<section class="field tbx">
-  <p class="field-name">TBX-ISO-TML</p>
-  <p class="field-value"><a href="{{ tbx_url }}">{{ tbx_url }}</a></p>
-</section>
-{%- endif %}
-
-<section class="field info">
-  <p class="field-name">info</p>
-  <div class="field-value">
-    <ul class="labels">
-      {% if english.entry_status -%}
-        <li>status: {{ english.entry_status | escape }}</li>
-      {% endif -%}
-
-      {% if english.terms.first.normative_status -%}
-        <li>classification: {{ english.terms.first.normative_status | escape }}</li>
-      {% endif -%}
-
-      {% if english.date_accepted -%}
-        <li>date accepted: {{ english.date_accepted | date: "%F" }}</li>
-      {% endif -%}
-
-      {% if english.date_amended -%}
-        <li>date amended: {{ english.date_amended | date: "%F" }}</li>
-      {%- endif %}
-    </ul>
-  </div>
-</section>
-
-{% if english.review_date -%}
-  <section class="field json">
-    <p class="field-name">Review</p>
-    <div class="field-value">
-      <dl class="review">
-        <div class="review-info">
-          <dt>last review performed:</dt>
-          <dd>({{ english.review_date | date: "%F" }})</dd>
-        </div>
-        {% if english.review_status -%}
-          <div class="review-info">
-            <dt>status:</dt>
-            <dd>{{ english.review_status }}</dd>
-          </div>
-        {% endif -%}
-        {% if english.review_decision -%}
-          <div class="review-info">
-            <dt>decision:</dt>
-            <dd>{{ english.review_decision | escape }}</dd>
-          </div>
-        {% endif -%}
-        {% if english.review_decision_event -%}
-          <div class="review-info">
-            <dt>decision event:</dt>
-            <dd>{{ english.review_decision_event | escape }}</dd>
-          </div>
-        {% endif -%}
-        {% if english.review_decision_notes -%}
-          <div class="review-info">
-            <dt>notes:</dt>
-            <dd>{{ english.review_decision_notes | escape }}</dd>
-          </div>
-        {%- endif %}
-      </dl>
-    </div>
-  </section>
-{% endif -%}
+{% include concept-review.html english=english %}
