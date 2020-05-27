@@ -26,11 +26,8 @@ term_attributes:
 
 {% include concept-source.html %}
 
-{% for lang in site.geolexica.term_languages %}
-
-  {%- assign localized_term = page[lang] -%}
-
-  {%- if localized_term -%}
+{% for lang in site.geolexica.term_languages -%}
+  {%- if page[lang] -%}
     {%- include localized-concept.html lang=lang -%}
   {%- endif %}
 
