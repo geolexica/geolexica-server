@@ -20,24 +20,24 @@ term_attributes:
 ---
 {%- assign english = page["eng"] -%}
 
-{% include concept-header.html english=english %}
+{% include concept-header.html %}
 
-{% include concept-lead-info.html english=english %}
+{% include concept-lead-info.html %}
 
-{% include concept-source.html english=english %}
+{% include concept-source.html %}
 
 {% for lang in site.geolexica.term_languages %}
 
   {%- assign localized_term = page[lang] -%}
 
   {%- if localized_term -%}
-    {%- include localized-concept.html lang=lang localized_term=localized_term english=english -%}
+    {%- include localized-concept.html lang=lang -%}
   {%- endif %}
 
 {% endfor %}
 
-{% include concept-api-links.html english=english %}
+{% include concept-api-links.html %}
 
-{% include concept-info.html english=english %}
+{% include concept-info.html %}
 
-{% include concept-review.html english=english %}
+{% include concept-review.html %}
