@@ -1,3 +1,5 @@
+{%- assign english = page["eng"] -%}
+{%- assign localized_term = page[lang] -%}
 {%- assign term_status = english.entry_status -%}
 {%- assign classification = english.terms.first.normative_status -%}
 <article
