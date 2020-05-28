@@ -1,6 +1,10 @@
 # (c) Copyright 2020 Ribose Inc.
 #
 
+require "rdf"
+require "rdf/turtle"
+require "json/ld"
+
 module Jekyll
   module Geolexica
     class ConceptPage < PageWithoutAFile
@@ -90,7 +94,12 @@ module Jekyll
         end
 
         def layout
-          "concept.jsonld"
+          nil
+        end
+
+        def content
+          r = RDFBuilder.new(concept, site)
+          escape_liquid(r.build_graph.dump(:jsonld))
         end
 
         def uses_liquid
@@ -112,7 +121,12 @@ module Jekyll
         end
 
         def layout
-          "concept.ttl"
+          nil
+        end
+
+        def content
+          r = RDFBuilder.new(concept, site)
+          escape_liquid(r.build_graph.dump(:ttl))
         end
 
         def uses_liquid
