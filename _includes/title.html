@@ -1,5 +1,2 @@
-{% if page.term %}{{ page.term | escape }} —
-{% elsif page.title %}{{ page.title | escape }} —
-{% else %}{{ site.title | escape }} —
-{% endif %}
-{{ site.tagline | escape }}
+{% assign title = page.term | default: page.title | default: site.title -%}
+{{ title | escape }} — {{ site.tagline | escape }}
