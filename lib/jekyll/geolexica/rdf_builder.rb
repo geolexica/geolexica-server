@@ -64,8 +64,9 @@ module Jekyll
       # Graph building
 
       def each_language
-        (term_languages & data.keys).each do |lang|
-          yield lang, data[lang]
+        Enumerator.new do |y|
+          supported_langs = (term_languages & data.keys)
+          supported_langs.each { |lang| y << [lang, data[lang]] }
         end
       end
 
