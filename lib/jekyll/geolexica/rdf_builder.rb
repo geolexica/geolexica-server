@@ -41,7 +41,13 @@ module Jekyll
         @graph = RDF::Graph.new
 
         add_statement(concept, RDF.type, SKOS.Concept)
-        add_statement(concept, SKOS.prefLabel, "some label", language: "eng")
+
+        each_language do |lang, l_data|
+          l_data["terms"].each.with_index do |term, term_idx|
+            label = term_idx.zero? ? SKOS.prefLabel : SKOS.altLabel
+            add_statement(concept, label, term["designation"], language: lang)
+          end
+        end
 
         @graph
       end
@@ -56,6 +62,12 @@ module Jekyll
       end
 
       # Graph building
+
+      def each_language
+        (term_languages & data.keys).each do |lang|
+          yield lang, data[lang]
+        end
+      end
 
       def add_statement(subject, predicate, object, **options)
         return if object.nil?
