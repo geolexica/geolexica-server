@@ -12,11 +12,11 @@
       {% endif -%}
 
       {% if english.date_accepted -%}
-        <li>date accepted: {{ english.date_accepted | date: "%F" }}</li>
+        <li>date accepted: {{ english.date_accepted | date: site.geolexica.concept_date_format }}</li>
       {% endif -%}
 
       {% if english.date_amended -%}
-        <li>date amended: {{ english.date_amended | date: "%F" }}</li>
+        <li>date amended: {{ english.date_amended | date: site.geolexica.concept_date_format }}</li>
       {%- endif %}
     </ul>
   </div>

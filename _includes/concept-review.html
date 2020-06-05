@@ -6,7 +6,7 @@
       <dl class="review">
         <div class="review-info">
           <dt>last review performed:</dt>
-          <dd>({{ english.review_date | date: "%F" }})</dd>
+          <dd>({{ english.review_date | date: site.geolexica.concept_date_format }})</dd>
         </div>
         {% if english.review_status -%}
           <div class="review-info">
