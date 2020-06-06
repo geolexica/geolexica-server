@@ -12,27 +12,5 @@ The concepts below are sorted by term name, alphabetically, in a case-insensitiv
 ++++
 {% assign sortedConcepts = site.concepts | sort_natural: "term" %}
 
-<div class="all-concepts">
-  <table>
-    <thead>
-      <tr>
-        <th class="field-termid">Term ID
-        <th class="field-term">Term
-      </tr>
-    </thead>
-
-    <tbody>
-      {% for concept in sortedConcepts %}
-        <tr>
-          <td class="field-termid">
-            <a href="{{ concept.url | relative_url }}">{{ concept.termid }}</a>
-          </td>
-          <td class="field-term">
-            <a href="{{ concept.url | relative_url }}">{{ concept.term }}</a>
-          </td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
+{% include concepts-list.html concepts=sortedConcepts %}
 ++++
