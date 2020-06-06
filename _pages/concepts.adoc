@@ -9,8 +9,8 @@ title: All Concepts
 
 The concepts below are sorted by term name, alphabetically, in a case-insensitive way.
 
-++++
-{% assign sorted_concepts = site.concepts | sort_natural: "term" %}
+{% assign sorted_concepts = site.concepts | sort_natural: "term" -%}
 
+++++
 {% include concepts-list.html concepts=sorted_concepts %}
 ++++
