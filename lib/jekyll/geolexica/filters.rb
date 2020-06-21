@@ -3,7 +3,8 @@
 
 module Jekyll
   module Geolexica
-    module GlossarizeFilter
+    module Filters
+
     end
   end
 end
