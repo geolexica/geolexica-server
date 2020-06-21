@@ -354,6 +354,10 @@ body {
         margin-right: 0;
       }
 
+      @media screen and (max-width: $bigscreenBreakpoint) {
+        display: none;
+      }
+
       li {
         display: inline;
         margin-right: 1em;
