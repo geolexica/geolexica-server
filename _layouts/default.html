@@ -150,6 +150,10 @@
 
     {% include script.html %}
 
+    {% if site.geolexica.math %}
+      {%- include math-config.html -%}
+    {% endif %}
+
     <template id="expandableNavTrigger">
       <button class="nav-expand-trigger">
         <i class="fas fa-bars"></i>
