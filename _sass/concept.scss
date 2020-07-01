@@ -108,7 +108,7 @@ body.concept {
     padding-top: 1em;
     padding-bottom: 1em;
 
-    @media screen and (max-width: $bigscreenBreakpoint) {
+    @media screen and (max-width: $bigscreenBreakpoint - 1) {
       &.field {
         display: block;
       }

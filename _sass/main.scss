@@ -250,7 +250,7 @@ body {
 
             box-sizing: border-box;
 
-            @media screen and (max-width: $bigscreenBreakpoint) {
+            @media screen and (max-width: $bigscreenBreakpoint - 1) {
               margin-right: -1px;
               margin-bottom: -1px;
               flex: 1;
@@ -272,7 +272,7 @@ body {
             flex-flow: row wrap;
 
             .widget-item {
-              @media screen and (max-width: $bigscreenBreakpoint) {
+              @media screen and (max-width: $bigscreenBreakpoint - 1) {
                 flex-basis: 50%;
                 &.home {
                   flex: 0;
@@ -320,7 +320,7 @@ body {
         }
       }
 
-      @media screen and (max-width: $bigscreenBreakpoint) {
+      @media screen and (max-width: $bigscreenBreakpoint - 1) {
         .parent-org-reference .logo-link img {
           visibility: hidden;
         }
@@ -354,7 +354,7 @@ body {
         margin-right: 0;
       }
 
-      @media screen and (max-width: $bigscreenBreakpoint) {
+      @media screen and (max-width: $bigscreenBreakpoint - 1) {
         display: none;
       }
 
