@@ -68,8 +68,7 @@ module Jekyll
         end
 
         def content
-          s = ConceptSerializer.new(concept, site)
-          s.to_json
+          ConceptSerializer.new(concept, site).to_json
         end
 
         def uses_liquid
@@ -161,8 +160,7 @@ module Jekyll
         end
 
         def content
-          s = ConceptSerializer.new(concept, site)
-          s.to_yaml
+          ConceptSerializer.new(concept, site).to_yaml
         end
 
         def uses_liquid
