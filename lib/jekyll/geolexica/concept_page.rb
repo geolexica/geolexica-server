@@ -26,24 +26,10 @@ module Jekyll
       def default_data
         {
           "layout" => layout,
+          "liquid" => uses_liquid,
           "permalink" => permalink,
           "representations" => concept.pages,
         }
-      end
-
-      # Disables Liquid processing for given content.
-      #
-      # FIXME Still may break if +content+ contains the "{% endraw %}" sequence,
-      #       which is very unlikely as we work with trusted input.
-      #       Preferred solution is to make the whole page a non-Liquid file,
-      #       or mark as already processed, or something, but it is unclear how
-      #       to achieve that.
-      def escape_liquid(content)
-        [
-          "{\% raw \%}",
-          content,
-          "{\% endraw \%}",
-        ].join("")
       end
 
       class HTML < ConceptPage
@@ -57,6 +43,10 @@ module Jekyll
 
         def layout
           "concept"
+        end
+
+        def uses_liquid
+          true
         end
 
         def permalink
@@ -79,7 +69,11 @@ module Jekyll
 
         def content
           s = ConceptSerializer.new(concept, site)
-          escape_liquid(s.to_json)
+          s.to_json
+        end
+
+        def uses_liquid
+          false
         end
 
         def permalink
@@ -100,6 +94,10 @@ module Jekyll
           "concept.jsonld"
         end
 
+        def uses_liquid
+          true
+        end
+
         def permalink
           "/api/concepts/#{termid}.jsonld"
         end
@@ -118,6 +116,10 @@ module Jekyll
           "concept.ttl"
         end
 
+        def uses_liquid
+          true
+        end
+
         def permalink
           "/api/concepts/#{termid}.ttl"
         end
@@ -134,6 +136,10 @@ module Jekyll
 
         def layout
           "concept.tbx.xml"
+        end
+
+        def uses_liquid
+          true
         end
 
         def permalink
@@ -156,7 +162,11 @@ module Jekyll
 
         def content
           s = ConceptSerializer.new(concept, site)
-          escape_liquid(s.to_yaml)
+          s.to_yaml
+        end
+
+        def uses_liquid
+          false
         end
 
         def permalink
