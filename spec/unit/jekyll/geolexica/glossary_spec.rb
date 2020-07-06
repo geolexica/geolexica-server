@@ -11,8 +11,8 @@ RSpec.describe ::Jekyll::Geolexica::Glossary do
   it { is_expected.to respond_to(:each_concept) }
   it { is_expected.to respond_to(:each_termid) }
 
-  describe "#language_statistics" do
-    subject { instance.method(:language_statistics) }
+  describe "#statistics" do
+    subject { instance.method(:statistics) }
 
     let(:fake_config) do
       {"geolexica" => { "term_languages" => %w[eng deu pol] }}
@@ -27,12 +27,20 @@ RSpec.describe ::Jekyll::Geolexica::Glossary do
       )
     end
 
-    it "returns a hash with languages as keys and natural numbers as values" do
+    it "returns a hash with various statistics" do
       retval = subject.call
       expect(retval).to be_kind_of(Hash)
-      expect(retval.keys).to all be_kind_of(String) & have_attributes(size: 3)
-      expect(retval.values).to all be_kind_of(Integer) & (be >= 0)
-      expect(retval).to eq({"eng" => 4, "deu" => 2, "pol" => 1})
+      expect(retval.keys).to contain_exactly("by_language")
+    end
+
+    specify "'by_language' entry is a hash with languages as keys " +
+      "and natural numbers as values" do
+      retval = subject.call
+      entry = retval["by_language"]
+      expect(entry).to be_kind_of(Hash)
+      expect(entry.keys).to all be_kind_of(String) & have_attributes(size: 3)
+      expect(entry.values).to all be_kind_of(Integer) & (be >= 0)
+      expect(entry).to eq({"eng" => 4, "deu" => 2, "pol" => 1})
     end
   end
 
