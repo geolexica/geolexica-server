@@ -29,31 +29,6 @@ powered_by:
   title: Ribose
   logo_path: /assets/logo-ribose.svg
 
-sass:
-  style: compressed
-
-collections:
-  pages:
-    output: true
-    permalink: /:path/
-  concepts:
-    output: true
-  concepts_json:
-    output: true
-    output_ext: .json
-  concepts_jsonld:
-    output: true
-    output_ext: .jsonld
-  concepts_ttl:
-    output: true
-    output_ext: .ttl
-  concepts_tbx:
-    output: true
-    output_ext: .tbx.xml
-  concepts_yaml:
-    output: true
-    output_ext: .yaml
-
 geolexica:
   concepts_glob: "./geolexica-database/concepts/*.yaml"
   concept_date_format: "%F"
