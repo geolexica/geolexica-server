@@ -24,14 +24,14 @@ module Jekyll
         super(concept.data["termid"], concept)
       end
 
-      def language_statistics
-        @language_statistics ||= calculate_language_statistics
+      def statistics
+        @statistics ||= calculate_statistics
       end
 
       # Defines how Glossary is exposed in Liquid templates.
       def to_liquid
         {
-          "language_statistics" => language_statistics,
+          "statistics" => statistics,
         }
       end
 
@@ -56,6 +56,12 @@ module Jekyll
 
       # Does nothing, but some sites may replace this method.
       def preprocess_concept_hash(concept_hash)
+      end
+
+      def calculate_statistics
+        {
+          "by_language" => calculate_language_statistics,
+        }
       end
 
       def calculate_language_statistics
