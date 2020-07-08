@@ -22,6 +22,7 @@ module Jekyll
 
         make_pages
         sort_pages
+        initialize_collections
         group_pages_in_collections
       end
 
@@ -44,6 +45,17 @@ module Jekyll
 
       def sort_pages
         generated_pages.sort_by! { |p| p.termid.to_s }
+      end
+
+      def initialize_collections
+        %w[
+          concepts concepts_json concepts_jsonld
+          concepts_ttl concepts_tbx concepts_yaml
+        ].each do |label|
+          next if site.collections[label]
+          site.config["collections"][label] ||= { "output" => true }
+          site.collections[label] = Jekyll::Collection.new(site, label)
+        end
       end
 
       def group_pages_in_collections
