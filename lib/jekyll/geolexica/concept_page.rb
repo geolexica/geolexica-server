@@ -26,7 +26,7 @@ module Jekyll
       def default_data
         {
           "layout" => layout,
-          "liquid" => uses_liquid,
+          "render_with_liquid" => uses_liquid,
           "permalink" => permalink,
           "representations" => concept.pages,
         }
