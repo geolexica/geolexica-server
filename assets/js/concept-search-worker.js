@@ -72,7 +72,7 @@ async function filterAndSort(params) {
       });
   }
 
-  return concepts.sort((item1, item2) => item1.termid - item2.termid);
+  return concepts.sort((item1, item2) => item1.sort_order.natural - item2.sort_order.natural);
 }
 
 onmessage = async function(msg) {
