@@ -1,5 +1,5 @@
 ---
-permalink: "/api/concepts-index-list.json"
+permalink: "/api/concept-search-index.json"
 ---
 [
   {% for concept in site.concepts %}
