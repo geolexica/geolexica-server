@@ -2,7 +2,7 @@
 ---
 importScripts('/assets/js/babel-polyfill.js');
 
-const CONCEPTS_URL = '/api/concepts-index-list.json';
+const CONCEPTS_URL = '/api/concept-search-index.json';
 
 /** For example:
  *    const LANGUAGES = [ 'eng', 'deu' ];
