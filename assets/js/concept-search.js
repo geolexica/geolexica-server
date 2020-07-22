@@ -1,26 +1,24 @@
+---
+---
 (function () {
 
   const searchWorker = new Worker('/assets/js/concept-search-worker.js');
 
-  // TODO: Move to a shared module
-  const LANGUAGES = [
-    'eng',
-    'ara',
-    'spa',
-    'swe',
-    'kor',
-    'rus',
-    'ger',
-    'fre',
-    'fin',
-    'jpn',
-    'dan',
-    'chi',
-  ];
+  /** For example:
+   *    const LANGUAGES = [ 'eng', 'deu' ];
+   *  Having a wrapper function helps not to break syntax highlight.
+   */
+  const LANGUAGES = (function() {
+    return {{ site.geolexica.term_languages | jsonify }} || [];
+  })();
 
-  const SEARCH_REFINEMENTS = [
-    'validity',
-  ];
+  /** For example:
+   *    const SEARCH_REFINEMENTS = [ 'validity' ];
+   *  Having a wrapper function helps not to break syntax highlight.
+   */
+  const SEARCH_REFINEMENTS = (function() {
+    return {{ site.geolexica.search.refinements | jsonify }} || [];
+  })();
 
 
   // React-based concept browser

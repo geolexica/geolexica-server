@@ -1,21 +1,16 @@
+---
+---
 importScripts('/assets/js/babel-polyfill.js');
 
 const CONCEPTS_URL = '/api/concepts-index-list.json';
 
-const LANGUAGES = [
-  'eng',
-  'ara',
-  'spa',
-  'swe',
-  'kor',
-  'rus',
-  'ger',
-  'fre',
-  'fin',
-  'jpn',
-  'dan',
-  'chi',
-];
+/** For example:
+ *    const LANGUAGES = [ 'eng', 'deu' ];
+ *  Having a wrapper function helps not to break syntax highlight.
+ */
+const LANGUAGES = (function() {
+  return {{ site.geolexica.term_languages | jsonify }} || [];
+})();
 
 var concepts = null;
 var latestQuery = null;
