@@ -4,7 +4,7 @@ permalink: "/api/concept-search-index.json"
 [
   {% for concept in site.concepts %}
   {
-    "termid": {{ concept.termid }},
+    "termid": {{ concept.termid | jsonify }},
     "term": {{ concept.eng.terms.first.designation | jsonify }},
     "term_url": {{ concept.url | jsonify }},
     "sort_order": {
