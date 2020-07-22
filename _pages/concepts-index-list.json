@@ -7,6 +7,9 @@ permalink: "/api/concepts-index-list.json"
     "termid": {{ concept.termid }},
     "term": {{ concept.eng.terms.first.designation | jsonify }},
     "term_url": {{ concept.url | jsonify }},
+    "sort_order": {
+      "natural": {{ forloop.index }}
+    },
 
     {% assign english_concept = concept["eng"] %}
     {% for lang in site.geolexica.term_languages %}
