@@ -6,6 +6,7 @@ permalink: "/api/concepts-index-list.json"
   {
     "termid": {{ concept.termid }},
     "term": {{ concept.eng.terms.first.designation | jsonify }},
+    "term_url": {{ concept.url | jsonify }},
 
     {% assign english_concept = concept["eng"] %}
     {% for lang in site.geolexica.term_languages %}
@@ -13,6 +14,7 @@ permalink: "/api/concepts-index-list.json"
     "{{ lang }}": {% if concept[lang] %}{
       "term": {{ concept[lang].terms.first.designation | jsonify }},
       "id": {{ concept[lang].id | jsonify }},
+      "term_url": {{ concept.url | append: "#entry-lang-" | append: lang | jsonify }},
       "entry_status": {{ english_concept.entry_status | jsonify }},
       "language_code": {{ concept[lang].language_code | jsonify }},
       "review_decision": {{ english_concept.review_decision | jsonify }}
