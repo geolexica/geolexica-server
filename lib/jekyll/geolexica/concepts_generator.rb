@@ -44,7 +44,7 @@ module Jekyll
       end
 
       def sort_pages
-        generated_pages.sort_by! { |p| p.termid.to_s }
+        generated_pages.sort_by! { |p| p.termid }
       end
 
       def initialize_collections
