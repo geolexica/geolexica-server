@@ -267,13 +267,7 @@
   ReactDOM.render(el(ConceptBrowser, null), document.querySelector('.browse-concepts'))
 
   function getConceptPermalink(concept) {
-    if (concept.termid) {
-      return `/concepts/${concept.termid}/`;
-    } else if (concept.id && concept.language_code) {
-      return `/concepts/${concept.id}/#entry-lang-${concept.language_code}`;
-    } else {
-      return null;
-    }
+    return concept.term_url;
   }
 
   function updateBodyClass({ searchQuery, expanded }) {
