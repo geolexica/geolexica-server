@@ -18,6 +18,10 @@
     'chi',
   ];
 
+  const SEARCH_REFINEMENTS = [
+    'validity',
+  ];
+
 
   // React-based concept browser
   // ===========================
@@ -57,7 +61,7 @@
       this.stringInputRef = React.createRef();
 
       this.state = {
-        valid: 'valid',  // Required value of the entry_status field, or undefined
+        valid: SEARCH_REFINEMENTS.indexOf('validity') >= 0 ? 'valid' : undefined,  // Required value of the entry_status field, or undefined
         string: '',
       };
     }
@@ -75,10 +79,10 @@
           onChange: this.handleSearchStringChange}),
       ];
 
-      if (this.state.string.length > 1 && (this.props.refineControls || []).length > 0) {
+      if (this.state.string.length > 1 && (SEARCH_REFINEMENTS).length > 0) {
         var refineControls = [];
 
-        if (this.props.refineControls.indexOf('validity') >= 0) {
+        if (SEARCH_REFINEMENTS.indexOf('validity') >= 0) {
           refineControls.push(
             el('div', { key: 'validity', className: 'validity' }, [
               el('input', {
@@ -218,7 +222,7 @@
         el('div', { key: 'search-controls', className: 'search-controls' },
           el(SearchControls, {
             onSearchChange: this.handleSearchQuery,
-            refineControls: ['validity'],
+            refineControls: SEARCH_REFINEMENTS,
           })
         ),
       ];
