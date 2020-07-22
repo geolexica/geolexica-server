@@ -3,6 +3,8 @@
 
 module Jekyll
   module Geolexica
+    FormatDefinition = Struct.new(:setting_name, keyword_init: true)
+
     FORMATS = {
       html: {setting_name: "html"},
       json: {setting_name: "json"},
@@ -10,6 +12,8 @@ module Jekyll
       tbx: {setting_name: "tbx-iso-tml"},
       turtle: {setting_name: "turtle"},
       yaml: {setting_name: "yaml"},
-    }.deep_freeze
+    }.
+      transform_values { |v| FormatDefinition.new(**v).freeze }.
+      freeze
   end
 end
