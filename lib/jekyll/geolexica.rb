@@ -5,6 +5,10 @@ require "jekyll"
 
 module Jekyll
   module Geolexica
+    def self.load_tasks
+      tasks_path = File.expand_path("../tasks", __dir__)
+      Rake.add_rakelib(tasks_path)
+    end
   end
 end
 
