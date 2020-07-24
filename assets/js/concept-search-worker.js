@@ -34,7 +34,7 @@ async function filterAndSort(params) {
       const matchingLanguages = LANGUAGES.
         filter((lang) => {
           const term = (item[lang] || {}).term;
-          return term && term.toLowerCase().indexOf(params.string) >= 0;
+          return term && term.toLowerCase().indexOf(queryString) >= 0;
         });
 
       if (matchingLanguages.length > 0) {
