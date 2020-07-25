@@ -15,6 +15,22 @@ const LANGUAGES = (function() {
 var concepts = null;
 var latestQuery = null;
 
+// TODO Support filters here maybe.
+class SearchQuery {
+  constructor(queryString) {
+    this.queryString = queryString.toLowerCase();
+  }
+
+  isEmpty() {
+    return this.queryString === "";
+  }
+
+  match(string) {
+    const stringLC = string.toLowerCase();
+    return this.queryString.indexOf(stringLC) >= 0;
+  }
+}
+
 function fetchConcepts() {
   if (concepts === null) {
     concepts = fetch(CONCEPTS_URL).then((resp) => resp.json());
@@ -25,16 +41,17 @@ function fetchConcepts() {
 async function filterAndSort(params) {
   var concepts = await fetchConcepts();
 
-  if (params.string !== '') {
+  const query = new SearchQuery(params.string);
+
+  if (!query.isEmpty()) {
     concepts = concepts.map((_item) => {
       // Search all localized term names for the presence of given search string
 
       const item = Object.assign({}, _item);
-      const queryString = params.string.toLowerCase();
       const matchingLanguages = LANGUAGES.
         filter((lang) => {
           const term = (item[lang] || {}).term;
-          return term && term.toLowerCase().indexOf(queryString) >= 0;
+          return term && query.match(term);
         });
 
       if (matchingLanguages.length > 0) {
