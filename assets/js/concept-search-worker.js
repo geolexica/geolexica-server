@@ -27,7 +27,7 @@ class SearchQuery {
 
   match(string) {
     const stringLC = string.toLowerCase();
-    return this.queryString.indexOf(stringLC) >= 0;
+    return stringLC.includes(this.queryString);
   }
 }
 
