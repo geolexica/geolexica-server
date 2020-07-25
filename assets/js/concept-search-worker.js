@@ -18,16 +18,16 @@ var latestQuery = null;
 // TODO Support filters here maybe.
 class SearchQuery {
   constructor(queryString) {
-    this.queryString = queryString.toLowerCase();
+    this.searchWords = queryString.toLowerCase().match(/\p{Letter}+/ug) || [];
   }
 
   isEmpty() {
-    return this.queryString === "";
+    return this.searchWords.length == 0;
   }
 
   match(string) {
     const stringLC = string.toLowerCase();
-    return stringLC.includes(this.queryString);
+    return this.searchWords.every((word) => stringLC.includes(word));
   }
 }
 
