@@ -45,6 +45,9 @@ module Jekyll
       end
 
       def skip_page?(pathname)
+        always_present = %w[concept-search-index]
+        return false if always_present.include?(pathname.basename)
+
         (pathname.extname == ".ttl" && !output_turtle?) ||
         (pathname.extname == ".json" && !output_json?) ||
         false
