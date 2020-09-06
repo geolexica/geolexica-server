@@ -2,6 +2,7 @@
 #
 
 require "asciimath"
+require "mathml2asciimath"
 require "open3"
 require "singleton"
 
@@ -28,6 +29,10 @@ module Jekyll
             cin.close
             return cout.read
           end
+        end
+
+        def mathml_to_asciimath(expression)
+          MathML2AsciiMath.m2a(expression)
         end
       end
 

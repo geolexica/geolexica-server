@@ -109,4 +109,22 @@ RSpec.describe ::Jekyll::Geolexica::Math do
       expect(retval).to include('<mo>⩾</mo>')
     end
   end
+
+  describe "MathML to AsciiMath conversion" do
+    subject do
+      ->(expr) { described_class.convert(expr, from: :mathml, to: :asciimath) }
+    end
+
+    it "converts most simplistic expressions" do
+      expr = '<math><mi>E</mi><mo>=</mo><mi>m</mi><msup><mi>c</mi><mn>2</mn></msup></math>'
+      retval = subject.(expr)
+      expect(retval).to eq('E = m c^2')
+    end
+
+    it "converts single-symbol formulas, which are common in glossary terms" do
+      expr = '<math><mi>n</mi></math>'
+      retval = subject.(expr)
+      expect(retval).to eq('n')
+    end
+  end
 end

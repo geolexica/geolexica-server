@@ -50,6 +50,8 @@ Gem::Specification.new do |spec|
   # though the older one also works and some may have reasons to use it.
   spec.add_runtime_dependency "asciimath", ">= 1", "< 3"
 
+  spec.add_runtime_dependency "mathml2asciimath", "~> 0.0.10"
+
   # Zeitwerk::Loader#push_dir supports :namespace argument from v. 2.4.
   spec.add_runtime_dependency "zeitwerk", "~> 2.4"
 
