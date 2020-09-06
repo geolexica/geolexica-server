@@ -22,6 +22,46 @@ RSpec.describe ::Jekyll::Geolexica::Math do
     end
   end
 
+  describe "AsciiMath to MathML conversion" do
+    subject do
+      ->(expr) { described_class.convert(expr, from: :asciimath, to: :mathml) }
+    end
+
+    it "converts most simplistic expressions" do
+      expr = 'E = mc^2'
+      retval = subject.(expr)
+
+      expect(retval).to be_a(String)
+      expect(retval).not_to be_empty
+
+      expect(retval).to include('<math')
+      expect(retval).to include('<mi>E</mi>')
+      expect(retval).to include('<mo>=</mo>')
+      expect(retval).to include('<msup>')
+      expect(retval).to include('<mi>c</mi>')
+      expect(retval).to include('<mn>2</mn>')
+    end
+
+    it "converts more advanced expressions" do
+      expr = 'AA_(x>=0, x in bbb R) abs(x)=x'
+      retval = subject.(expr)
+
+      expect(retval).to be_a(String)
+      expect(retval).not_to be_empty
+
+      expect(retval).to include('<math')
+      expect(retval).to include('<msub>')
+      expect(retval).to include('<mo>&#x2200;</mo>') # for all
+      expect(retval).to include('<mo>&#x2208;</mo>') # in
+      expect(retval).
+        to include('<mstyle mathvariant="double-struck"><mi>R</mi></mstyle>')
+
+      # Note that AsciiMath v1 uses <mfenced> rather than expanded form,
+      # see https://github.com/asciidoctor/asciimath/issues/26
+      expect(retval).to include('<mo>|</mo>')
+    end
+  end
+
   describe "LaTeX math to MathML conversion" do
     subject do
       ->(expr) { described_class.convert(expr, from: :latexmath, to: :mathml) }

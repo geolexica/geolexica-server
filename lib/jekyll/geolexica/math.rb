@@ -1,6 +1,7 @@
 # (c) Copyright 2020 Ribose Inc.
 #
 
+require "asciimath"
 require "open3"
 require "singleton"
 
@@ -14,6 +15,10 @@ module Jekyll
 
         def convert(expression, from:, to:)
           public_send("#{from}_to_#{to}", expression)
+        end
+
+        def asciimath_to_mathml(expression)
+          AsciiMath.parse(expression).to_mathml
         end
 
         def latexmath_to_mathml(expression)

@@ -46,6 +46,10 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency "jekyll-asciidoc"
 
+  # Version 2+ is feature-complete and generally recommended,
+  # though the older one also works and some may have reasons to use it.
+  spec.add_runtime_dependency "asciimath", ">= 1", "< 3"
+
   # Zeitwerk::Loader#push_dir supports :namespace argument from v. 2.4.
   spec.add_runtime_dependency "zeitwerk", "~> 2.4"
 
