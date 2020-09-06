@@ -15,6 +15,15 @@ module Jekyll
         def convert(expression, from:, to:)
           public_send("#{from}_to_#{to}", expression)
         end
+
+        def latexmath_to_mathml(expression)
+          cmd = "latexmlmath --strict --preload=amsmath --preload=amssymb -- -"
+          Open3.popen2(cmd) do |cin, cout|
+            cin.print(expression)
+            cin.close
+            return cout.read
+          end
+        end
       end
 
       module_function

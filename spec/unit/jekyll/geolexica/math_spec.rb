@@ -21,4 +21,52 @@ RSpec.describe ::Jekyll::Geolexica::Math do
       expect(retval).to eq("converted_expr")
     end
   end
+
+  describe "LaTeX math to MathML conversion" do
+    subject do
+      ->(expr) { described_class.convert(expr, from: :latexmath, to: :mathml) }
+    end
+
+    it "converts most simplistic expressions" do
+      expr = 'E = mc^2'
+      retval = subject.(expr)
+
+      expect(retval).to be_a(String)
+      expect(retval).not_to be_empty
+
+      expect(retval).to start_with('<?xml version="1.0" encoding="UTF-8"?>')
+      expect(retval).to include('<math')
+      expect(retval).to include('<mi>E</mi>')
+      expect(retval).to include('<mo>=</mo>')
+      expect(retval).to include('<msup>')
+      expect(retval).to include('<mi>c</mi>')
+      expect(retval).to include('<mn>2</mn>')
+    end
+
+    it "handles features from amsmath package" do
+      # \text is an example of AMS math feature
+      expr = '\Delta \text{is a Greek letter}'
+      retval = subject.(expr)
+
+      expect(retval).to be_a(String)
+      expect(retval).not_to be_empty
+
+      expect(retval).to include('<math')
+      expect(retval).not_to include('<merror')
+      expect(retval).to include('<mtext>is a Greek letter</mtext>')
+    end
+
+    it "handles features from amssymb package" do
+      # \geqslant is an example of AMS symbol
+      expr = '\Delta x \Delta p_x \geqslant \frac{\hbar}{2}'
+      retval = subject.(expr)
+
+      expect(retval).to be_a(String)
+      expect(retval).not_to be_empty
+
+      expect(retval).to include('<math')
+      expect(retval).not_to include('<merror')
+      expect(retval).to include('<mo>⩾</mo>')
+    end
+  end
 end
