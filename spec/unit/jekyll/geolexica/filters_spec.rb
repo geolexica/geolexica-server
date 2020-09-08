@@ -73,4 +73,31 @@ RSpec.describe Jekyll::Geolexica::Filters do
       expect(retval).to eq("")
     end
   end
+
+  describe "#parse_math" do
+    subject { wrapper.method(:parse_math) }
+
+    it "accepts a string input and returns a string" do
+      retval = subject.call("input string")
+      expect(retval).to be_kind_of(String)
+    end
+
+    it "detects AsciiMath expressions and converts them to MathML" do
+      input = 'Everyone knows that `pi` is roughly 3.14.'
+      retval = subject.call(input)
+      expect(retval).to include('<mi>&#x3C0;</mi>') | include('<mi>π</mi>')
+    end
+
+    it "detects LaTeX math expressions and converts them to MathML" do
+      input = 'Everyone knows that \(\pi\) is roughly 3.14.'
+      retval = subject.call(input)
+      expect(retval).to include('<mi>&#x3C0;</mi>') | include('<mi>π</mi>')
+    end
+
+    it "detects LaTeX math block expressions and converts them to MathML" do
+      input = 'Everyone knows that: \[\pi\] is roughly 3.14.'
+      retval = subject.call(input)
+      expect(retval).to include('<mi>&#x3C0;</mi>') | include('<mi>π</mi>')
+    end
+  end
 end
