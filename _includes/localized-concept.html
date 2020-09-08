@@ -10,17 +10,17 @@
 
   <div class="field-value">
     {% for entry in localized_term.terms %}
-      <h3 class="localized">{{ entry.designation | escape }}</h3>
+      <h3 class="localized">{{ entry.designation | escape | parse_math }}</h3>
     {% else %}
       <h3 class="warning">Translated term missing in this language.</h3>
     {% endfor %}
 
     {% if localized_term.abbrev %}
-      <p class="localized abbrev">{{ localized_term.abbrev | escape }}</p>
+      <p class="localized abbrev">{{ localized_term.abbrev | escape | parse_math }}</p>
     {% endif %}
 
     {% if localized_term.definition %}
-      <p class="definition localized">{{ localized_term.definition | escape }}</p>
+      <p class="definition localized">{{ localized_term.definition | escape | parse_math }}</p>
     {% else %}
       <p class="definition warning">Definition not provided in this language.</p>
     {% endif %}
@@ -50,7 +50,7 @@
             This note has not been translated.
           </span>
         {% else %}
-          {{ note | escape }}
+          {{ note | escape | parse_math }}
         {% endif %}
         </p>
         {% endfor %}
@@ -71,7 +71,7 @@
             This example has not been translated.
           </span>
         {% else %}
-          {{ example | escape }}
+          {{ example | escape | parse_math }}
         {% endif %}
         </p>
         {% endfor %}
@@ -80,7 +80,7 @@
 
     <ul class="labels">
       {% if localized_term.alt %}
-        <li><span class="localized">{{ localized_term.alt | escape }}</span></li>
+        <li><span class="localized">{{ localized_term.alt | escape | parse_math }}</span></li>
       {% endif %}
     </ul>
 
