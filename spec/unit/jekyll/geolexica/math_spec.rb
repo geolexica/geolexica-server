@@ -108,6 +108,25 @@ RSpec.describe ::Jekyll::Geolexica::Math do
       expect(retval).not_to include('<merror')
       expect(retval).to include('<mo>⩾</mo>')
     end
+
+    it "raises an error when expression is malformed" do
+      expr = 'What &is; THAT'
+      expect { subject.(expr) }.to raise_conversion_error(fatal: true)
+    end
+
+    it "raises an error when finds some unknown macro" do
+      expr = '1 \veryunknown 2'
+      expect { subject.(expr) }.to raise_conversion_error(fatal: true)
+    end
+
+    it "returns a non-fatal error sometimes" do
+      # LaTeXML prints warnings for a following expression.
+      expr = '[\backepsilon a = 1, b = 2]'
+      expect { subject.(expr) }.to raise_conversion_error(fatal: false) do |err|
+        expect(err.result).to be_a(String)
+        expect(err.result).not_to be_empty
+      end
+    end
   end
 
   describe "MathML to AsciiMath conversion" do
@@ -125,6 +144,20 @@ RSpec.describe ::Jekyll::Geolexica::Math do
       expr = '<math><mi>n</mi></math>'
       retval = subject.(expr)
       expect(retval).to eq('n')
+    end
+  end
+
+  def raise_conversion_error(fatal: nil, &block)
+    raise_error do |error|
+      expect(error).to be_a(Jekyll::Geolexica::Math::ConversionError)
+
+      if fatal
+        expect(error).to be_fatal
+      else
+        expect(error).not_to be_fatal
+      end
+
+      yield error if block_given?
     end
   end
 end

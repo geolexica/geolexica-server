@@ -10,6 +10,30 @@ module Jekyll
   module Geolexica
     module Math
 
+      class ConversionError < StandardError
+        attr_reader :expression, :from, :to, :details, :result
+
+        def initialize(expression, from:, to:, result: nil, details: nil)
+          @expression = expression
+          @from = from
+          @to = to
+          @result = result
+          @details = details
+        end
+
+        def fatal?
+          result.nil?
+        end
+
+        def message
+          head = fatal? ?
+            "Could not convert" :
+            "There were some difficulties with converting"
+
+          "#{head} formula from #{from} to #{to}"
+        end
+      end
+
       # A helper class which contains mathematical formulae converter logic.
       class Converter
         include Singleton
@@ -22,12 +46,26 @@ module Jekyll
           AsciiMath.parse(expression).to_mathml
         end
 
+        # TODO In fact it is quite difficult to tell when the error should be
+        # considered fatal, because latexmlmath exit status is zero even if
+        # warnings or errors are printed.  For this reason, we test all of
+        # following: exit status, stdout length, stderr length, and presence of
+        # "Error:" substring in the stderr.
         def latexmath_to_mathml(expression)
           cmd = "latexmlmath --strict --preload=amsmath --preload=amssymb -- -"
-          Open3.popen2(cmd) do |cin, cout|
-            cin.print(expression)
-            cin.close
-            return cout.read
+
+          cout, cerr, exit_status = Open3.capture3(cmd, stdin_data: expression)
+
+          case
+          when exit_status.success? && !cout.empty? && cerr.empty? # success
+            return cout
+          when exit_status.success? && !cout.empty? && /^Error:/ !~ cerr
+            # warnings
+            raise ConversionError.new(expression,
+              from: :latexmath, to: :mathml, details: cerr, result: cout)
+          else # errors
+            raise ConversionError.new(expression,
+              from: :latexmath, to: :mathml, details: cerr)
           end
         end
 
