@@ -32,14 +32,34 @@ module Jekyll
           (?<open>\\\()  (?<expr>.*?)  \\\) | # LaTeX inline
           (?<open>\\\[)  (?<expr>.*?)  \\\] | # LaTeX block
           (?<open>`)     (?<expr>.*?)  `      # AsciiMath
-        )x) do
-          case $~["open"]
-          when '\(' then src_format = :latexmath
-          when '\[' then src_format = :latexmath
-          when '`'  then src_format = :asciimath
-          end
+        )x) do |delimited_expression|
+          begin
+            case $~["open"]
+            when '\(' then src_format = :latexmath
+            when '\[' then src_format = :latexmath
+            when '`'  then src_format = :asciimath
+            end
 
-          Math.convert($~["expr"], from: src_format, to: :mathml)
+            Math.convert($~["expr"], from: src_format, to: :mathml)
+
+          rescue Math::ConversionError
+            fatal_enough = $!.fatal?
+            logger_method = fatal_enough ? :error : :warn
+            page_path = @context.registers[:page]["path"]
+
+            Jekyll.logger.public_send(logger_method, "Geolexica:",
+              "#{$!.message} at page #{page_path}.")
+
+            Jekyll.logger.public_send(logger_method, "Geolexica:",
+              "Formula was: #{$!.expression}")
+
+            # Calling Jekyll.logger#debug would replace all whitespaces with
+            # single space characters, which could make debug details less
+            # readable.  That's why low level API is used here.
+            Jekyll.logger.writer.debug($!.details)
+
+            fatal_enough ? delimited_expression : $!.result
+          end
         end
       end
     end

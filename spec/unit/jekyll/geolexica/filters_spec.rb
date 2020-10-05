@@ -5,7 +5,12 @@ RSpec.describe Jekyll::Geolexica::Filters do
   let(:wrapper) do
     w = Object.new
     w.extend(described_class)
+    w.instance_variable_set("@context", liquid_context_dbl)
     w
+  end
+
+  let(:liquid_context_dbl) do
+    double(registers: { page: { path: "path/page.html" } })
   end
 
   describe "#display_authoritative_source" do
@@ -77,6 +82,14 @@ RSpec.describe Jekyll::Geolexica::Filters do
   describe "#parse_math" do
     subject { wrapper.method(:parse_math) }
 
+    before do
+      # Suppress logger
+      allow(Jekyll.logger.writer).to receive(:debug)
+      allow(Jekyll.logger.writer).to receive(:error)
+      allow(Jekyll.logger.writer).to receive(:info)
+      allow(Jekyll.logger.writer).to receive(:warn)
+    end
+
     it "accepts a string input and returns a string" do
       retval = subject.call("input string")
       expect(retval).to be_kind_of(String)
@@ -98,6 +111,32 @@ RSpec.describe Jekyll::Geolexica::Filters do
       input = 'Everyone knows that: \[\pi\] is roughly 3.14.'
       retval = subject.call(input)
       expect(retval).to include('<mi>&#x3C0;</mi>') | include('<mi>π</mi>')
+    end
+
+    it "a malformed formula does not affect other content in given string" do
+      input = 'The `1+2`, the `bad one`, and the `3+4` formulas.'
+      math = Jekyll::Geolexica::Math # for short
+
+      allow(math).to receive(:convert).
+        with("bad one", any_args).
+        and_raise(math::ConversionError.new("bad one", from: :_, to: :_))
+
+      allow(math).to receive(:convert).
+        with("1+2", any_args).
+        and_call_original
+
+      allow(math).to receive(:convert).
+        with("3+4", any_args).
+        and_call_original
+
+      retval = subject.call(input)
+
+      # Expect text, unchanged broken formula, and converted good formulas.
+      expect(retval).to include(
+        "The", "and the", "formulas.",
+        "the `bad one`",
+        "<mn>1</mn>", "<mn>2</mn>", "<mn>3</mn>", "<mn>4</mn>", "<mo>+</mo>"
+      )
     end
   end
 end
