@@ -25,8 +25,16 @@ module Jekyll
 
       # Converts various mathematical formulae formats to MathML.
       #
+      # This filter is typically used on HTML/XML-escaped content.  If HTML/XML
+      # escaping had happened after math conversion, then MathML content would
+      # have became broken.
+      #
       # TODO Render math blocks properly.
       # TODO Make these tags configurable.
+      # TODO Implement some filter which escapes HTML/XML in a clever way,
+      # so that unescaping here is unnecessary.
+      # TODO If the input formula is in MathML, HTML/XML-unescaping may
+      # break it.
       def parse_math(input)
         input.gsub(%r(
           (?<open>\\\()  (?<expr>.*?)  \\\) | # LaTeX inline
@@ -40,7 +48,8 @@ module Jekyll
             when '`'  then src_format = :asciimath
             end
 
-            Math.convert($~["expr"], from: src_format, to: :mathml)
+            expr = CGI::unescape_html($~["expr"])
+            Math.convert(expr, from: src_format, to: :mathml)
 
           rescue Math::ConversionError
             fatal_enough = $!.fatal?
