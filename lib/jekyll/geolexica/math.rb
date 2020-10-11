@@ -83,8 +83,14 @@ module Jekyll
       # @param to [Symbol] output format
       #
       # @return [String] converted expression
+      #
+      # @raise [ConversionError]
       def convert(expression, from:, to:)
         Converter.instance.convert(expression, from: from, to: to)
+      rescue ConversionError # pass these errors through
+        raise
+      rescue # catch any other exception and raise ConversionError instead
+        raise ConversionError.new(expression, from: from, to: to)
       end
     end
   end
