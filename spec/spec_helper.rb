@@ -1,3 +1,6 @@
+# (c) Copyright 2020 Ribose Inc.
+#
+
 require "bundler"
 Bundler.require(:default, :development)
 

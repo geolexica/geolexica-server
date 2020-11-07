@@ -1,3 +1,6 @@
+# (c) Copyright 2020 Ribose Inc.
+#
+
 namespace :geolexica do
 
   desc "Deploy site to S3"

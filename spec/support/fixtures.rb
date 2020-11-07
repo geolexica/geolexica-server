@@ -1,3 +1,6 @@
+# (c) Copyright 2020 Ribose Inc.
+#
+
 module FixtureHelper
   def fixture(name)
     File.read(fixture_path(name))
