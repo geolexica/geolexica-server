@@ -3,6 +3,15 @@
 
 require "jekyll"
 
+# Unfortunately, Zeitwerk::Loader.for_gem doesn't work well when gem's main
+# namespace is compound.
+require "zeitwerk"
+loader = Zeitwerk::Loader.new
+loader.tag = "jekyll-geolexica"
+loader.push_dir(File.join(__dir__, "geolexica"), namespace: Jekyll::Geolexica)
+loader.inflector = Zeitwerk::GemInflector.new(__FILE__)
+loader.setup
+
 module Jekyll
   module Geolexica
     # Loads Rake tasks which are provided in this gem.
@@ -19,13 +28,8 @@ module Jekyll
   end
 end
 
-require_relative "geolexica/configuration"
-require_relative "geolexica/concept_page"
-require_relative "geolexica/concept_serializer"
-require_relative "geolexica/concepts_generator"
-require_relative "geolexica/filters"
-require_relative "geolexica/glossary"
-require_relative "geolexica/hooks"
-require_relative "geolexica/meta_pages_generator"
+# Jekyll-Geolexica must be loaded eagerly because Jekyll has no other way
+# to learn about gem's features.
+loader.eager_load
 
 Jekyll::Geolexica::Hooks.register_all_hooks
