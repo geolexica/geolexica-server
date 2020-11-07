@@ -1,3 +1,6 @@
+# (c) Copyright 2020 Ribose Inc.
+#
+
 module Jekyll
   module Geolexica
     # A decorator responsible for serializing concepts in the most simplistic
