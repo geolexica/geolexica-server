@@ -4,11 +4,12 @@ permalink: "/api/concepts.json"
 {
   {% for concept in site.concepts %}
   {% assign json_concept = concept.representations.json %}
-  "{{ concept.termid }}": {
-    "term": "{{ concept.term }}",
-    "termid": {{ concept.termid }},
-    "uri-html": "{{ concept.url }}",
-    "uri-json": "{{ json_concept.url }}"
+  {% comment %}"append" below ensures conversion to string{% endcomment -%}
+  {{ concept.termid | append: '' | jsonify }}: {
+    "term": {{ concept.term | jsonify }},
+    "termid": {{ concept.termid | jsonify }},
+    "uri-html": {{ concept.url | jsonify }},
+    "uri-json": {{ json_concept.url | jsonify }}
   }{% unless forloop.last %},{% endunless %}
   {% endfor %}
 }
