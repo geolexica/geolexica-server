@@ -15,8 +15,6 @@ jobs:
         with:
           ruby-version: "3.0"
       - name: Install gems
-        run: |
-          gem install bundler -v "~> 2"
-          bundle install --jobs 4 --retry 3
+        run: bundle install --jobs 4 --retry 3
       - name: Test
         run: bundle exec rspec
