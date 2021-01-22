@@ -6,7 +6,7 @@ on:
 
 jobs:
   test-jekyll-geolexica:
-    name: jekyll-geolexica
+    name: Jekyll ${{ matrix.jekyll }} on Ruby ${{ matrix.ruby }}
     runs-on: ubuntu-latest
 
     strategy:
