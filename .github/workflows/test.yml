@@ -8,12 +8,18 @@ jobs:
   test-jekyll-geolexica:
     name: jekyll-geolexica
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby: [ "2.7", "3.0" ]
+
     steps:
       - uses: actions/checkout@v2
       - name: Use Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.0"
+          ruby-version: ${{ matrix.ruby }}
       - name: Install gems
         run: bundle install --jobs 4 --retry 3
       - name: Test
