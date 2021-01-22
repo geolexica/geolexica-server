@@ -24,7 +24,6 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
-      - name: Install gems
-        run: bundle install --jobs 4 --retry 3
+          bundler-cache: true
       - name: Test
         run: bundle exec rspec
