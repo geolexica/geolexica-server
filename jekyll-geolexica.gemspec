@@ -39,7 +39,7 @@ Gem::Specification.new do |spec|
   # I doubt we should be worried, but there is no good reason to allow them
   # either.
   # See: https://jekyllrb.com/news/2020/06/24/jekyll-4-1-1-released/
-  spec.add_runtime_dependency "jekyll", ">= 3.8.5", "< 4.2", "!= 4.1.0"
+  spec.add_runtime_dependency "jekyll", ">= 3.8.5", "< 4.3", "!= 4.1.0"
 
   spec.add_runtime_dependency "jekyll-asciidoc"
 
