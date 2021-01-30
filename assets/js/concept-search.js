@@ -177,6 +177,7 @@
         expanded: false,
         error: false,
         loading: false,
+        selected: null,
       };
 
       this.handleKeyDown = this.handleKeyDown.bind(this);
@@ -256,7 +257,7 @@
         window.setTimeout(() => { searchWorker.postMessage(query) }, 100);
       }
       this.setState({ loading: hasQuery, searchQuery: query, expanded: hasQuery });
-      updateBodyClass({ searchQuery: query, expanded: hasQuery });
+      updateBodyClass({ searchQuery: query, expanded: hasQuery, selected: null });
     }
 
     handleToggleBrowser() {
@@ -276,7 +277,30 @@
         case 'Escape':
           this.handleToggleBrowser();
           return;
+
+        case 'Escape':
+          this.handleToggleBrowser();
+          return;
+
+        case 'ArrowDown':
+          this.moveSelectionBy(1);
+          return;
+
+        case 'ArrowUp':
+          this.moveSelectionBy(-1);
+          return;
       }
+    }
+
+    moveSelectionBy(change) {
+      this.setState((state) => {
+        if (state.selected === null) { // none selected
+          state.selected = (state >= 0 ? 0 : -1); // first or last
+        } else {
+          state.selected += change; // by change
+        }
+        return state;
+      })
     }
   }
 
