@@ -179,6 +179,7 @@
         loading: false,
       };
 
+      this.handleKeyDown = this.handleKeyDown.bind(this);
       this.handleSearchQuery = this.handleSearchQuery.bind(this);
       this.handleToggleBrowser = this.handleToggleBrowser.bind(this);
     }
@@ -191,10 +192,13 @@
           this.setState({ loading: false, error: null, items: msg.data });
         }
       };
+
+      document.addEventListener("keydown", this.handleKeyDown);
     }
 
     componentWillUnmount() {
       searchWorker.onmessage = undefined;
+      document.removeEventListener("keydown", this.handleKeyDown);
     }
 
     render() {
@@ -261,6 +265,14 @@
         updateBodyClass({ expanded: state.expanded });
         return state;
       });
+    }
+
+    handleKeyDown(event) {
+      if (!this.state.expanded) {
+        return; // ConceptBrowser is hidden
+      }
+
+      // TODO handle keys
     }
   }
 
