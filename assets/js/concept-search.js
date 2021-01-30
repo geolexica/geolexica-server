@@ -272,7 +272,11 @@
         return; // ConceptBrowser is hidden
       }
 
-      // TODO handle keys
+      switch(event.code) {
+        case 'Escape':
+          this.handleToggleBrowser();
+          return;
+      }
     }
   }
 
