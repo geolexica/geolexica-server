@@ -141,29 +141,36 @@
             map((lang) => item[lang]);
 
           return [item, ...localizedItems].map((item) => {
-            const isLocalized = item.hasOwnProperty('language_code');
-            const conceptId = isLocalized ? item.id : item.termid;
-
-            return el(
-              'tr', {
-                key: `${conceptId}-${item.language_code}`,
-                className: `${isLocalized ? 'localized' : 'main'}`,
-              },
-              this.props.fields.map((field) => {
-                const view = field.view;
-                const defaultView = (item) => { return item[field.name]; };
-                return el(
-                  'td', {
-                    className: `lang-${item.language_code} field-${field.name}`,
-                    key: `${conceptId}-${item.language_code}-${field.name}`,
-                  },
-                  (view || defaultView)(item));
-              })
-            );
+            return el(ConceptListItem, { item, fields });
           });
         }).reduce((a, b) => a.concat(b), [])),
 
       ]);
+    }
+  }
+
+  class ConceptListItem extends React.Component {
+    render() {
+      const item = this.props.item;
+      const isLocalized = item.hasOwnProperty('language_code');
+      const conceptId = isLocalized ? item.id : item.termid;
+
+      return el(
+        'tr', {
+          key: `${conceptId}-${item.language_code}`,
+          className: `${isLocalized ? 'localized' : 'main'}`,
+        },
+        this.props.fields.map((field) => {
+          const view = field.view;
+          const defaultView = (item) => { return item[field.name]; };
+          return el(
+            'td', {
+              className: `lang-${item.language_code} field-${field.name}`,
+              key: `${conceptId}-${item.language_code}-${field.name}`,
+            },
+            (view || defaultView)(item));
+        })
+      );
     }
   }
 
