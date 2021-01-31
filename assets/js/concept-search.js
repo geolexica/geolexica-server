@@ -257,7 +257,7 @@
         window.setTimeout(() => { searchWorker.postMessage(query) }, 100);
       }
       this.setState({ loading: hasQuery, searchQuery: query, expanded: hasQuery });
-      updateBodyClass({ searchQuery: query, expanded: hasQuery, selected: null });
+      updateBodyClass({ searchQuery: query, expanded: hasQuery });
     }
 
     handleToggleBrowser() {
@@ -293,14 +293,21 @@
     }
 
     moveSelectionBy(change) {
-      this.setState((state) => {
-        if (state.selected === null) { // none selected
-          state.selected = (state >= 0 ? 0 : -1); // first or last
-        } else {
-          state.selected += change; // by change
-        }
-        return state;
-      })
+      // el.querySelector
+      //   document.querySelector('body').classList.add('browser-expandable');
+
+
+      // this.setState((state) => {
+      //   if (state.selected === null) { // none selected
+      //     state.selected = (change >= 0 ? 0 : -1); // first or last
+      //   } else {
+      //     state.selected += change; // by change
+      //   }
+
+      //   // state.selected %= ;
+      //   console.log("current state: " + state.toString());
+      //   return state;
+      // })
     }
   }
 
