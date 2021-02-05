@@ -1,5 +1,0 @@
----
-permalink: "/api/stats.json"
-layout: null
----
-{{ glossary.language_statistics | jsonify }}
