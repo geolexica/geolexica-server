@@ -125,6 +125,10 @@
   }
 
   class ConceptList extends React.Component {
+    // constructor(props) {
+    //   super(props);
+    // }
+
     render() {
       return el('table', null, [
 
@@ -140,8 +144,8 @@
             filter((lang) => Object.keys(item).indexOf(lang) >= 0).
             map((lang) => item[lang]);
 
-          return [item, ...localizedItems].map((item) => {
-            return el(ConceptListItem, { item, fields });
+          return [item, ...localizedItems].map((item, index) => {
+            return el(ConceptListItem, { item, fields, selected: index == this.props.selectedIndex });
           });
         }).reduce((a, b) => a.concat(b), [])),
 
@@ -154,11 +158,12 @@
       const item = this.props.item;
       const isLocalized = item.hasOwnProperty('language_code');
       const conceptId = isLocalized ? item.id : item.termid;
+      const selected = this.props.selected;
 
       return el(
         'tr', {
           key: `${conceptId}-${item.language_code}`,
-          className: `${isLocalized ? 'localized' : 'main'}`,
+          className: `${isLocalized ? 'localized' : 'main'} ${selected ? 'selected' : ''}`,
         },
         this.props.fields.map((field) => {
           const view = field.view;
@@ -184,12 +189,14 @@
         expanded: false,
         error: false,
         loading: false,
-        selected: null,
+        selectedIndex: null,
       };
 
       this.handleKeyDown = this.handleKeyDown.bind(this);
       this.handleSearchQuery = this.handleSearchQuery.bind(this);
       this.handleToggleBrowser = this.handleToggleBrowser.bind(this);
+
+      this.conceptListEl = React.createRef();
     }
 
     componentDidMount() {
@@ -208,6 +215,10 @@
       searchWorker.onmessage = undefined;
       document.removeEventListener("keydown", this.handleKeyDown);
     }
+
+    // shouldComponentUpdate() {
+    //   // maybe it's easier to change classes with refs
+    // }
 
     render() {
       var headerEls = [];
@@ -252,7 +263,8 @@
         els.push(el('div', {
           key: 'search-results',
           className: 'search-results',
-        }, el(ConceptList, { items: this.state.items, fields })));
+          ref: this.conceptListEl,
+        }, el(ConceptList, { items: this.state.items, selectedIndex: this.state.selectedIndex, fields })));
       }
 
       return el(React.Fragment, null, els);
@@ -263,7 +275,7 @@
       if (hasQuery) {
         window.setTimeout(() => { searchWorker.postMessage(query) }, 100);
       }
-      this.setState({ loading: hasQuery, searchQuery: query, expanded: hasQuery });
+      this.setState({ loading: hasQuery, searchQuery: query, expanded: hasQuery, selectedIndex: null });
       updateBodyClass({ searchQuery: query, expanded: hasQuery });
     }
 
@@ -300,21 +312,17 @@
     }
 
     moveSelectionBy(change) {
-      // el.querySelector
-      //   document.querySelector('body').classList.add('browser-expandable');
+      this.setState((state) => {
+        if (state.selectedIndex === null) { // none selected
+          state.selectedIndex = (change >= 0 ? 0 : -1); // first or last
+        } else {
+          state.selectedIndex += change; // by change
+        }
 
+        state.selectedIndex %= state.items.length;
 
-      // this.setState((state) => {
-      //   if (state.selected === null) { // none selected
-      //     state.selected = (change >= 0 ? 0 : -1); // first or last
-      //   } else {
-      //     state.selected += change; // by change
-      //   }
-
-      //   // state.selected %= ;
-      //   console.log("current state: " + state.toString());
-      //   return state;
-      // })
+        return state;
+      })
     }
   }
 
