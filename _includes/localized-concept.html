@@ -85,9 +85,12 @@
     </ul>
 
     <p class="origin localized">
-      {% if lang == "eng" %}SOURCE{% else %}ORIGIN{% endif %}:
-      <a href="/registers/#language-{{ lang }}">{{ site.data.info.languages[lang].register-name }}</a>
-      (last updated: {{ site.data.info.languages[lang].date-of-last-change }})
+      {% if lang == "eng" %}
+        SOURCE: {{ page["eng"].authoritative_source | display_authoritative_source }}
+      {% else %}
+        ORIGIN:  <a href="/registers/#language-{{ lang }}">{{ site.data.info.languages[lang].register-name }}</a>
+        (last updated: {{ site.data.info.languages[lang].date-of-last-change }})
+      {% endif %}
     </p>
 
   </div>
