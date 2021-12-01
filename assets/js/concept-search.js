@@ -55,6 +55,7 @@
 
       this.handleSearchStringChange = this.handleSearchStringChange.bind(this);
       this.handleValiditySelectionChange = this.handleValiditySelectionChange.bind(this);
+      this.handleClearSearchClick = this.handleClearSearchClick.bind(this);
 
       this.stringInputRef = React.createRef();
 
@@ -76,6 +77,17 @@
           placeholder: 'Start typing…',
           onChange: this.handleSearchStringChange}),
       ];
+
+      if (this.state.string.length > 1) {
+        searchControls.push(
+          el('button', {
+            key: 'clear-search',
+            className: 'clear-search',
+            type: 'button',
+            title: "Clear search",
+            onClick: this.handleClearSearchClick})
+        );
+      }
 
       if (this.state.string.length > 1 && (SEARCH_REFINEMENTS).length > 0) {
         var refineControls = [];
@@ -107,6 +119,10 @@
         valid: this.state.valid,
         string: this.state.string,
       });
+    }
+
+    handleClearSearchClick() {
+        this.setState({ string: '' });
     }
 
     handleSearchStringChange(evt) {
