@@ -85,6 +85,7 @@
             className: 'clear-search',
             type: 'button',
             title: "Clear search",
+            text: "⨉",
             onClick: this.handleClearSearchClick})
         );
       }
