@@ -51,6 +51,21 @@ body.home {
           margin-left: -.5em;
         }
 
+        button.clear-search {
+          line-height: 1;
+          border: none;
+          border-radius: 5px;
+          z-index: 10;
+
+          // Below ensures refine controls won’t shift
+          // whether or not clear button is displayed,
+          // and displays the clear button on top of input field.
+          margin-left: -3em;
+          width: 1.5em;
+          height: 1.5em;
+          margin-right: 1.5em;
+        }
+
         .refine {
           display: flex;
           flex-flow: row wrap;
