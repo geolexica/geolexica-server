@@ -1,4 +1,7 @@
 <section class="field ref">
   <p class="field-name">Term ID</p>
-  <p class="field-value">{{ page.termid }}</p>
+  <p class="field-value">
+  	<span style="margin-right: 5em">{{ page.termid }}</span>
+    SOURCE: {{ page["eng"].authoritative_source | display_authoritative_source }}
+  </p>
 </section>

@@ -22,8 +22,6 @@ term_attributes:
 
 {% include concept-lead-info.html %}
 
-{% include concept-source.html %}
-
 {% for lang in site.geolexica.term_languages -%}
   {%- if page[lang] -%}
     {%- include localized-concept.html lang=lang -%}
