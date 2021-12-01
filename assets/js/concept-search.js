@@ -123,6 +123,7 @@
 
     handleClearSearchClick() {
         this.setState({ string: '' });
+        this.stringInputRef.current.value = '';
     }
 
     handleSearchStringChange(evt) {
