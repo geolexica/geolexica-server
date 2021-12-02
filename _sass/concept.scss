@@ -39,6 +39,14 @@ body.concept {
       }
     }
 
+    .header-term-id{
+        display: flex;
+        width: 15em;
+    }
+    .header-source{
+        display: flex;
+    }
+
     .abbrev {
     }
 
@@ -100,7 +108,10 @@ body.concept {
 
     }
 
+  }
 
+  section.field.ref{
+    flex-wrap: wrap;
   }
 
   article {
