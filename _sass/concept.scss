@@ -114,6 +114,29 @@ body.concept {
     flex-wrap: wrap;
   }
 
+  #engTermCopy {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width:32px;height:32px"><path d="M0 0v426.7h149.3V384H42.7V42.7h256V64h42.7V0H0zm170.7 85.3V512H512V85.3H170.7zm42.6 42.7h256v341.3h-256V128z"></path></svg>');
+    background-repeat: no-repeat;
+    background-position: top center;
+    width:32px;
+    min-width:32px;
+    padding-top: 32px;
+    margin-left:auto;
+    line-height:1em;
+    font-size:12px;
+    text-align:center;
+    cursor:pointer;
+    text-decoration: none;
+    border-bottom: none;
+    color: #000;
+  };
+
+  #engTermCopy:active {
+    opacity: 0.6;
+  }
+
+
+
   article {
     border-top: 2px solid #f0f0f0;
     padding-top: 1em;

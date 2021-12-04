@@ -7,30 +7,19 @@
         r.selectNode(domElm);
         window.getSelection().removeAllRanges();
         window.getSelection().addRange(r);
+        domElm.select();
         d.execCommand('copy');
         window.getSelection().removeAllRanges();
     };
 
-
-    var copyToClipboard2 = function (elmId) {
-        if (d.selection) {
-            var range = d.body.createTextRange();
-            range.moveToElementText(d.getElementById(elmId));
-            range.select().createTextRange();
-            d.execCommand('copy');
-        } else if (window.getSelection) {
-            var range = d.createRange();
-            range.selectNode(d.getElementById(elmId));
-            window.getSelection().addRange(range);
-            d.execCommand('copy');
-        }
+    var replace_math_symb = function(s){
+      return s.replace(/(`[^`]+`)/g, '<<math_symbol>>');
     };
 
     var copyBtn = d.getElementById('engTermCopy');
 
     if (copyBtn) {
         var copyBlock = d.createElement('textarea');
-        //var copyBlock = d.createElement('div');
         copyBlock.setAttribute('id', 'engTermCopyArea');
         copyBlock.style.position = 'absolute';
         copyBlock.style.left = '-1000px';
@@ -40,12 +29,7 @@
         //copyBlock.style.opacity = 0;
 
         var tgtElement = copyBtn.parentElement.getElementsByClassName('field-value')[0];
-        var mjxList = tgtElement.getElementsByTagName('mjx-container');
-
-        for (var _elm of mjxList) {
-            _el.innerText = '<<math_symbol>>';
-        };
-
+        
         var textToCopy = '';
         var elmsToCopy = [];
 
@@ -58,7 +42,8 @@
 
         for (var _elm of elmsToCopy) {
             if (_elm.innerText.trim().length > 0) {
-                textToCopy = textToCopy + _elm.innerText + '\r';
+                // textToCopy = textToCopy + _elm.innerText + '\r\n\r\n';
+                textToCopy = textToCopy + replace_math_symb(_elm.innerText) + '\r\n\r\n';
             };
         };
 
@@ -68,6 +53,16 @@
             CopyToClipboard(copyBlock);
             d.body.removeChild(copyBlock);
         });
+
+        copyBtn.addEventListener('keyup', function(evt) {
+            if (evt.keyCode === 13) {
+              evt.preventDefault();
+              copyBtn.click();
+              copyBtn.focus();
+            };
+        });
+
+      copyBtn.style.display = 'block';
 
     };
 })();
