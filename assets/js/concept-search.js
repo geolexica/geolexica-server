@@ -219,7 +219,7 @@
       var searchString = this.state.searchQuery.string;
 
       if (searchString && searchString.length > 1) {
-        let buttonLabel = this.state.expanded ? '×' : '+';
+        let buttonLabel = this.state.expanded ? '−' : '+';
         headerEls.push(
           el('button', {
             key: 'toggle',
