@@ -122,9 +122,7 @@
     }
 
     handleClearSearchClick() {
-      this.setState({ string: '' });
-      this.stringInputRef.current.value = '';
-      this.emitSearchChange();
+      this.setState({ string: '' }, () => { this.emitSearchChange() });
     }
 
     handleSearchStringChange(evt) {
