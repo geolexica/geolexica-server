@@ -74,6 +74,7 @@
           ref: this.stringInputRef,
           className: 'search-string',
           type: 'text',
+          value: this.state.string,
           placeholder: 'Start typing…',
           onChange: this.handleSearchStringChange}),
       ];
