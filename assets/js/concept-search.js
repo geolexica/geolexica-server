@@ -268,6 +268,8 @@
       var hasQuery = query.string.length > 1;
       if (hasQuery) {
         window.setTimeout(() => { searchWorker.postMessage(query) }, 100);
+      } else {
+        this.setState({ loading: false, error: null, items: msg.data });
       }
       this.setState({ loading: hasQuery, searchQuery: query, expanded: hasQuery });
       updateBodyClass({ searchQuery: query, expanded: hasQuery });
