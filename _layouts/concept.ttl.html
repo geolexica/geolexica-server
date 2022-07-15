@@ -29,8 +29,9 @@ layout: null
 :closure
   rdf:type skos:Concept ;
 
-{%- if concept.authoritative_source.link %}
-  dcterms:source "{{ concept.authoritative_source.link }}" ;
+{%- assign authoritative_source = concept.sources | get_authoritative -%}
+{%- if authoritative_source.link %}
+  dcterms:source "{{ authoritative_source.link }}" ;
 {%- endif %}
 
 {%- for lang in site.geolexica.term_languages %}

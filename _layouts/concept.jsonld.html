@@ -124,15 +124,16 @@ layout: null
   },
   {%- endif -%}
 
-  {%- if concept.authoritative_source -%}
+  {%- assign authoritative_source = concept.sources | get_authoritative -%}
+  {%- if authoritative_source -%}
   "source": {
-  {%- if concept.authoritative_source.link -%}
-    "link": "{{ concept.authoritative_source.link }}",
+  {%- if authoritative_source.link -%}
+    "link": "{{ authoritative_source.link }}",
   {%- endif -%}
-  {%- if concept.authoritative_source.clause -%}
-    "clause": "{{ concept.authoritative_source.clause }}",
+  {%- if authoritative_source.clause -%}
+    "clause": "{{ authoritative_source.clause }}",
   {%- endif -%}
-    "ref": "{{ concept.authoritative_source.ref }}"
+    "ref": "{{ authoritative_source.ref }}"
   },
   {%- endif -%}
 
