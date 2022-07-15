@@ -11,7 +11,7 @@ module Jekyll
       #
       # TODO Maybe support string inputs.
       def display_authoritative_source(input)
-        ref, clause, link = input.values_at("ref", "clause", "link") rescue nil
+        ref, clause, link = input["origin"].values_at("ref", "clause", "link") rescue nil
 
         return "" if ref.nil? && link.nil?
 
@@ -21,6 +21,21 @@ module Jekyll
         clause_part = clause && escape_once(clause)
 
         [ref_part, clause_part].compact.join(", ")
+      end
+
+      ABBREVIATION_TYPES = %w[
+        truncation
+        acronym
+        initialism
+      ].freeze
+
+      # check if the given term is an abbreviation or not
+      def abbreviation?(term)
+        ABBREVIATION_TYPES.include?(term)
+      end
+
+      def get_authoritative(sources)
+        sources&.find { |source| source["type"] == "authoritative" }
       end
     end
   end

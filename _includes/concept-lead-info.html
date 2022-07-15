@@ -5,6 +5,6 @@
   </div>
   <div class="header-source">
     <p class="field-name">SOURCE</p>
-    <p class="field-value">{{ page["eng"].authoritative_source | display_authoritative_source }}</p>
+    <p class="field-value">{{ page["eng"].sources | get_authoritative | display_authoritative_source }}</p>
   </div>
 </section>
