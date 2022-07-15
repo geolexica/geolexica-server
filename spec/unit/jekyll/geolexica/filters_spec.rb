@@ -22,7 +22,9 @@ RSpec.describe Jekyll::Geolexica::Filters do
 
     it "returns 'ref' as link and ', clause' as string " \
       "when ref, clause, and link are given" do
-      input = { "origin" => { "ref" => ref, "clause" => clause, "link" => link } }
+      input = {
+        "origin" => { "ref" => ref, "clause" => clause, "link" => link },
+      }
       retval = subject.call(input)
       expect(retval).to eq(%(<a href="#{link}">!#{ref}!</a>, !#{clause}!))
     end
@@ -95,7 +97,7 @@ RSpec.describe Jekyll::Geolexica::Filters do
     it "returns authoritative source if available in given sources" do
       sources = [
         { "type" => "authoritative" },
-        { "type" => "lineage" }
+        { "type" => "lineage" },
       ]
 
       expect(subject.call(sources)).to eq(sources[0])
@@ -103,7 +105,7 @@ RSpec.describe Jekyll::Geolexica::Filters do
 
     it "returns nil if authoritative source is not in given sources" do
       sources = [
-        { "type" => "lineage" }
+        { "type" => "lineage" },
       ]
 
       expect(subject.call(sources)).to eq(nil)
