@@ -42,13 +42,15 @@ layout: null
 {%- endfor %}
   rdf-profile:termID <{{ page.url }}> ;
   rdfs:label "{{ english.terms.first.designation | escape }}" ;
-  skos:notation {{ page.termid }} ;
+  skos:notation "{{ page.termid }}" ;
 {%- for lang in site.geolexica.term_languages %}
-{%- assign localized_term = page[lang] -%}
-{%- if localized_term.definition %}
-  skos:definition "{{ localized_term.definition | escape }}"@{{ site.data.lang[lang].iso-639-1 }} ;
-{%- endif %}
-{%- endfor %}
+  {%- assign localized_term = page[lang] -%}
+  {%- if localized_term.definition %}
+  {% for definition in localized_term.definition -%}
+  skos:definition """{{ definition["content"] | escape }}"""@{{ site.data.lang[lang].iso-639-1 }} ;
+  {% endfor -%}
+  {%- endif %}
+{%- endfor -%}
   skos:inScheme rdf-profile:GeolexicaConceptScheme ;
 
 {%- for lang in site.geolexica.term_languages %}
