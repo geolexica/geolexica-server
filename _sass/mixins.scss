@@ -2,14 +2,21 @@
   width: 100%;
   font-size: 90%;
 
-  tr.main {
-    font-weight: bold;
+  tr {
+    &.main {
+      font-weight: bold;
 
-    td {
-      border-top: 2px solid #f0f0f0;
+      td {
+        border-top: 2px solid #f0f0f0;
+      }
+      &:first-child td {
+        border-top: 0;
+      }
     }
-    &:first-child td {
-      border-top: 0;
+
+    &.status-superseded {
+      opacity: 0.5;
+      background-color: darkgray;
     }
   }
 
