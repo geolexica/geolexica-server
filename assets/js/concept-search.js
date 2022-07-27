@@ -160,11 +160,12 @@
           return [item, ...localizedItems].map((item) => {
             const isLocalized = item.hasOwnProperty('language_code');
             const conceptId = isLocalized ? item.id : item.termid;
+            const supersededClass = item.hasOwnProperty('entry_status') && item.entry_status != 'valid' ? 'status-superseded' : ''
 
             return el(
               'tr', {
                 key: `${conceptId}-${item.language_code}`,
-                className: `${isLocalized ? 'localized' : 'main'}`,
+                className: `${isLocalized ? 'localized' : 'main'} ${supersededClass}`,
               },
               this.props.fields.map((field) => {
                 const view = field.view;
