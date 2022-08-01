@@ -27,8 +27,8 @@ module Jekyll
         result = []
 
         result << "&lt;#{term['usage_info']}&gt;" if term["usage_info"]
-        result << extract_grammar_info(term) if term["grammar_info"]
-        result << term["geographical_area"]&.upcase if term["geographical_area"]
+        result << extract_grammar_info(term)
+        result << term["geographical_area"]&.upcase
 
         result.unshift(",") if result.compact.size.positive?
 
@@ -36,9 +36,11 @@ module Jekyll
       end
 
       def extract_grammar_info(term)
+        return unless term["grammar_info"]
+
         grammar_info = []
 
-        term["grammar_info"]&.each do |info|
+        term["grammar_info"].each do |info|
           grammar_info << info["gender"]&.join(", ")
           grammar_info << info["number"]&.join(", ")
           grammar_info << extract_parts_of_speech(info)

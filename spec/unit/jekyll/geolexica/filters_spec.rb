@@ -130,8 +130,8 @@ RSpec.describe Jekyll::Geolexica::Filters do
           "adverb" => false,
           "noun" => false,
           "gender" => ["m"],
-          "number" => ["singular"]
-        }]
+          "number" => ["singular"],
+        }],
       }
     end
 
@@ -143,7 +143,7 @@ RSpec.describe Jekyll::Geolexica::Filters do
       end
 
       it "return empty when grammar_info is not present" do
-        expect(subject.call({})).to eq("")
+        expect(subject.call({})).to eq(nil)
       end
     end
 
