@@ -115,4 +115,60 @@ RSpec.describe Jekyll::Geolexica::Filters do
       expect(subject.call(nil)).to eq(nil)
     end
   end
+
+  describe "with term" do
+    let(:term) do
+      {
+        "designation" => "admitted term",
+        "geographical_area" => "GB",
+        "usage_info" => "science",
+        "grammar_info" => [{
+          "preposition" => false,
+          "participle" => false,
+          "adj" => true,
+          "verb" => false,
+          "adverb" => false,
+          "noun" => false,
+          "gender" => ["m"],
+          "number" => ["singular"],
+        }],
+      }
+    end
+
+    describe "#extract_grammar_info" do
+      subject { wrapper.method(:extract_grammar_info) }
+
+      it "return grammar_info from term" do
+        expect(subject.call(term)).to eq("m singular adj")
+      end
+
+      it "return empty when grammar_info is not present" do
+        expect(subject.call({})).to eq(nil)
+      end
+    end
+
+    describe "#extract_parts_of_speech" do
+      subject { wrapper.method(:extract_parts_of_speech) }
+
+      it "return all parts of speech from grammar_info" do
+        expect(subject.call(term["grammar_info"].first)).to eq("adj")
+      end
+
+      it "return empty when grammar_info is not present" do
+        expect(subject.call({})).to eq("")
+      end
+    end
+
+    describe "#display_terminological_data" do
+      subject { wrapper.method(:display_terminological_data) }
+
+      it "return all parts of speech from grammar_info" do
+        expect(subject.call(term)).to eq(", &lt;science&gt; m singular adj GB")
+      end
+
+      it "return empty when grammar_info is not present" do
+        expect(subject.call({})).to eq("")
+      end
+    end
+  end
 end

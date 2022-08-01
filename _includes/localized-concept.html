@@ -13,11 +13,17 @@
 
   <div class="field-value">
     {% for entry in localized_term.terms %}
+      {%- assign terminological_data = entry | display_terminological_data -%}
       {%- assign is_abbreviation = entry.type | abbreviation? -%}
+
       {% if is_abbreviation %}
-        <p class="localized abbrev">{{ entry.designation | escape }}</p>
+        <p class="localized abbrev">
+          {{ entry.designation | escape }}{{ terminological_data }}
+        </p>
       {% else %}
-        <h3 class="localized">{{ entry.designation | escape }}</h3>
+        <p class="localized">
+          <span class="heading">{{ entry.designation | escape }}</span>{{ terminological_data }}
+        </p>
       {% endif %}
     {% else %}
       <h3 class="warning">Translated term missing in this language.</h3>
