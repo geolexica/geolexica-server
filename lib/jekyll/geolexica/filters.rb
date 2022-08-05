@@ -23,6 +23,27 @@ module Jekyll
         [ref_part, clause_part].compact.join(", ")
       end
 
+      REFERENCE_REGEX = /{{(urn:[^,}]*),?([^,}]*),?([^,}]*)?}}/.freeze
+
+      def resolve_reference_to_links(text)
+        text.gsub(REFERENCE_REGEX) do |reference|
+          urn = Regexp.last_match[1]
+
+          if !urn || urn.empty?
+            reference
+          else
+            link_tag_from_urn(urn, Regexp.last_match[2], Regexp.last_match[3])
+          end
+        end
+      end
+
+      def link_tag_from_urn(urn, term_referenced, term_to_show)
+        clause = urn.split(":").last
+        term_to_show = term_to_show.empty? ? term_referenced : term_to_show
+
+        "<a href=\"/concepts/#{clause}\">#{term_to_show}<\/a>"
+      end
+
       def display_terminological_data(term)
         result = []
 
