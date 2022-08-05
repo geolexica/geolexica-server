@@ -31,7 +31,7 @@
 
     {% if localized_term.definition %}
       {% for definition in localized_term.definition %}
-        <p class="definition localized">{{ definition.content | escape }}</p>
+        <p class="definition localized">{{ definition.content | escape | resolve_reference_to_links }}</p>
       {% endfor %}
     {% else %}
       <p class="definition warning">Definition not provided in this language.</p>
@@ -62,7 +62,7 @@
                 This note has not been translated.
               </span>
             {% else %}
-              {{ note.content | escape }}
+              {{ note.content | escape | resolve_reference_to_links }}
             {% endif %}
           </p>
         {% endfor %}
@@ -83,7 +83,7 @@
                 This example has not been translated.
               </span>
             {% else %}
-              {{ example.content | escape }}
+              {{ example.content | escape | resolve_reference_to_links }}
             {% endif %}
           </p>
         {% endfor %}
