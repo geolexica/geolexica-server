@@ -100,8 +100,8 @@
       {% if lang == "eng" %}
         [SOURCE:
           {% for source in english.sources %}
-            {{ source | display_authoritative_source }};
-          {% endfor %}
+            {{ source | display_authoritative_source }}{% unless forloop.last %};{% endunless %}
+          {%- endfor -%}
         ]
       {% else %}
         ORIGIN:  <a href="/registers/#language-{{ lang }}">{{ site.data.info.languages[lang].register-name }}</a>
