@@ -20,7 +20,12 @@ module Jekyll
 
         clause_part = clause && escape_once(clause)
 
-        [ref_part, clause_part].compact.join(", ")
+        source = [ref_part, clause_part].compact.join(", ")
+
+        modification = input["modification"]
+        return source unless modification
+
+        "#{source}, modified -- #{modification}"
       end
 
       REFERENCE_REGEX = /{{(urn:[^,}]*),?([^,}]*),?([^,}]*)?}}/.freeze
