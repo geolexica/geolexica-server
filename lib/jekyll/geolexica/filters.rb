@@ -28,6 +28,22 @@ module Jekyll
         "#{source}, modified -- #{modification}"
       end
 
+      def concepts_url(base_url)
+        return if !base_url || base_url.empty?
+
+        if base_url.end_with?("/")
+          "#{base_url}concepts/"
+        else
+          "#{base_url}/concepts/"
+        end
+      end
+
+      def extract_concept_id(url)
+        return if !url || url.empty?
+
+        url.split("/").last
+      end
+
       REFERENCE_REGEX = /{{(urn:[^,}]*),?([^,}]*),?([^,}]*)?}}/.freeze
 
       def resolve_reference_to_links(text)

@@ -4,14 +4,16 @@ layout: null
 {%- assign concept = page["eng"] -%}
 {%- assign rdfprofile = "/api/rdf-profile" -%}
 {%- assign concept_html = page.representations.html -%}
-{%- assign concept_id = concept_html.url -%}
+{%- assign concept_id = concept_html.url | extract_concept_id -%}
 {%- assign english = page["eng"] -%}
-# baseURI: "{{ concept_id }}"
+{%- assign base_url = site.url | concepts_url -%}
+# baseURI: "{{ base_url }}"
 # imports: http://purl.org/dc/terms/
 # imports: https://www.geolexica.org/api/rdf-profile
 # imports: http://www.w3.org/2004/02/skos/core
 
-@prefix : <{{ concept_id }}> .
+@base <{{ base_url }}> .
+@prefix : <{{ base_url }}> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -20,13 +22,13 @@ layout: null
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<{{ concept_id }}>
+<{{ base_url }}>
   rdf:type owl:Ontology ;
   owl:imports dcterms: ;
   owl:imports <{{ rdfprofile }}> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
 .
-:closure
+<{{ concept_id }}>
   rdf:type skos:Concept ;
 
 {%- assign authoritative_source = concept.sources | get_authoritative -%}
