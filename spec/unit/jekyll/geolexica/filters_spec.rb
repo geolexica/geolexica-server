@@ -76,6 +76,42 @@ RSpec.describe Jekyll::Geolexica::Filters do
     end
   end
 
+  describe "#concepts_url" do
+    subject { wrapper.method(:concepts_url) }
+
+    context "when base_url is nil or empty" do
+      it { expect(subject.call(nil)).to be_nil }
+      it { expect(subject.call("")).to be_nil }
+    end
+
+    context "when base_url ends with `/`" do
+      let(:base_url) { "https://test-url/" }
+
+      it { expect(subject.call(base_url)).to eq("#{base_url}concepts/") }
+    end
+
+    context "when base_url do not ends with `/`" do
+      let(:base_url) { "https://test-url" }
+
+      it { expect(subject.call(base_url)).to eq("#{base_url}/concepts/") }
+    end
+  end
+
+  describe "#extract_concept_id" do
+    subject { wrapper.method(:extract_concept_id) }
+
+    context "when url is nil or empty" do
+      it { expect(subject.call(nil)).to be_nil }
+      it { expect(subject.call("")).to be_nil }
+    end
+
+    context "when url contains id" do
+      let(:url) { "https://test-url/concepts/147" }
+
+      it { expect(subject.call(url)).to eq("147") }
+    end
+  end
+
   describe "#abbreviation?" do
     subject { wrapper.method(:abbreviation?) }
 
