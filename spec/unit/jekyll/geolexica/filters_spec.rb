@@ -116,14 +116,46 @@ RSpec.describe Jekyll::Geolexica::Filters do
     subject { wrapper.method(:abbreviation?) }
 
     it "returns true if term is valid abbreviation" do
-      expect(subject.call("truncation")).to eq(true)
-      expect(subject.call("acronym")).to eq(true)
-      expect(subject.call("initialism")).to eq(true)
+      expect(subject.call("type" => "truncation")).to eq(true)
+      expect(subject.call("type" => "acronym")).to eq(true)
+      expect(subject.call("type" => "initialism")).to eq(true)
     end
 
     it "returns false if term is not a valid abbreviation" do
-      expect(subject.call("invalid")).to eq(false)
-      expect(subject.call("hello_world")).to eq(false)
+      expect(subject.call("type" => "invalid")).to eq(false)
+      expect(subject.call("type" => "hello_world")).to eq(false)
+    end
+  end
+
+ describe "#preferred?" do
+    subject { wrapper.method(:preferred?).call(term) }
+
+    context "when normative_status is `preferred`" do
+      let(:term) { { "normative_status" => "preferred" } }
+
+      it { is_expected.to be(true) }
+    end
+
+    context "when normative_status is `invalid`" do
+      let(:term) { { "normative_status" => "invalid" } }
+
+      it { is_expected.to be(false) }
+    end
+  end
+
+  describe "#deprecated?" do
+    subject { wrapper.method(:deprecated?).call(term) }
+
+    context "when normative_status is `deprecated`" do
+      let(:term) { { "normative_status" => "deprecated" } }
+
+      it { is_expected.to be(true) }
+    end
+
+    context "when normative_status is `invalid`" do
+      let(:term) { { "normative_status" => "invalid" } }
+
+      it { is_expected.to be(false) }
     end
   end
 
