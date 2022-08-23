@@ -127,7 +127,7 @@ RSpec.describe Jekyll::Geolexica::Filters do
     end
   end
 
- describe "#preferred?" do
+  describe "#preferred?" do
     subject { wrapper.method(:preferred?).call(term) }
 
     context "when normative_status is `preferred`" do
