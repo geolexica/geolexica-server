@@ -113,7 +113,15 @@ module Jekyll
 
       # check if the given term is an abbreviation or not
       def abbreviation?(term)
-        ABBREVIATION_TYPES.include?(term)
+        ABBREVIATION_TYPES.include?(term["type"])
+      end
+
+      def preferred?(term)
+        term["normative_status"] == "preferred"
+      end
+
+      def deprecated?(term)
+        term["normative_status"] == "deprecated"
       end
 
       def get_authoritative(sources)
