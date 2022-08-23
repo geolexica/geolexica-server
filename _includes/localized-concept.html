@@ -14,15 +14,25 @@
   <div class="field-value">
     {% for entry in localized_term.terms %}
       {%- assign terminological_data = entry | display_terminological_data -%}
-      {%- assign is_abbreviation = entry.type | abbreviation? -%}
+      {%- assign is_preferred = entry | preferred? -%}
+      {%- assign is_abbreviation = entry | abbreviation? -%}
+      {%- assign is_deprecated = entry | deprecated? -%}
 
-      {% if is_abbreviation %}
+      {% if is_preferred %}
+        <p class="localized">
+          <span class="heading">{{ entry.designation | escape }}</span>{{ terminological_data }}
+        </p>
+      {% elsif is_abbreviation %}
         <p class="localized abbrev">
           {{ entry.designation | escape }}{{ terminological_data }}
         </p>
+      {% elsif is_deprecated %}
+        <p>
+          DEPRECATED: {{ entry.designation | escape }}{{ terminological_data }}
+        </p>
       {% else %}
-        <p class="localized">
-          <span class="heading">{{ entry.designation | escape }}</span>{{ terminological_data }}
+        <p>
+          {{ entry.designation | escape }}{{ terminological_data }}
         </p>
       {% endif %}
     {% else %}
