@@ -19,19 +19,19 @@
       {%- assign is_deprecated = entry | deprecated? -%}
 
       {% if is_preferred %}
-        <p class="localized">
+        <p class="localized margin-x-0">
           <span class="heading">{{ entry.designation | escape }}</span>{{ terminological_data }}
         </p>
       {% elsif is_abbreviation %}
-        <p class="localized abbrev">
+        <p class="localized abbrev margin-x-0">
           {{ entry.designation | escape }}{{ terminological_data }}
         </p>
       {% elsif is_deprecated %}
-        <p>
+        <p class="margin-x-0">
           DEPRECATED: {{ entry.designation | escape }}{{ terminological_data }}
         </p>
       {% else %}
-        <p>
+        <p class="margin-x-0">
           {{ entry.designation | escape }}{{ terminological_data }}
         </p>
       {% endif %}

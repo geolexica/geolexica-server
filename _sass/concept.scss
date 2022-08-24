@@ -195,6 +195,12 @@ body.concept > main {
   .field {
     margin: 0 15vw 0 15vw;
   }
+
+  .margin-x-0 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
   @media screen and (min-width: $bigscreenBreakpoint) {
     .field {
       margin-left: calc(#{$sideOffsetBase} - #{$logoOffset});
