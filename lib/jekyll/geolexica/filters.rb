@@ -28,11 +28,6 @@ module Jekyll
         "#{source}, modified -- #{modification}"
       end
 
-      def debug(param)
-        require "pry"
-        binding.pry if param
-      end
-
       def concepts_url(base_url)
         return if !base_url || base_url.empty?
 
