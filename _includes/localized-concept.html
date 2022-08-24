@@ -41,7 +41,12 @@
 
     {% if localized_term.definition %}
       {% for definition in localized_term.definition %}
-        <p class="definition localized">{{ definition.content | escape | resolve_reference_to_links }}</p>
+        <p class="definition localized">
+          {%- if localized_term.domain != blank -%}
+            &lt;{{ localized_term.domain | escape }}&gt;&nbsp;
+          {%- endif -%}
+          {{ definition.content | escape | resolve_reference_to_links }}
+        </p>
       {% endfor %}
     {% else %}
       <p class="definition warning">Definition not provided in this language.</p>
