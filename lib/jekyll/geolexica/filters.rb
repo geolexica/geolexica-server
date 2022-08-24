@@ -28,6 +28,11 @@ module Jekyll
         "#{source}, modified -- #{modification}"
       end
 
+      def debug(param)
+        require "pry"
+        binding.pry if param
+      end
+
       def concepts_url(base_url)
         return if !base_url || base_url.empty?
 
@@ -44,7 +49,7 @@ module Jekyll
         url.split("/").last
       end
 
-      REFERENCE_REGEX = /{{(urn:[^,}]*),?([^,}]*),?([^,}]*)?}}/.freeze
+      REFERENCE_REGEX = /{{(urn:[^,}]*),?([^,}]*),?([^}]*)?}}/.freeze
 
       def resolve_reference_to_links(text)
         text.gsub(REFERENCE_REGEX) do |reference|
