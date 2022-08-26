@@ -3,7 +3,6 @@
 # (c) Copyright 2020 Ribose Inc.
 #
 
-require "pry"
 module Jekyll
   module Geolexica
     class ImagesGenerator < Generator
