@@ -98,7 +98,7 @@
                 This example has not been translated.
               </span>
             {% else %}
-              {{ example.content | escape | resolve_reference_to_links }}
+              {{ example.content | escape | resolve_reference_to_links | add_images }}
             {% endif %}
           </p>
         {% endfor %}

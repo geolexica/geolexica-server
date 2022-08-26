@@ -65,6 +65,29 @@ module Jekyll
         "<a href=\"/concepts/#{clause}\">#{term_to_show}<\/a>"
       end
 
+      IMAGE_REGEX = /(?:<|&lt;){2}fig_(.*?)(?:>|&gt;){2}/.freeze
+
+      def add_images(text)
+        images = []
+
+        text.scan(IMAGE_REGEX) do |match_data|
+          images << image_tag(match_data[0], width: "100%")
+        end
+
+        text + images.join("\n\n")
+      end
+
+      def image_tag(image_name, options = {})
+        options_str = options.map do |name, value|
+          %(#{name} = "#{value}")
+        end.join(" ")
+
+        <<~TEMPLATE
+          <img src="/concepts/images/fig_#{image_name}.png" #{options_str}>
+          <div style="font-weight: bold;">Figure #{image_name}</div>
+        TEMPLATE
+      end
+
       def display_terminological_data(term)
         result = []
 
