@@ -9,6 +9,13 @@ module Jekyll
         File.expand_path(glob_string, site.source)
       end
 
+      def images_glob
+        glob_string = glossary_config["images_glob"]
+        return nil if glob_string.nil? || glob_string.empty?
+
+        File.expand_path(glob_string, site.source)
+      end
+
       def term_languages
         glossary_config["term_languages"]
       end
