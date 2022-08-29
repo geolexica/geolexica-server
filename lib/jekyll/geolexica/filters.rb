@@ -94,11 +94,12 @@ module Jekyll
       end
 
       def images_metadata
-        glossary_path = @context.registers[:site].config["geolexica"]["glossary_path"]
+        site = @context.registers[:site]
+        glossary_path = site.config["geolexica"]["glossary_path"]
         return {} if glossary_path.nil? || glossary_path.empty?
 
         @images_metadata ||= YAML.load_file(
-          File.expand_path("#{glossary_path}/images_metadata.yaml")
+          File.expand_path("#{glossary_path}/images_metadata.yaml"),
         )
       end
 
