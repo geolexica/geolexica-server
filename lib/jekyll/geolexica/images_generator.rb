@@ -21,7 +21,7 @@ module Jekyll
         @site = site
         @generated_pages = []
 
-        make_images if images_glob
+        make_images if Dir.exist?(images_path)
         site.static_files.concat(generated_pages)
       end
 
@@ -36,7 +36,7 @@ module Jekyll
       end
 
       def images_pathnames
-        Dir.glob(images_glob).map { |path| Pathname.new(path) }
+        Dir.glob("#{images_path}/*").map { |path| Pathname.new(path) }
       end
     end
   end

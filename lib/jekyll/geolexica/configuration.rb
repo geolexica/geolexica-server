@@ -9,11 +9,18 @@ module Jekyll
         File.expand_path(glob_string, site.source)
       end
 
-      def images_glob
-        glob_string = glossary_config["images_glob"]
-        return nil if glob_string.nil? || glob_string.empty?
+      def images_path
+        glossary_path = glossary_config["glossary_path"]
+        return nil if glossary_path.nil? || glossary_path.empty?
 
-        File.expand_path(glob_string, site.source)
+        File.expand_path("#{glossary_path}/images", site.source)
+      end
+
+      def images_metadata_path
+        glossary_path = glossary_config["glossary_path"]
+        return {} if glossary_path.nil? || glossary_path.empty?
+
+        File.expand_path("#{glossary_path}/images_metadata.yaml", site.source)
       end
 
       def term_languages

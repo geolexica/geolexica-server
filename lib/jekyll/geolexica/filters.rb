@@ -65,7 +65,7 @@ module Jekyll
         "<a href=\"/concepts/#{clause}\">#{term_to_show}<\/a>"
       end
 
-      IMAGE_REGEX = /(?:<|&lt;){2}fig_(.*?)(?:>|&gt;){2}/.freeze
+      IMAGE_REGEX = /(?:<|&lt;){2}(fig_.*?)(?:>|&gt;){2}/.freeze
 
       def add_images(text)
         images = []
@@ -82,10 +82,24 @@ module Jekyll
           %(#{name} = "#{value}")
         end.join(" ")
 
+        number = image_name.split("_").last
+        metadata = images_metadata[image_name]
+
+        title = "Figure #{number} — #{metadata['caption']}"
+
         <<~TEMPLATE
-          <img src="/concepts/images/fig_#{image_name}.png" #{options_str}>
-          <div style="font-weight: bold;">Figure #{image_name}</div>
+          <img src="/concepts/images/#{image_name}.png" #{options_str}>
+          <div style="font-weight: bold;">#{title}</div>
         TEMPLATE
+      end
+
+      def images_metadata
+        glossary_path = @context.registers[:site].config["geolexica"]["glossary_path"]
+        return {} if glossary_path.nil? || glossary_path.empty?
+
+        @images_metadata ||= YAML.load_file(
+          File.expand_path("#{glossary_path}/images_metadata.yaml")
+        )
       end
 
       def display_terminological_data(term)
