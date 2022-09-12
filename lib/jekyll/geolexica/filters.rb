@@ -70,19 +70,22 @@ module Jekyll
       def add_images(text)
         images = []
 
-        text.scan(IMAGE_REGEX) do |match_data|
-          images << image_tag(match_data[0], width: "100%")
+        text.gsub!(IMAGE_REGEX) do
+          image_name = Regexp.last_match[1]
+          metadata = images_metadata[image_name]
+
+          images << image_tag(image_name, metadata, width: "100%")
+
+          metadata["clause"]
         end
 
         text + images.join("\n\n")
       end
 
-      def image_tag(image_name, options = {})
+      def image_tag(image_name, metadata, options = {})
         options_str = options.map do |name, value|
           %(#{name} = "#{value}")
         end.join(" ")
-
-        metadata = images_metadata[image_name]
 
         title = "#{metadata['clause']} — #{metadata['caption']}"
 
