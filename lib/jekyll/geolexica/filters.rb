@@ -82,10 +82,9 @@ module Jekyll
           %(#{name} = "#{value}")
         end.join(" ")
 
-        number = image_name.split("_").last
         metadata = images_metadata[image_name]
 
-        title = "Figure #{number} — #{metadata['caption']}"
+        title = "#{metadata['clause']} — #{metadata['caption']}"
 
         <<~TEMPLATE
           <img src="/concepts/images/#{image_name}.png" #{options_str}>
