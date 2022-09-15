@@ -44,10 +44,11 @@ module Jekyll
         url.split("/").last
       end
 
-      REFERENCE_REGEX = /{{(urn:[^,}]*),?([^,}]*),?([^}]*)?}}/.freeze
+      URN_REFERENCE_REGEX = /{{(urn:[^,}]*),?([^,}]*),?([^}]*)?}}/.freeze
+      REFERENCE_REGEX = /(?:&lt;|<){2}((?!:&gt;:&gt;).*?)(?:&gt;|>){2}/.freeze
 
       def resolve_reference_to_links(text)
-        text.gsub(REFERENCE_REGEX) do |reference|
+        text.gsub!(URN_REFERENCE_REGEX) do |reference|
           urn = Regexp.last_match[1]
 
           if !urn || urn.empty?
@@ -56,13 +57,42 @@ module Jekyll
             link_tag_from_urn(urn, Regexp.last_match[2], Regexp.last_match[3])
           end
         end
+
+        text.gsub!(REFERENCE_REGEX) do |reference|
+          ref = Regexp.last_match[1]
+          return reference if ref.start_with?("fig")
+
+          link_tag_from_ref(ref.split(",").first)
+        end
+
+        text
       end
 
       def link_tag_from_urn(urn, term_referenced, term_to_show)
         clause = urn.split(":").last
         term_to_show = term_to_show.empty? ? term_referenced : term_to_show
 
-        "<a href=\"/concepts/#{clause}\">#{term_to_show}<\/a>"
+        link_tag("/concepts/#{clause}", term_to_show)
+      end
+
+      def link_tag_from_ref(ref)
+        bib_ref = @context.registers[:site].data["bibliography"][ref]
+
+        if bib_ref["user_defined"]
+          link = bib_ref["link"]
+          docidentifier = bib_ref["reference"]
+        else
+          link = bib_ref["link"].detect { |l| l["type"] == "src" }["content"]["uri_string"]
+          docidentifier = bib_ref["docidentifier"].select { |d| d["primary"] }[0]["id"]
+        end
+
+        link_tag(link, docidentifier)
+      end
+
+      def link_tag(link, text)
+        return text if link.nil? || link.empty?
+
+        "<a href=\"#{link}\">#{text}<\/a>"
       end
 
       IMAGE_REGEX = /(?:<|&lt;){2}(fig_.*?)(?:>|&gt;){2}/.freeze
