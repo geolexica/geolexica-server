@@ -82,8 +82,8 @@ module Jekyll
           link = bib_ref["link"]
           docidentifier = bib_ref["reference"]
         else
-          link = bib_ref["link"].detect { |l| l["type"] == "src" }["content"]["uri_string"]
-          docidentifier = bib_ref["docidentifier"].select { |d| d["primary"] }[0]["id"]
+          link = bib_ref["link"].detect { |l| l["type"] == "src" }["content"]
+          docidentifier = bib_ref["docid"].detect { |d| d["primary"] }["id"]
         end
 
         link_tag(link, docidentifier)
