@@ -131,7 +131,7 @@ module Jekyll
         return {} if glossary_path.nil? || glossary_path.empty?
 
         @images_metadata ||= YAML.load_file(
-          File.expand_path("#{glossary_path}/images_metadata.yaml"),
+          File.expand_path("#{glossary_path}/images_metadata.yaml", site.source),
         )
       end
 
