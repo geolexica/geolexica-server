@@ -43,6 +43,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "jbuilder"
 
   spec.add_runtime_dependency "jekyll-asciidoc"
+  spec.add_runtime_dependency "relaton"
 
   # Zeitwerk::Loader#push_dir supports :namespace argument from v. 2.4.
   spec.add_runtime_dependency "zeitwerk", "~> 2.4"

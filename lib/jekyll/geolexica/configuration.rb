@@ -23,6 +23,13 @@ module Jekyll
         File.expand_path("#{glossary_path}/images_metadata.yaml", site.source)
       end
 
+      def bibliography_path
+        glossary_path = glossary_config["glossary_path"]
+        return nil if glossary_path.nil? || glossary_path.empty?
+
+        File.expand_path("#{glossary_path}/bibliography.yaml", site.source)
+      end
+
       def term_languages
         glossary_config["term_languages"]
       end
