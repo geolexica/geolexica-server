@@ -27,12 +27,11 @@ module Jekyll
 
       def make_bibliography
         YAML.load_file(bibliography_path).each do |name, identifier|
-          bib = @db.fetch(identifier["reference"]) ||
-                {
-                  "user_defined" => true,
-                  "reference" => identifier["reference"],
-                  "link" => identifier["link"],
-                }.compact
+          bib = @db.fetch(identifier["reference"]) || {
+            "user_defined" => true,
+            "reference" => identifier["reference"],
+            "link" => identifier["link"],
+          }.compact
 
           @site.data["bibliography"][name] = bib.to_hash
         end
