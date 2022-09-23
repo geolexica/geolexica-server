@@ -32,7 +32,7 @@ RSpec.describe GeolexicaServer::Generator::Metadata do
                 "designation" => "entity",
               },
             ],
-          }
+          },
         },
       ]
     end
