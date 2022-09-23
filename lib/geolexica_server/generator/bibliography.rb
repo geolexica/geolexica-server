@@ -20,8 +20,9 @@ module GeolexicaServer
         Dir.mkdir(@output_dir) unless File.directory?(@output_dir)
 
         @bibliography_map.each do |name, identifier|
-          bib = @db.fetch(identifier["reference"]) ||
-                user_defined_bib(identifier)
+          bib =
+            @db.fetch(identifier["reference"]) ||
+            user_defined_bib(identifier)
 
           file_path = "#{@output_dir}/#{name}.yaml"
           File.write(file_path, bib.to_yaml)

@@ -11,8 +11,9 @@ module GeolexicaServer
       end
 
       def initialize(options = {})
-        config_file_path = options["config_file_path"] ||
-                           GeolexicaServer::DEFAULT_CONFIG_FILE_PATH
+        config_file_path =
+          options["config_file_path"] ||
+          GeolexicaServer::DEFAULT_CONFIG_FILE_PATH
 
         @config = YAML.load_file(config_file_path)
 
