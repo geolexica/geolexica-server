@@ -1,8 +1,0 @@
----
-layout: custom-home
-permalink: /
-nav_items: [about, posts, stats, feedback, registers]
-title: Index
----
-:page-liquid:
-

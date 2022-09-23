@@ -1,0 +1,39 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "mercenary"
+require "pry"
+require_relative "../lib/geolexica_server"
+
+Mercenary.program(:geolexica) do |p|
+  p.version GeolexicaServer::VERSION
+  p.syntax "geolexica <subcommand> [options]"
+
+  p.option "source", "-s", "--source [DIR]", "Source directory (defaults to ./)"
+  p.option "destination", "-d", "--destination [DIR]", "Destination directory (defaults to ./_site)"
+
+  Jekyll::Commands::Serve.init_with_program(p)
+  Jekyll::Commands::Build.init_with_program(p)
+
+  p.command(:generate_metadata) do |c|
+    c.syntax "generate-metadata [options]"
+    c.description "Creates a file containing metadata related to current repo"
+
+    c.action do |_args, options|
+      GeolexicaServer::Generator::Metadata.generate(options)
+    end
+  end
+
+  p.command(:generate_bibliography) do |c|
+    c.syntax "generate-bibliography [options]"
+    c.description "Creates a directory containing bibliography based on bibliography.yaml file"
+
+    c.action do |_args, options|
+      GeolexicaServer::Generator::Bibliography.generate(options)
+    end
+  end
+
+  p.action do |args, _options|
+    puts(p) if args.empty?
+  end
+end
