@@ -8,7 +8,10 @@ RSpec.describe GeolexicaServer::Generator::Bibliography do
     subject { described_class.new(options).send(:user_defined_bib, identifier) }
 
     context "when link is present" do
-      let(:identifier) { { "reference" => "ref_1", "link" => "http://www.abc.com" } }
+      let(:identifier) do
+        { "reference" => "ref_1", "link" => "http://www.abc.com" }
+      end
+
       let(:expected_value) do
         {
           "user_defined" => true,

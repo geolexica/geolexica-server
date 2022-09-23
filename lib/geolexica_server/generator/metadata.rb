@@ -9,38 +9,37 @@ module GeolexicaServer
 
         @concepts_dir = "#{@glossary_path}/concepts/*.yaml"
         @output_file_name = "metadata.yaml"
-        @terms = []
       end
 
       def generate
-        populate_terms
+        terms = extract_terms
 
-        term_count = @terms.map { |t| t.keys.length - 2 }.sum
-
-        meta = {
-          "concept_count" => @terms.length,
-          "term_count" => term_count,
-          "version" => "20220530"
-        }
-
-        write_metadata_to_output_file(meta)
+        File.open(@output_file_name, "w") do |file|
+          file.write(metadata(terms).to_yaml)
+        end
 
         puts "Done."
       end
 
       private
 
-      def populate_terms
+      def extract_terms
+        terms = []
+
         Dir[@concepts_dir].map do |yaml_file|
-          @terms << YAML.safe_load(IO.read(yaml_file))
+          terms << YAML.safe_load(IO.read(yaml_file))
           puts "Processing #{yaml_file}"
         end
+
+        terms
       end
 
-      def write_metadata_to_output_file(meta)
-        File.open(@output_file_name, "w") do |file|
-          file.write(meta.to_yaml)
-        end
+      def metadata(terms)
+        {
+          "concept_count" => terms.length,
+          "term_count" => terms.sum { |t| t.keys.length - 2 },
+          "version" => "20220530",
+        }
       end
     end
   end
