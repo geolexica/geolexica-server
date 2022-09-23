@@ -15,7 +15,10 @@ RSpec.describe GeolexicaServer::Generator::Metadata do
           "term" => "immaterial entity",
           "eng" => {
             "terms" => [
-              { "type" => "expression", "designation" => "immaterial entity" },
+              {
+                "type" => "expression",
+                "designation" => "immaterial entity",
+              },
             ],
           },
         },
@@ -24,7 +27,10 @@ RSpec.describe GeolexicaServer::Generator::Metadata do
           "term" => "entity",
           "eng" => {
             "terms" => [
-              { "type" => "expression", "designation" => "entity" },
+              {
+                "type" => "expression",
+                "designation" => "entity",
+              },
             ],
           }
         },
@@ -32,7 +38,7 @@ RSpec.describe GeolexicaServer::Generator::Metadata do
     end
 
     it "should return terms from concepts" do
-      expect(terms).to eq(expected_output)
+      expect(terms).to match_array(expected_output)
     end
   end
 
