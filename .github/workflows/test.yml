@@ -6,17 +6,13 @@ on:
 
 jobs:
   test-jekyll-geolexica:
-    name: Jekyll ${{ matrix.jekyll }} on Ruby ${{ matrix.ruby }}
+    name: Geolexica server on Ruby ${{ matrix.ruby }}
     runs-on: ubuntu-latest
 
     strategy:
       fail-fast: false
       matrix:
-        jekyll: [ "4.0", "4.1", "4.2" ]
         ruby: [ "2.7", "3.0" ]
-
-    env:
-      BUNDLE_GEMFILE: gemfiles/Jekyll-${{ matrix.jekyll }}.gemfile
 
     steps:
       - uses: actions/checkout@v2
