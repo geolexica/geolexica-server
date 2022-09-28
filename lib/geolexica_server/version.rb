@@ -2,5 +2,5 @@
 #
 
 module GeolexicaServer
-  VERSION = "0.0.1-beta-32".freeze
+  VERSION = "0.0.1".freeze
 end
